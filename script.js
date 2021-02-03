@@ -148,12 +148,34 @@ const stepOptions = {
     variableName: "floorMaterial",
   },
 
-  Garaje: {
-    1: {
-      left: ["Gris", "Verde", "Azul", "Amarillo"],
-      right: ["Blanco", "Negro", "Rojo Ferrari", "Rojo Oscuro"],
-      question1: "¿DE QUE COLOR LO QUIERE",
-      question2: "PINTAR?",
+  'Hormigón Liso': {
+    2: {
+      middle:["No", "Pocos", "Muchos"],
+      question1: "¿SU SUELO TIENE",
+      question2: "DESPERFECTOS?",
+      slides: [
+        {
+          name: "Muchos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Pocos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Sin Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+        },
+      ],
+      variableName: "Desperfectos",
+    },
+    3: {
+      middle: "area picker",
+      question1: "¿CUÁNTOS M² QUIERE",
+      question2: "PINTAR DE SUELO?",
       slides: [
         {
           name: "Parking",
@@ -224,91 +246,141 @@ const stepOptions = {
           name: "Garajes",
           url:
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-GARAJES-HS.jpg?v=1612267812",
+        },
+      ],
+      variableName: "Area",
+    },
+    4: {
+      middle: ["color picker"],
+      question1: "¿DE QUE COLOR QUIERE",
+      question2: "PINTAR EL SUELO?",
+      slides: [
+        {
+          name: "Gris Oscuro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-OSCURO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Medio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-MEDIO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Blanco",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-BLANCO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Azul Acero",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-AZUL-ACERO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Negro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Antártica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Rojo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-ROJO-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Claro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-CLARO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Verde",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-VERDE-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Crema",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-CREMA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Ocre",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-OCRE-SLIDE.jpg?v=1612354971",
         },
       ],
       variableName: "Color",
     },
-    2: {
-      left: ["a", "b", "c", "d"],
-      right: ["ab", "e", "Rojo r", "Rojo rr"],
-      question1: "¿DE QUE COLOR LO QUIERE",
-      question2: "PINTAR?",
+    5: {
+      middle:["herramientas picker"],
+      question1: "¿NECESITA",
+      question2: "HERRAMIENTAS?",
       slides: [
         {
-          name: "Parking",
+          name: "Báscula Pequeña",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PARKING-HS.jpg?v=1612267813",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BASCULA-PEQUENA-SLIDE.jpg?v=1612355587",
         },
         {
-          name: "Patio Colegio",
+          name: "Brochas",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PATIO-COLEGIO-HS.jpg?v=1612267812",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BROCHAS-SLIDE.jpg?v=1612355587",
         },
         {
-          name: "Taller Mecánico",
+          name: "Rodillos",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-TALLER-MECANICO-HS.jpg?v=1612267812",
-        },
-        {
-          name: "Terraza",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TERRAZA.jpg?v=1612267812",
-        },
-        {
-          name: "Supermercado",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-SUPERMERCADO-HS.jpg?v=1612267812",
-        },
-        {
-          name: "Trasteros",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TRASTERO.jpg?v=1612267812",
-        },
-        {
-          name: "Tiendas",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TIENDAS.jpg?v=1612267812",
-        },
-        {
-          name: "Almacén",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALMACEN-HS.jpg?v=1612267812",
-        },
-        {
-          name: "Naves",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS_NAVES_HS.jpg?v=1612267812",
-        },
-        {
-          name: "Exterior",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-EXTERIOR-HS.jpg?v=1612267812",
-        },
-        {
-          name: "Suelos Alimentarios",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALIMENTARIOS-HS.jpg?v=1612267812",
-        },
-        {
-          name: "Viviendas",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-VIVIENDA-HS.jpg?v=1612267812",
-        },
-        {
-          name: "Cocina Industrial",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-COCINA-INDUSTRIAL-HS.jpg?v=1612267812",
-        },
-        {
-          name: "Garajes",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-GARAJES-HS.jpg?v=1612267812",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-RODILLOS-SLIDE.jpg?v=1612355587",
         },
       ],
-      variableName: "Color2",
+      variableName: "Herramientas",
+    },
+    5: {
+      middle:["Brillo", "Mate"],
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    6: {
+      middle:["Prespuesto picker"],
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
     },
   },
+
 };
+
 
 const SLIDE_TIME = 500;
 let floorType = localStorage.getItem("floorType");
@@ -501,7 +573,7 @@ function buttonClickedAt(myElement) {
   let option = myElement.innerHTML;
   console.log(stepOptions, option);
   if (step > 1) {
-    localStorage.setItem(stepOptions[floorType][step].variableName, option);
+    localStorage.setItem(stepOptions[floorMaterial][step].variableName, option);
   } else if (step == 1) {
     localStorage.setItem("floorMaterial", option);
   } else {
@@ -788,12 +860,16 @@ function buttonAreaInnerHTMLGenerator() {
         "</div>";
       document.getElementById("buttonarea").innerHTML = leftDiv + rightDiv;
     }
-    
+    document.getElementById('question1').innerHTML = stepOptions[step].question1
+    document.getElementById('question2').innerHTML = stepOptions[step].question2
   } else {
-    if (stepOptions[floorType][step].middle) {
+    if(stepOptions[floorMaterial][step].middle=="area picker"){
+      loadAreaPicker()
+    }
+    else if (stepOptions[floorMaterial][step].middle) {
       middleDiv =
         '<div class="middleside side" >' +
-        stepOptions[floorType][step].middle
+        stepOptions[floorMaterial][step].middle
           .map((option) => `<a><div class="option">${option}</div></a>`)
           .join("") +
         "</div>";
@@ -801,19 +877,22 @@ function buttonAreaInnerHTMLGenerator() {
     } else {
       leftDiv =
         '<div class="leftside side" >' +
-        stepOptions[floorType][step].left
+        stepOptions[floorMaterial][step].left
           .map((option) => `<a><div class="option">${option}</div></a>`)
           .join("") +
         "</div>";
       rightDiv =
         '<div class="rightside side" >' +
-        stepOptions[floorType][step].right
+        stepOptions[floorMaterial][step].right
           .map((option) => `<a><div class="option">${option}</div></a>`)
           .join("") +
         "</div>";
       document.getElementById("buttonarea").innerHTML = leftDiv + rightDiv;
     }
+    document.getElementById('question1').innerHTML = stepOptions[floorMaterial][step].question1
+    document.getElementById('question2').innerHTML = stepOptions[floorMaterial][step].question2
   }
+
 }
 
 function sliderGenerator() {
@@ -827,7 +906,7 @@ function sliderGenerator() {
   } else if (step < 2) {
     slideArray = stepOptions[step].slides;
   } else {
-    slideArray = stepOptions[floorType][step].slides;
+    slideArray = stepOptions[floorMaterial][step].slides;
   }
   console.log("this is slideArray", slideArray);
 
@@ -845,3 +924,39 @@ function sliderGenerator() {
 const goBack = document.getElementById("back");
 
 goBack.addEventListener("click", prevStep, false);
+
+function loadAreaPicker(){
+
+  document.getElementById('buttonarea').innerHTML = `
+  <div class="areapicker">
+    <div class="areapickerheader">
+      SELECCIONE LOS M² Y PINCHE EN CONTINUAR
+    </div>
+    <div>
+      <span class="input-number-decrement" id="decrease">–</span>
+      <input id="areainput" class="input-number" type="number" value="100" min="0">
+      <span class="input-number-increment" id="increase">+</span>
+    </div>
+    <a><div id="areapickercontinuar">
+        CONTINUAR
+    </div></a>
+  </div>`
+
+
+  const decreaseButton = document.getElementById("decrease")
+  const increaseButton = document.getElementById("increase")
+  const areaInput = document.getElementById("areainput")
+  const areaPickerContinuar = document.getElementById("areapickercontinuar")
+  const storedValue = localStorage.getItem('Area')
+
+  if(storedValue>0){areaInput.value = storedValue}
+  decreaseButton.addEventListener('click', ()=>{areaInput.value = Number(areaInput.value) - 10}, 'false')
+  increaseButton.addEventListener('click', ()=>{areaInput.value = Number(areaInput.value) + 10}, 'false')
+
+  areaPickerContinuar.addEventListener('click', areaPickerGoNext, 'false')
+
+  function areaPickerGoNext(){
+    localStorage.setItem('Area', areaInput.value)
+    nextStep()
+  }
+}
