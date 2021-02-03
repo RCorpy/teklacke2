@@ -314,7 +314,7 @@ const stepOptions = {
       variableName: "Color",
     },
     5: {
-      middle:["herramientas picker"],
+      middle:"herramientas picker",
       question1: "¿NECESITA",
       question2: "HERRAMIENTAS?",
       slides: [
@@ -336,7 +336,7 @@ const stepOptions = {
       ],
       variableName: "Herramientas",
     },
-    5: {
+    6: {
       middle:["Brillo", "Mate"],
       question1: "¿LO PREFIERE BRILLO",
       question2: "O MATE?",
@@ -354,8 +354,8 @@ const stepOptions = {
       ],
       variableName: "Brillo",
     },
-    6: {
-      middle:["Prespuesto picker"],
+    7: {
+      middle:"Prespuesto picker",
       question1: "ELIJA SU",
       question2: "PRESUPUESTO",
       slides: [
@@ -530,9 +530,9 @@ function nextStep() {
     reloadElement(document.getElementById("question2"));
     reloadElement(document.getElementById("buttonarea"));
     reloadElement(document.getElementById("slider"));
+    buttonAreaInnerHTMLGenerator();
     sliderGenerator();
     onWndLoad();
-    buttonAreaInnerHTMLGenerator();
     slideFromTheRight(document.getElementById("question1"));
     slideFromTheRight(document.getElementById("question2"));
     slideFromTheRight(document.getElementById("buttonarea"));
@@ -556,9 +556,9 @@ function prevStep() {
       reloadElement(document.getElementById("question2"));
       reloadElement(document.getElementById("buttonarea"));
       reloadElement(document.getElementById("slider"));
+      buttonAreaInnerHTMLGenerator();
       sliderGenerator();
       onWndLoad();
-      buttonAreaInnerHTMLGenerator();
       slideFromTheLeft(document.getElementById("question1"));
       slideFromTheLeft(document.getElementById("question2"));
       slideFromTheLeft(document.getElementById("buttonarea"));
@@ -571,7 +571,6 @@ function prevStep() {
 
 function buttonClickedAt(myElement) {
   let option = myElement.innerHTML;
-  console.log(stepOptions, option);
   if (step > 1) {
     localStorage.setItem(stepOptions[floorMaterial][step].variableName, option);
   } else if (step == 1) {
@@ -822,7 +821,6 @@ function onWndLoad() {
 }
 
 function buttonAreaInnerHTMLGenerator() {
-  console.log("changing texts");
   floorType = localStorage.getItem("floorType");
   floorMaterial = localStorage.getItem('floorMaterial')
 
@@ -837,7 +835,6 @@ function buttonAreaInnerHTMLGenerator() {
 
   if (step < 2) {
     if (stepOptions[step].middle) {
-      console.log("this runs")
       middleDiv =
         '<div class="middleside side" >' +
         stepOptions[step].middle
@@ -865,6 +862,15 @@ function buttonAreaInnerHTMLGenerator() {
   } else {
     if(stepOptions[floorMaterial][step].middle=="area picker"){
       loadAreaPicker()
+    }
+    else if(stepOptions[floorMaterial][step].middle=="color picker"){
+      loadColorPicker()
+    }
+    else if(stepOptions[floorMaterial][step].middle=="herramientas picker"){
+      loadHerramientasPicker()
+    }
+    else if(stepOptions[floorMaterial][step].middle=="presupuesto picker"){
+      loadPresupuestoPicker()
     }
     else if (stepOptions[floorMaterial][step].middle) {
       middleDiv =
@@ -899,16 +905,11 @@ function sliderGenerator() {
   let slideArray;
   const sliderDiv = document.getElementById("slider");
 
-  if (!floorType) {
-    slideArray = stepOptions[0].slides;
-  } else if (!floorMaterial) {
-    slideArray = stepOptions[1].slides;
-  } else if (step < 2) {
+  if (step < 2) {
     slideArray = stepOptions[step].slides;
   } else {
     slideArray = stepOptions[floorMaterial][step].slides;
   }
-  console.log("this is slideArray", slideArray);
 
   sliderDiv.innerHTML = slideArray
     .map(
@@ -960,3 +961,164 @@ function loadAreaPicker(){
     nextStep()
   }
 }
+
+
+function loadColorPicker(){
+  document.getElementById('buttonarea').innerHTML = `
+  <div class="colorpicker">
+    <div class="colorpickercolumn">
+        <div class="colorpickeroption grisclaro">
+            <p>Gris Claro</p>
+        </div>
+        <div class="colorpickeroption grismedio">
+            <p>Gris Medio</p>
+        </div>
+        <div class="colorpickeroption grisoscuro">
+            <p>Gris Oscuro</p>
+        </div>
+    </div>
+    <div class="colorpickercolumn">
+        <div class="colorpickeroption antracita">
+            <p>Antracita</p>
+        </div>
+        <div class="colorpickeroption blanco">
+            <p>Blanco</p>
+        </div>
+        <div class="colorpickeroption crema">
+            <p>Crema</p>
+        </div>
+    </div>
+    <div class="colorpickercolumn">
+        <div class="colorpickeroption amarillotrafico">
+            <p>Amarillo Tráfico</p>
+        </div>
+        <div class="colorpickeroption ocre">
+            <p>Ocre</p>
+        </div>
+        <div class="colorpickeroption negro">
+            <p>Negro</p>
+        </div>
+    </div>
+    <div class="colorpickercolumn">
+        <div class="colorpickeroption azulacero">
+            <p>Azul Acero</p>
+        </div>
+        <div class="colorpickeroption rojooxido">
+            <p>Rojo Óxido</p>
+        </div>
+        <div class="colorpickeroption verdebosque">
+            <p>Verde Bosque</p>
+        </div>
+    </div>
+  </div>`
+
+  let elements = document.getElementsByClassName("colorpickeroption");
+
+  for (let i = 0, len = elements.length; i < len; i++) {
+    let myElement = elements[i];
+    elements[i].addEventListener(
+      "click",
+      () => colorElementClicked(myElement),
+      false
+    );
+  }
+
+  function colorElementClicked(element){
+    localStorage.setItem('Color', element.children[0].innerHTML)
+    nextStep()
+  }
+}
+
+function loadHerramientasPicker(){
+
+  document.getElementById('buttonarea').innerHTML = `
+  <div class="herramientaspicker">
+  <div class="herramientasrow">
+      <p>Balanza 2g a 5Kgs</p>
+      <div class="herramientasinput">
+          <span class="herramientasdecrement" id="decreasebalanza">–</span>
+          <input id="balanzainput" class="herramientasnumber" type="number" value="1" min="0">
+          <span class="herramientasincrement" id="increasebalanza">+</span>
+      </div>
+  </div>
+  <div  class="herramientasrow">
+      <p>Rodillos 220mm</p>
+      <div class="herramientasinput">
+          <span class="herramientasdecrement" id="decreaserodillos">–</span>
+          <input id="rodillosinput" class="herramientasnumber" type="number" value="1" min="0">
+          <span class="herramientasincrement" id="increaserodillos">+</span>
+      </div>
+  </div>
+  <div  class="herramientasrow">
+      <p>Brochas</p>
+      <div class="herramientasinput">
+          <span class="herramientasdecrement" id="decreasebrochas">–</span>
+          <input id="brochasinput" class="herramientasnumber" type="number" value="1" min="0">
+          <span class="herramientasincrement" id="increasebrochas">+</span>
+      </div>
+  </div>
+  <div  class="herramientasrow">
+      <p>Cubos de Mezcla</p>
+      <div class="herramientasinput">
+          <span class="herramientasdecrement" id="decreasecubos">–</span>
+          <input id="cubosinput" class="herramientasnumber" type="number" value="1" min="0">
+          <span class="herramientasincrement" id="increasecubos">+</span>
+      </div>
+  </div>
+  <div class="acceptandcontinue" id="acceptandcontinue">
+      CONTINUAR
+  </div>`
+
+
+  const herramientasPickerContinuar = document.getElementById("acceptandcontinue")
+
+  const decreaseBalanzaButton = document.getElementById("decreasebalanza")
+  const increaseBalanzaButton = document.getElementById("increasebalanza")
+  const balanzaInput = document.getElementById("balanzainput")
+  const balanzaStoredValue = localStorage.getItem('Balanzas')
+  
+  const decreaseRodillosButton = document.getElementById("decreaserodillos")
+  const increaseRodillosButton = document.getElementById("increaserodillos")
+  const rodillosInput = document.getElementById("rodillosinput")
+  const rodillosStoredValue = localStorage.getItem('Rodillos')
+
+  const decreaseBrochasButton = document.getElementById("decreasebrochas")
+  const increaseBrochasButton = document.getElementById("increasebrochas")
+  const brochasInput = document.getElementById("brochasinput")
+  const brochasStoredValue = localStorage.getItem('Brochas')
+
+  const decreaseCubosButton = document.getElementById("decreasecubos")
+  const increaseCubosButton = document.getElementById("increasecubos")
+  const cubosInput = document.getElementById("cubosinput")
+  const cubosStoredValue = localStorage.getItem('Cubos')
+
+  if(balanzaStoredValue>0){balanzaInput.value = balanzaStoredValue}
+  decreaseBalanzaButton.addEventListener('click', ()=>{if(Number(balanzaInput.value)>0)balanzaInput.value = Number(balanzaInput.value) - 1}, 'false')
+  increaseBalanzaButton.addEventListener('click', ()=>{balanzaInput.value = Number(balanzaInput.value) + 1}, 'false')
+
+  if(rodillosStoredValue>0){rodillosInput.value = rodillosStoredValue}
+  decreaseRodillosButton.addEventListener('click', ()=>{if(Number(rodillosInput.value)>0)rodillosInput.value = Number(rodillosInput.value) - 1}, 'false')
+  increaseRodillosButton.addEventListener('click', ()=>{rodillosInput.value = Number(rodillosInput.value) + 1}, 'false')
+  
+  if(brochasStoredValue>0){brochasInput.value = brochasStoredValue}
+  decreaseBrochasButton.addEventListener('click', ()=>{if(Number(brochasInput.value)>0)brochasInput.value = Number(brochasInput.value) - 1}, 'false')
+  increaseBrochasButton.addEventListener('click', ()=>{brochasInput.value = Number(brochasInput.value) + 1}, 'false')
+
+  if(cubosStoredValue>0){cubosInput.value = cubosStoredValue}
+  decreaseCubosButton.addEventListener('click', ()=>{if(Number(cubosInput.value)>0)cubosInput.value = Number(cubosInput.value) - 1}, 'false')
+  increaseCubosButton.addEventListener('click', ()=>{cubosInput.value = Number(cubosInput.value) + 1}, 'false')
+  herramientasPickerContinuar.addEventListener('click', herramientasPickerGoNext, 'false')
+
+  function herramientasPickerGoNext(){
+    localStorage.setItem('Balanza', balanzaInput.value)
+    localStorage.setItem('Rodillos', rodillosInput.value)
+    localStorage.setItem('Brochas', brochasInput.value)
+    localStorage.setItem('Cubos', cubosInput.value)
+    nextStep()
+  }
+}
+
+function loadPresupuestoPicker(){
+  
+}
+
