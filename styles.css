@@ -520,3 +520,39 @@ body {
   text-align: center;
   cursor: pointer;
 }
+
+.presupuestooption{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.presupuestopicker{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+.presupuestooption > h3 {
+  color: blue;
+}
+
+.presupuestooption > p {
+  font-size: 2.1vh;
+}
+
+.presupuestooption > p > b {
+  font-size: 2.2vh;
+}
+
+.presupuestooption:hover {
+  margin: -1px;
+  border: 1px lightgrey solid;
+  cursor: pointer;
+}
+
+.presupuestooption:active{
+  background-color: rgba(100,200,240, 0.5);
+}

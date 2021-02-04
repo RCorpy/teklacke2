@@ -148,9 +148,9 @@ const stepOptions = {
     variableName: "floorMaterial",
   },
 
-  'Hormigón Liso': {
+  "Hormigón Liso": {
     2: {
-      middle:["No", "Pocos", "Muchos"],
+      middle: ["No", "Pocos", "Muchos"],
       question1: "¿SU SUELO TIENE",
       question2: "DESPERFECTOS?",
       slides: [
@@ -314,7 +314,7 @@ const stepOptions = {
       variableName: "Color",
     },
     5: {
-      middle:"herramientas picker",
+      middle: "herramientas picker",
       question1: "¿NECESITA",
       question2: "HERRAMIENTAS?",
       slides: [
@@ -337,7 +337,7 @@ const stepOptions = {
       variableName: "Herramientas",
     },
     6: {
-      middle:["Brillo", "Mate"],
+      middle: ["Brillo", "Mate"],
       question1: "¿LO PREFIERE BRILLO",
       question2: "O MATE?",
       slides: [
@@ -355,7 +355,7 @@ const stepOptions = {
       variableName: "Brillo",
     },
     7: {
-      middle:"Prespuesto picker",
+      middle: "presupuesto picker",
       question1: "ELIJA SU",
       question2: "PRESUPUESTO",
       slides: [
@@ -378,9 +378,7 @@ const stepOptions = {
       variableName: "Presupuesto",
     },
   },
-
 };
-
 
 const SLIDE_TIME = 500;
 let floorType = localStorage.getItem("floorType");
@@ -822,14 +820,14 @@ function onWndLoad() {
 
 function buttonAreaInnerHTMLGenerator() {
   floorType = localStorage.getItem("floorType");
-  floorMaterial = localStorage.getItem('floorMaterial')
+  floorMaterial = localStorage.getItem("floorMaterial");
 
   let leftDiv, rightDiv, middleDiv;
   if (!floorType) {
-    console.log("forced to step 0")
+    console.log("forced to step 0");
     step = 0;
   } else if (!floorMaterial) {
-    console.log("forced to step 1", floorMaterial)
+    console.log("forced to step 1", floorMaterial);
     step = 1;
   }
 
@@ -857,22 +855,24 @@ function buttonAreaInnerHTMLGenerator() {
         "</div>";
       document.getElementById("buttonarea").innerHTML = leftDiv + rightDiv;
     }
-    document.getElementById('question1').innerHTML = stepOptions[step].question1
-    document.getElementById('question2').innerHTML = stepOptions[step].question2
+    document.getElementById("question1").innerHTML =
+      stepOptions[step].question1;
+    document.getElementById("question2").innerHTML =
+      stepOptions[step].question2;
   } else {
-    if(stepOptions[floorMaterial][step].middle=="area picker"){
-      loadAreaPicker()
-    }
-    else if(stepOptions[floorMaterial][step].middle=="color picker"){
-      loadColorPicker()
-    }
-    else if(stepOptions[floorMaterial][step].middle=="herramientas picker"){
-      loadHerramientasPicker()
-    }
-    else if(stepOptions[floorMaterial][step].middle=="presupuesto picker"){
-      loadPresupuestoPicker()
-    }
-    else if (stepOptions[floorMaterial][step].middle) {
+    if (stepOptions[floorMaterial][step].middle == "area picker") {
+      loadAreaPicker();
+    } else if (stepOptions[floorMaterial][step].middle == "color picker") {
+      loadColorPicker();
+    } else if (
+      stepOptions[floorMaterial][step].middle == "herramientas picker"
+    ) {
+      loadHerramientasPicker();
+    } else if (
+      stepOptions[floorMaterial][step].middle == "presupuesto picker"
+    ) {
+      loadPresupuestoPicker();
+    } else if (stepOptions[floorMaterial][step].middle) {
       middleDiv =
         '<div class="middleside side" >' +
         stepOptions[floorMaterial][step].middle
@@ -895,10 +895,11 @@ function buttonAreaInnerHTMLGenerator() {
         "</div>";
       document.getElementById("buttonarea").innerHTML = leftDiv + rightDiv;
     }
-    document.getElementById('question1').innerHTML = stepOptions[floorMaterial][step].question1
-    document.getElementById('question2').innerHTML = stepOptions[floorMaterial][step].question2
+    document.getElementById("question1").innerHTML =
+      stepOptions[floorMaterial][step].question1;
+    document.getElementById("question2").innerHTML =
+      stepOptions[floorMaterial][step].question2;
   }
-
 }
 
 function sliderGenerator() {
@@ -926,9 +927,8 @@ const goBack = document.getElementById("back");
 
 goBack.addEventListener("click", prevStep, false);
 
-function loadAreaPicker(){
-
-  document.getElementById('buttonarea').innerHTML = `
+function loadAreaPicker() {
+  document.getElementById("buttonarea").innerHTML = `
   <div class="areapicker">
     <div class="areapickerheader">
       SELECCIONE LOS M² Y PINCHE EN CONTINUAR
@@ -941,30 +941,42 @@ function loadAreaPicker(){
     <a><div id="areapickercontinuar">
         CONTINUAR
     </div></a>
-  </div>`
+  </div>`;
 
+  const decreaseButton = document.getElementById("decrease");
+  const increaseButton = document.getElementById("increase");
+  const areaInput = document.getElementById("areainput");
+  const areaPickerContinuar = document.getElementById("areapickercontinuar");
+  const storedValue = localStorage.getItem("Area");
 
-  const decreaseButton = document.getElementById("decrease")
-  const increaseButton = document.getElementById("increase")
-  const areaInput = document.getElementById("areainput")
-  const areaPickerContinuar = document.getElementById("areapickercontinuar")
-  const storedValue = localStorage.getItem('Area')
+  if (storedValue > 0) {
+    areaInput.value = storedValue;
+  }
+  decreaseButton.addEventListener(
+    "click",
+    () => {
+      areaInput.value = Number(areaInput.value) - 10;
+    },
+    "false"
+  );
+  increaseButton.addEventListener(
+    "click",
+    () => {
+      areaInput.value = Number(areaInput.value) + 10;
+    },
+    "false"
+  );
 
-  if(storedValue>0){areaInput.value = storedValue}
-  decreaseButton.addEventListener('click', ()=>{areaInput.value = Number(areaInput.value) - 10}, 'false')
-  increaseButton.addEventListener('click', ()=>{areaInput.value = Number(areaInput.value) + 10}, 'false')
+  areaPickerContinuar.addEventListener("click", areaPickerGoNext, "false");
 
-  areaPickerContinuar.addEventListener('click', areaPickerGoNext, 'false')
-
-  function areaPickerGoNext(){
-    localStorage.setItem('Area', areaInput.value)
-    nextStep()
+  function areaPickerGoNext() {
+    localStorage.setItem("Area", areaInput.value);
+    nextStep();
   }
 }
 
-
-function loadColorPicker(){
-  document.getElementById('buttonarea').innerHTML = `
+function loadColorPicker() {
+  document.getElementById("buttonarea").innerHTML = `
   <div class="colorpicker">
     <div class="colorpickercolumn">
         <div class="colorpickeroption grisclaro">
@@ -1010,7 +1022,7 @@ function loadColorPicker(){
             <p>Verde Bosque</p>
         </div>
     </div>
-  </div>`
+  </div>`;
 
   let elements = document.getElementsByClassName("colorpickeroption");
 
@@ -1023,15 +1035,14 @@ function loadColorPicker(){
     );
   }
 
-  function colorElementClicked(element){
-    localStorage.setItem('Color', element.children[0].innerHTML)
-    nextStep()
+  function colorElementClicked(element) {
+    localStorage.setItem("Color", element.children[0].innerHTML);
+    nextStep();
   }
 }
 
-function loadHerramientasPicker(){
-
-  document.getElementById('buttonarea').innerHTML = `
+function loadHerramientasPicker() {
+  document.getElementById("buttonarea").innerHTML = `
   <div class="herramientaspicker">
   <div class="herramientasrow">
       <p>Balanza 2g a 5Kgs</p>
@@ -1067,58 +1078,149 @@ function loadHerramientasPicker(){
   </div>
   <div class="acceptandcontinue" id="acceptandcontinue">
       CONTINUAR
-  </div>`
+  </div>`;
 
+  const herramientasPickerContinuar = document.getElementById(
+    "acceptandcontinue"
+  );
 
-  const herramientasPickerContinuar = document.getElementById("acceptandcontinue")
+  const decreaseBalanzaButton = document.getElementById("decreasebalanza");
+  const increaseBalanzaButton = document.getElementById("increasebalanza");
+  const balanzaInput = document.getElementById("balanzainput");
+  const balanzaStoredValue = localStorage.getItem("Balanzas");
 
-  const decreaseBalanzaButton = document.getElementById("decreasebalanza")
-  const increaseBalanzaButton = document.getElementById("increasebalanza")
-  const balanzaInput = document.getElementById("balanzainput")
-  const balanzaStoredValue = localStorage.getItem('Balanzas')
-  
-  const decreaseRodillosButton = document.getElementById("decreaserodillos")
-  const increaseRodillosButton = document.getElementById("increaserodillos")
-  const rodillosInput = document.getElementById("rodillosinput")
-  const rodillosStoredValue = localStorage.getItem('Rodillos')
+  const decreaseRodillosButton = document.getElementById("decreaserodillos");
+  const increaseRodillosButton = document.getElementById("increaserodillos");
+  const rodillosInput = document.getElementById("rodillosinput");
+  const rodillosStoredValue = localStorage.getItem("Rodillos");
 
-  const decreaseBrochasButton = document.getElementById("decreasebrochas")
-  const increaseBrochasButton = document.getElementById("increasebrochas")
-  const brochasInput = document.getElementById("brochasinput")
-  const brochasStoredValue = localStorage.getItem('Brochas')
+  const decreaseBrochasButton = document.getElementById("decreasebrochas");
+  const increaseBrochasButton = document.getElementById("increasebrochas");
+  const brochasInput = document.getElementById("brochasinput");
+  const brochasStoredValue = localStorage.getItem("Brochas");
 
-  const decreaseCubosButton = document.getElementById("decreasecubos")
-  const increaseCubosButton = document.getElementById("increasecubos")
-  const cubosInput = document.getElementById("cubosinput")
-  const cubosStoredValue = localStorage.getItem('Cubos')
+  const decreaseCubosButton = document.getElementById("decreasecubos");
+  const increaseCubosButton = document.getElementById("increasecubos");
+  const cubosInput = document.getElementById("cubosinput");
+  const cubosStoredValue = localStorage.getItem("Cubos");
 
-  if(balanzaStoredValue>0){balanzaInput.value = balanzaStoredValue}
-  decreaseBalanzaButton.addEventListener('click', ()=>{if(Number(balanzaInput.value)>0)balanzaInput.value = Number(balanzaInput.value) - 1}, 'false')
-  increaseBalanzaButton.addEventListener('click', ()=>{balanzaInput.value = Number(balanzaInput.value) + 1}, 'false')
+  if (balanzaStoredValue > 0) {
+    balanzaInput.value = balanzaStoredValue;
+  }
+  decreaseBalanzaButton.addEventListener(
+    "click",
+    () => {
+      if (Number(balanzaInput.value) > 0)
+        balanzaInput.value = Number(balanzaInput.value) - 1;
+    },
+    "false"
+  );
+  increaseBalanzaButton.addEventListener(
+    "click",
+    () => {
+      balanzaInput.value = Number(balanzaInput.value) + 1;
+    },
+    "false"
+  );
 
-  if(rodillosStoredValue>0){rodillosInput.value = rodillosStoredValue}
-  decreaseRodillosButton.addEventListener('click', ()=>{if(Number(rodillosInput.value)>0)rodillosInput.value = Number(rodillosInput.value) - 1}, 'false')
-  increaseRodillosButton.addEventListener('click', ()=>{rodillosInput.value = Number(rodillosInput.value) + 1}, 'false')
-  
-  if(brochasStoredValue>0){brochasInput.value = brochasStoredValue}
-  decreaseBrochasButton.addEventListener('click', ()=>{if(Number(brochasInput.value)>0)brochasInput.value = Number(brochasInput.value) - 1}, 'false')
-  increaseBrochasButton.addEventListener('click', ()=>{brochasInput.value = Number(brochasInput.value) + 1}, 'false')
+  if (rodillosStoredValue > 0) {
+    rodillosInput.value = rodillosStoredValue;
+  }
+  decreaseRodillosButton.addEventListener(
+    "click",
+    () => {
+      if (Number(rodillosInput.value) > 0)
+        rodillosInput.value = Number(rodillosInput.value) - 1;
+    },
+    "false"
+  );
+  increaseRodillosButton.addEventListener(
+    "click",
+    () => {
+      rodillosInput.value = Number(rodillosInput.value) + 1;
+    },
+    "false"
+  );
 
-  if(cubosStoredValue>0){cubosInput.value = cubosStoredValue}
-  decreaseCubosButton.addEventListener('click', ()=>{if(Number(cubosInput.value)>0)cubosInput.value = Number(cubosInput.value) - 1}, 'false')
-  increaseCubosButton.addEventListener('click', ()=>{cubosInput.value = Number(cubosInput.value) + 1}, 'false')
-  herramientasPickerContinuar.addEventListener('click', herramientasPickerGoNext, 'false')
+  if (brochasStoredValue > 0) {
+    brochasInput.value = brochasStoredValue;
+  }
+  decreaseBrochasButton.addEventListener(
+    "click",
+    () => {
+      if (Number(brochasInput.value) > 0)
+        brochasInput.value = Number(brochasInput.value) - 1;
+    },
+    "false"
+  );
+  increaseBrochasButton.addEventListener(
+    "click",
+    () => {
+      brochasInput.value = Number(brochasInput.value) + 1;
+    },
+    "false"
+  );
 
-  function herramientasPickerGoNext(){
-    localStorage.setItem('Balanza', balanzaInput.value)
-    localStorage.setItem('Rodillos', rodillosInput.value)
-    localStorage.setItem('Brochas', brochasInput.value)
-    localStorage.setItem('Cubos', cubosInput.value)
-    nextStep()
+  if (cubosStoredValue > 0) {
+    cubosInput.value = cubosStoredValue;
+  }
+  decreaseCubosButton.addEventListener(
+    "click",
+    () => {
+      if (Number(cubosInput.value) > 0)
+        cubosInput.value = Number(cubosInput.value) - 1;
+    },
+    "false"
+  );
+  increaseCubosButton.addEventListener(
+    "click",
+    () => {
+      cubosInput.value = Number(cubosInput.value) + 1;
+    },
+    "false"
+  );
+  herramientasPickerContinuar.addEventListener(
+    "click",
+    herramientasPickerGoNext,
+    "false"
+  );
+
+  function herramientasPickerGoNext() {
+    localStorage.setItem("Balanza", balanzaInput.value);
+    localStorage.setItem("Rodillos", rodillosInput.value);
+    localStorage.setItem("Brochas", brochasInput.value);
+    localStorage.setItem("Cubos", cubosInput.value);
+    nextStep();
   }
 }
 
-function loadPresupuestoPicker(){
-  
-}
+function loadPresupuestoPicker() {
+  document.getElementById("buttonarea").innerHTML = `
+    <div class="presupuestopicker">
+      <div class="presupuestooption" id="imprimacionydosmanos">
+        <h3>DOS MANOS E IMPRIMACION</h3>
+        <p>Esto es lo que recomendamos.<b>(Recomendada)</b></p>
+      </div>
+      <div class="presupuestooption" id="dosmanos">
+        <h3>SOLO DOS MANOS</h3>
+        <p>Se puede ahorrar la imprimación, pero va a quedar</p>
+        <p>menos capa. Para suelos nuevos funciona bien</p>
+      </div>
+      <div class="presupuestooption" id="soloimprimacion">
+        <h3>UNA MANO TRANSPARENTE</h3>
+        <p>Ideal para cuando solo se quiere evitar el polvo</p>
+        <p>y gastar poco</p>
+      </div>
+    </div>`;
 
+    function setAndContinue(id){
+      console.log(id)
+      localStorage.setItem('Manos', id)
+      nextStep()
+    }
+
+    [...document.getElementsByClassName('presupuestooption')].map(div=>{
+      div.addEventListener('click', ()=>setAndContinue(div.id), 'false')
+    })
+
+}
