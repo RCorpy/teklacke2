@@ -377,6 +377,28 @@ const stepOptions = {
       ],
       variableName: "Presupuesto",
     },
+    8: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    9: {
+      middle: "fin",
+      lastStep: 8,
+    },
   },
 };
 
@@ -422,7 +444,7 @@ function changeStep() {
 
 function slideToTheLeft(element) {
   let start = Date.now(); // remember start time
-
+  if(element){
   let timer = setInterval(function () {
     // how much time passed from the start?
     let timePassed = Date.now() - start;
@@ -442,10 +464,11 @@ function slideToTheLeft(element) {
     //element.style.left = '75vw';
   }
 }
+}
 
 function slideFromTheRight(element) {
   let start = Date.now(); // remember start time
-
+  if(element){
   let timer = setInterval(function () {
     // how much time passed from the start?
     let timePassed = Date.now() - start;
@@ -466,11 +489,12 @@ function slideFromTheRight(element) {
     }
     //element.style.left = '75vw';
   }
+  }
 }
 
 function slideToTheRight(element) {
   let start = Date.now(); // remember start time
-
+  if(element){
   let timer = setInterval(function () {
     // how much time passed from the start?
     let timePassed = Date.now() - start;
@@ -490,10 +514,11 @@ function slideToTheRight(element) {
     //element.style.left = '75vw';
   }
 }
+}
 
 function slideFromTheLeft(element) {
   let start = Date.now(); // remember start time
-
+  if(element){
   let timer = setInterval(function () {
     // how much time passed from the start?
     let timePassed = Date.now() - start;
@@ -515,10 +540,11 @@ function slideFromTheLeft(element) {
     //element.style.left = '75vw';
   }
 }
+}
 
 function nextStep() {
   step++;
-
+  
   //slideToTheLeft(document.getElementById('buttonarea'))
   slideToTheLeft(document.getElementById("question1"));
   slideToTheLeft(document.getElementById("question2"));
@@ -580,7 +606,9 @@ function buttonClickedAt(myElement) {
 }
 
 function onWndLoad() {
+  
   var slider = document.querySelector(".slider");
+  if(!slider){ return false}
   var sliders = slider.children;
 
   var initX = null;
@@ -868,10 +896,14 @@ function buttonAreaInnerHTMLGenerator() {
       stepOptions[floorMaterial][step].middle == "herramientas picker"
     ) {
       loadHerramientasPicker();
+    } else if (stepOptions[floorMaterial][step].middle == "resina picker") {
+      loadResinaPicker();
     } else if (
       stepOptions[floorMaterial][step].middle == "presupuesto picker"
     ) {
       loadPresupuestoPicker();
+    } else if (stepOptions[floorMaterial][step].middle == "fin") {
+      loadFinalResult();
     } else if (stepOptions[floorMaterial][step].middle) {
       middleDiv =
         '<div class="middleside side" >' +
@@ -895,16 +927,18 @@ function buttonAreaInnerHTMLGenerator() {
         "</div>";
       document.getElementById("buttonarea").innerHTML = leftDiv + rightDiv;
     }
-    document.getElementById("question1").innerHTML =
-      stepOptions[floorMaterial][step].question1;
-    document.getElementById("question2").innerHTML =
-      stepOptions[floorMaterial][step].question2;
+    if(document.getElementById("question1")){document.getElementById("question1").innerHTML =
+      stepOptions[floorMaterial][step].question1;}
+      if(document.getElementById("question2")){document.getElementById("question2").innerHTML =
+      stepOptions[floorMaterial][step].question2;}
   }
 }
 
 function sliderGenerator() {
   let slideArray;
   const sliderDiv = document.getElementById("slider");
+
+  if(sliderDiv){
 
   if (step < 2) {
     slideArray = stepOptions[step].slides;
@@ -920,7 +954,7 @@ function sliderGenerator() {
     <p>${slide.name}</p>
   </div>`
     )
-    .join("");
+    .join("");}
 }
 
 const goBack = document.getElementById("back");
@@ -1213,14 +1247,156 @@ function loadPresupuestoPicker() {
       </div>
     </div>`;
 
-    function setAndContinue(id){
-      console.log(id)
-      localStorage.setItem('Manos', id)
-      nextStep()
-    }
+  function setAndContinue(id) {
+    localStorage.setItem("Manos", id);
+    nextStep();
+  }
 
-    [...document.getElementsByClassName('presupuestooption')].map(div=>{
-      div.addEventListener('click', ()=>setAndContinue(div.id), 'false')
-    })
+  [...document.getElementsByClassName("presupuestooption")].map((div) => {
+    div.addEventListener("click", () => setAndContinue(div.id), "false");
+  });
+}
 
+function loadResinaPicker() {
+  document.getElementById("buttonarea").innerHTML = `
+  <div class="resinapicker">
+    <div class="resinaoption" id="epoxi">
+      <h3>EPOXI 100% SOLIDOS</h3>
+      <p>Epoxi bicomponente pura, calidad profesional.</p>
+      <p>se diluye con disolvente.  <b>(Recomendada)</b></p>
+    </div>
+    <div class="resinaoption" id="acrilica">
+      <h3>ACRILICA MONOCOMPONENTE</h3>
+      <p>La de toda la vida, más barata, esfuerzos como la</p>
+      <p>presión de neumáticos pueden llegar a dañarla.</p>
+    </div>
+  </div>`;
+
+  function setAndContinue(id) {
+    localStorage.setItem("Resina", id);
+    nextStep();
+  }
+
+  [...document.getElementsByClassName("resinaoption")].map((div) => {
+    div.addEventListener("click", () => setAndContinue(div.id), "false");
+  });
+
+
+}
+
+function loadFinalResult() {
+  document.getElementById("interactive").innerHTML = `
+    <div class="backgroundimage">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/FONDO_GENERAL.jpg?v=1612267903"
+      alt="background"
+    />
+  </div>
+  <h3>PRESUPUESTO</h3>
+  <div class="table">
+    <h2 class="tableheading">
+      Presupuesto
+    </h2>
+    <div class="tableblocks">
+    <div class="tableblock" id="tablepinturas">
+    <p>Pinturas y resinas
+      <span class="tableprice">$28
+        <sub></sub>
+      </span>   
+      <ul class="tableoptions">
+        <li>Cubo Epoxi 30Kgs x 2</li>
+        <li>Cubo Epoxi 6Ks</li>
+        <li>Imprimación 30Kgs</li>
+        <li>Imprimación 6Kgs</li>
+      </ul>
+    </p>
+  </div>
+  <div class="tableblock" id="tabledisolvente">
+    <p>disolvente
+      <span class="tableprice">$28
+        <sub></sub>
+      </span>   
+      <ul class="tableoptions">
+        <li>Disolvente</li>
+      </ul>
+  </p>
+  </div>
+  <div class="tableblock" id="tableherramientas">
+    <p>Herramientas
+      <span class="tableprice">$29
+        <sub></sub>
+      </span>   
+      <ul class="tableoptions">
+        <li>Brochas</li>
+        <li>Cubos de mezcla</li>
+        <li>Balanza</li>
+        <li>Rodillos</li>
+      </ul>
+    </p>
+  </div>
+  <div class="tableblock" id="tabletotal">
+    <p>
+      <ul class="tableoptions">
+        <li>portes</li>
+        <li>IVA</li>
+      </ul>
+      Total
+        <span class="tableprice">$29
+          <sub></sub>
+        </span>   
+    </p>
+  </div>
+</div>
+<button class="btn">
+  <p>book your order now</p>
+  <span class="fa fa-cart-plus" aria-hidden="true">Go to the store</span>
+</button>
+</div>
+<div class="buttonholder">
+  <button class="button" id="gotohome">
+    Inicio
+  </button>
+  <button class="button" id="editarconfiguracion">
+    Editar configuración
+  </button>
+</div>`;
+
+  document.getElementById("editarconfiguracion").addEventListener('click', goEdit, false)
+  function goEdit() {
+    step = stepOptions[floorMaterial][step].lastStep
+    recoverOptinoneerScreen()
+  }
+  function startOver() {}
+  function recoverOptinoneerScreen() {
+    document.getElementById("interactive").innerHTML = `
+      <div class="backgroundimage">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/FONDO_GENERAL.jpg?v=1612267903"
+        alt="background"
+      />
+    </div>
+    <div class="slider" id="slider">
+    </div>
+    <div class="changeablecontent">
+    <div class="buttonarea" id="buttonarea">
+    </div>
+    <div class="menu">
+            <a id="back">Atras</a>
+            <div><p>
+              PINCHE EN UNA OPCIÓN PARA
+            </p>
+            <p>
+              CONTINUAR
+            </p></div>
+            <a id="gotohome" href="/">Inicio</a>
+            
+          </div>
+    </div>`;
+    buttonAreaInnerHTMLGenerator();
+    sliderGenerator();
+    onWndLoad();
+    const goBack = document.getElementById("back");
+    goBack.addEventListener("click", prevStep, false);
+
+  }
 }
