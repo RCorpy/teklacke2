@@ -1,5 +1,9 @@
 let step;
 
+const DESCUENTO = 50
+const DISOLVENTE_PRICE = 19
+const PER_KG_PRICE_TRANPORT = 0.33
+
 const stepOptions = {
   0: {
     left: [
@@ -402,6 +406,277 @@ const stepOptions = {
   },
 };
 
+const priceObject = {
+  epoxi: {
+    imprimacion: {
+      Incoloro: {
+        "6Kg": 89.568,
+        "12Kg": 144.96,
+        "18Kg": 207.72,
+        "24Kg": 276.96,
+        "30Kg": 339.2,
+      },
+      Gris: {
+        "6Kg": 91.872,
+        "12Kg": 148.8,
+        "18Kg": 213.48,
+        "24Kg": 284.64,
+        "30Kg": 348.8,
+      },
+      Azul: {
+        "6Kg": 96.48,
+        "12Kg": 156.48,
+        "18Kg": 225,
+        "24Kg": 300,
+        "30Kg": 368,
+      },
+      "Rojo granate": {
+        "6Kg": 96.48,
+        "12Kg": 156.48,
+        "18Kg": 225,
+        "24Kg": 300,
+        "30Kg": 368,
+      },
+      Verde: {
+        "6Kg": 112.32,
+        "12Kg": 182.88,
+        "18Kg": 264.6,
+        "24Kg": 352.8,
+        "30Kg": 434,
+      },
+      Amarillo: {
+        "6Kg": 207.36,
+        "12Kg": 341.28,
+        "18Kg": 502.2,
+        "24Kg": 669.6,
+        "30Kg": 830,
+      },
+      Crema: {
+        "6Kg": 91.872,
+        "12Kg": 148.8,
+        "18Kg": 213.48,
+        "24Kg": 284.64,
+        "30Kg": 348.8,
+      },
+      Blanco: {
+        "6Kg": 91.872,
+        "12Kg": 148.8,
+        "18Kg": 213.48,
+        "24Kg": 284.64,
+        "30Kg": 348.8,
+      },
+      Negro: {
+        "6Kg": 91.872,
+        "12Kg": 148.8,
+        "18Kg": 213.48,
+        "24Kg": 284.64,
+        "30Kg": 348.8,
+      },
+      "Rojo Ferrari": {
+        "6Kg": 112.32,
+        "12Kg": 182.88,
+        "18Kg": 264.6,
+        "24Kg": 352.8,
+        "30Kg": 434,
+      },
+    },
+    Brillo: {
+      notes: "Catalizador 5 a 1",
+      Gris: {
+        "6Kg": 96.912,
+        "12Kg": 157.2,
+        "18Kg": 226.08,
+        "24Kg": 301.44,
+        "30Kg": 369.8,
+      },
+      Azul: {
+        "6Kg": 103.104,
+        "12Kg": 167.52,
+        "18Kg": 241.56,
+        "24Kg": 322.08,
+        "30Kg": 395.6,
+      },
+      "Rojo granate": {
+        "6Kg": 96.912,
+        "12Kg": 157.2,
+        "18Kg": 226.08,
+        "24Kg": 301.44,
+        "30Kg": 369.8,
+      },
+      Verde: {
+        "6Kg": 122.112,
+        "12Kg": 199.2,
+        "18Kg": 289.08,
+        "24Kg": 385.44,
+        "30Kg": 474.8,
+      },
+      Amarillo: {
+        "6Kg": 207.36,
+        "12Kg": 341.28,
+        "18Kg": 502.2,
+        "24Kg": 669.6,
+        "30Kg": 830,
+      },
+      Crema: {
+        "6Kg": 96.912,
+        "12Kg": 157.2,
+        "18Kg": 226.08,
+        "24Kg": 301.44,
+        "30Kg": 369.8,
+      },
+      Blanco: {
+        "6Kg": 96.912,
+        "12Kg": 157.2,
+        "18Kg": 226.08,
+        "24Kg": 301.44,
+        "30Kg": 369.8,
+      },
+      Negro: {
+        "6Kg": 96.912,
+        "12Kg": 157.2,
+        "18Kg": 226.08,
+        "24Kg": 301.44,
+        "30Kg": 369.8,
+      },
+      "Rojo Ferrari": {
+        "6Kg": 122.112,
+        "12Kg": 199.2,
+        "18Kg": 289.08,
+        "24Kg": 385.44,
+        "30Kg": 474.8,
+      },
+    },
+    Mate: {
+      notes: "Catalizador 10 a 1",
+      Gris: {
+        "6Kg": 111.312,
+        "12Kg": 181.2,
+        "18Kg": 262.08,
+        "24Kg": 349.44,
+        "30Kg": 429.8,
+      },
+      Azul: {
+        "6Kg": 117.504,
+        "12Kg": 191.52,
+        "18Kg": 277.56,
+        "24Kg": 370.08,
+        "30Kg": 455.6,
+      },
+      "Rojo granate": {
+        "6Kg": 111.312,
+        "12Kg": 181.2,
+        "18Kg": 262.08,
+        "24Kg": 349.44,
+        "30Kg": 429.8,
+      },
+      Verde: {
+        "6Kg": 136.512,
+        "12Kg": 223.2,
+        "18Kg": 325.08,
+        "24Kg": 433.44,
+        "30Kg": 534.8,
+      },
+      Amarillo: {
+        "6Kg": 221.76,
+        "12Kg": 365.28,
+        "18Kg": 538.2,
+        "24Kg": 717.6,
+        "30Kg": 890,
+      },
+      Crema: {
+        "6Kg": 111.312,
+        "12Kg": 181.2,
+        "18Kg": 262.08,
+        "24Kg": 349.44,
+        "30Kg": 429.8,
+      },
+      Blanco: {
+        "6Kg": 111.312,
+        "12Kg": 181.2,
+        "18Kg": 262.08,
+        "24Kg": 349.44,
+        "30Kg": 429.8,
+      },
+      Negro: {
+        "6Kg": 111.312,
+        "12Kg": 181.2,
+        "18Kg": 262.08,
+        "24Kg": 349.44,
+        "30Kg": 429.8,
+      },
+      "Rojo Ferrari": {
+        "6Kg": 136.512,
+        "12Kg": 223.2,
+        "18Kg": 325.08,
+        "24Kg": 433.44,
+        "30Kg": 534.8,
+      },
+    },
+  },
+  acrilica: {
+    Primer: {
+      "5Kg": 37.53,
+      "10Kg": 58.797,
+      "15Kg": 83.4,
+      "20Kg": 106.335,
+    },
+    Gris: {
+      "5Kg": 52.542,
+      "10Kg": 83.817,
+      "15Kg": 120.93,
+      "20Kg": 156.375,
+    },
+    Azul: {
+      "5Kg": 57.546,
+      "10Kg": 92.157,
+      "15Kg": 133.44,
+      "20Kg": 173.055,
+    },
+    "Rojo granate": {
+      "5Kg": 78.813,
+      "10Kg": 127.602,
+      "15Kg": 186.6075,
+      "20Kg": 243.945,
+    },
+    Verde: {
+      "5Kg": 103.833,
+      "10Kg": 169.302,
+      "15Kg": 249.1575,
+      "20Kg": 327.345,
+    },
+    Amarillo: {
+      "5Kg": 185.148,
+      "10Kg": 304.827,
+      "15Kg": 452.445,
+      "20Kg": 598.395,
+    },
+    Crema: {
+      "5Kg": 57.546,
+      "10Kg": 92.157,
+      "15Kg": 133.44,
+      "20Kg": 173.055,
+    },
+    Blanco: {
+      "5Kg": 57.546,
+      "10Kg": 92.157,
+      "15Kg": 133.44,
+      "20Kg": 173.055,
+    },
+    Negro: {
+      "5Kg": 57.546,
+      "10Kg": 92.157,
+      "15Kg": 133.44,
+      "20Kg": 173.055,
+    },
+    "Rojo Ferrari": {
+      "5Kg": 110.088,
+      "10Kg": 179.727,
+      "15Kg": 264.795,
+      "20Kg": 348.195,
+    },
+  },
+};
+
 const SLIDE_TIME = 500;
 let floorType = localStorage.getItem("floorType");
 let floorMaterial = localStorage.getItem("floorMaterial");
@@ -444,108 +719,107 @@ function changeStep() {
 
 function slideToTheLeft(element) {
   let start = Date.now(); // remember start time
-  if(element){
-  let timer = setInterval(function () {
-    // how much time passed from the start?
-    let timePassed = Date.now() - start;
+  if (element) {
+    let timer = setInterval(function () {
+      // how much time passed from the start?
+      let timePassed = Date.now() - start;
 
-    if (timePassed >= SLIDE_TIME) {
-      clearInterval(timer); // finish the animation
-      element.style.left = 60 + "vw";
-      return;
+      if (timePassed >= SLIDE_TIME) {
+        clearInterval(timer); // finish the animation
+        element.style.left = 60 + "vw";
+        return;
+      }
+
+      // draw the animation at the moment timePassed
+      draw(timePassed);
+    }, 20);
+
+    function draw(timePassed) {
+      element.style.left = (-timePassed / SLIDE_TIME) * 60 + "vw";
+      //element.style.left = '75vw';
     }
-
-    // draw the animation at the moment timePassed
-    draw(timePassed);
-  }, 20);
-
-  function draw(timePassed) {
-    element.style.left = (-timePassed / SLIDE_TIME) * 60 + "vw";
-    //element.style.left = '75vw';
   }
-}
 }
 
 function slideFromTheRight(element) {
   let start = Date.now(); // remember start time
-  if(element){
-  let timer = setInterval(function () {
-    // how much time passed from the start?
-    let timePassed = Date.now() - start;
+  if (element) {
+    let timer = setInterval(function () {
+      // how much time passed from the start?
+      let timePassed = Date.now() - start;
 
-    if (timePassed >= 600) {
-      clearInterval(timer); // finish the animation
-      element.style.left = 0 + "vw";
-      return;
+      if (timePassed >= 600) {
+        clearInterval(timer); // finish the animation
+        element.style.left = 0 + "vw";
+        return;
+      }
+
+      // draw the animation at the moment timePassed
+      draw(timePassed);
+    }, 20);
+
+    function draw(timePassed) {
+      if (timePassed / SLIDE_TIME < 1) {
+        element.style.left = 60 - (timePassed / SLIDE_TIME) * 60 + "vw";
+      }
+      //element.style.left = '75vw';
     }
-
-    // draw the animation at the moment timePassed
-    draw(timePassed);
-  }, 20);
-
-  function draw(timePassed) {
-    if (timePassed / SLIDE_TIME < 1) {
-      element.style.left = 60 - (timePassed / SLIDE_TIME) * 60 + "vw";
-    }
-    //element.style.left = '75vw';
-  }
   }
 }
 
 function slideToTheRight(element) {
   let start = Date.now(); // remember start time
-  if(element){
-  let timer = setInterval(function () {
-    // how much time passed from the start?
-    let timePassed = Date.now() - start;
+  if (element) {
+    let timer = setInterval(function () {
+      // how much time passed from the start?
+      let timePassed = Date.now() - start;
 
-    if (timePassed >= SLIDE_TIME) {
-      clearInterval(timer); // finish the animation
-      element.style.left = -60 + "vw";
-      return;
+      if (timePassed >= SLIDE_TIME) {
+        clearInterval(timer); // finish the animation
+        element.style.left = -60 + "vw";
+        return;
+      }
+
+      // draw the animation at the moment timePassed
+      draw(timePassed);
+    }, 20);
+
+    function draw(timePassed) {
+      element.style.left = (timePassed / SLIDE_TIME) * 60 + "vw";
+      //element.style.left = '75vw';
     }
-
-    // draw the animation at the moment timePassed
-    draw(timePassed);
-  }, 20);
-
-  function draw(timePassed) {
-    element.style.left = (timePassed / SLIDE_TIME) * 60 + "vw";
-    //element.style.left = '75vw';
   }
-}
 }
 
 function slideFromTheLeft(element) {
   let start = Date.now(); // remember start time
-  if(element){
-  let timer = setInterval(function () {
-    // how much time passed from the start?
-    let timePassed = Date.now() - start;
+  if (element) {
+    let timer = setInterval(function () {
+      // how much time passed from the start?
+      let timePassed = Date.now() - start;
 
-    if (timePassed >= 600) {
-      clearInterval(timer); // finish the animation
-      element.style.left = 0 + "vw";
-      return;
+      if (timePassed >= 600) {
+        clearInterval(timer); // finish the animation
+        element.style.left = 0 + "vw";
+        return;
+      }
+
+      // draw the animation at the moment timePassed
+      draw(timePassed);
+    }, 20);
+
+    function draw(timePassed) {
+      if (timePassed / SLIDE_TIME < 1) {
+        element.style.left = -60 + (timePassed / SLIDE_TIME) * 60 + "vw";
+      }
+      //element.style.left = '75vw';
     }
-
-    // draw the animation at the moment timePassed
-    draw(timePassed);
-  }, 20);
-
-  function draw(timePassed) {
-    if (timePassed / SLIDE_TIME < 1) {
-      element.style.left = -60 + (timePassed / SLIDE_TIME) * 60 + "vw";
-    }
-    //element.style.left = '75vw';
   }
-}
 }
 
 function nextStep() {
   step++;
-  
-  //slideToTheLeft(document.getElementById('buttonarea'))
+
   slideToTheLeft(document.getElementById("question1"));
   slideToTheLeft(document.getElementById("question2"));
   slideToTheLeft(document.getElementById("buttonarea"));
@@ -567,11 +841,12 @@ function nextStep() {
 }
 
 function prevStep() {
+  console.log("prevStep, current step", step);
   if (!step) {
     window.location.href = "/";
   } else {
     step--;
-    //slideToTheLeft(document.getElementById('buttonarea'))
+
     slideToTheRight(document.getElementById("question1"));
     slideToTheRight(document.getElementById("question2"));
     slideToTheRight(document.getElementById("buttonarea"));
@@ -606,9 +881,10 @@ function buttonClickedAt(myElement) {
 }
 
 function onWndLoad() {
-  
   var slider = document.querySelector(".slider");
-  if(!slider){ return false}
+  if (!slider) {
+    return false;
+  }
   var sliders = slider.children;
 
   var initX = null;
@@ -927,10 +1203,14 @@ function buttonAreaInnerHTMLGenerator() {
         "</div>";
       document.getElementById("buttonarea").innerHTML = leftDiv + rightDiv;
     }
-    if(document.getElementById("question1")){document.getElementById("question1").innerHTML =
-      stepOptions[floorMaterial][step].question1;}
-      if(document.getElementById("question2")){document.getElementById("question2").innerHTML =
-      stepOptions[floorMaterial][step].question2;}
+    if (document.getElementById("question1")) {
+      document.getElementById("question1").innerHTML =
+        stepOptions[floorMaterial][step].question1;
+    }
+    if (document.getElementById("question2")) {
+      document.getElementById("question2").innerHTML =
+        stepOptions[floorMaterial][step].question2;
+    }
   }
 }
 
@@ -938,23 +1218,23 @@ function sliderGenerator() {
   let slideArray;
   const sliderDiv = document.getElementById("slider");
 
-  if(sliderDiv){
+  if (sliderDiv) {
+    if (step < 2) {
+      slideArray = stepOptions[step].slides;
+    } else {
+      slideArray = stepOptions[floorMaterial][step].slides;
+    }
 
-  if (step < 2) {
-    slideArray = stepOptions[step].slides;
-  } else {
-    slideArray = stepOptions[floorMaterial][step].slides;
-  }
-
-  sliderDiv.innerHTML = slideArray
-    .map(
-      (slide) => `
+    sliderDiv.innerHTML = slideArray
+      .map(
+        (slide) => `
   <div class="slide">
     <img src="${slide.url}"/>
     <p>${slide.name}</p>
   </div>`
-    )
-    .join("");}
+      )
+      .join("");
+  }
 }
 
 const goBack = document.getElementById("back");
@@ -1280,8 +1560,6 @@ function loadResinaPicker() {
   [...document.getElementsByClassName("resinaoption")].map((div) => {
     div.addEventListener("click", () => setAndContinue(div.id), "false");
   });
-
-
 }
 
 function loadFinalResult() {
@@ -1299,17 +1577,7 @@ function loadFinalResult() {
     </h2>
     <div class="tableblocks">
     <div class="tableblock" id="tablepinturas">
-    <p>Pinturas y resinas
-      <span class="tableprice">$28
-        <sub></sub>
-      </span>   
-      <ul class="tableoptions">
-        <li>Cubo Epoxi 30Kgs x 2</li>
-        <li>Cubo Epoxi 6Ks</li>
-        <li>Imprimación 30Kgs</li>
-        <li>Imprimación 6Kgs</li>
-      </ul>
-    </p>
+
   </div>
   <div class="tableblock" id="tabledisolvente">
     <p>disolvente
@@ -1347,7 +1615,7 @@ function loadFinalResult() {
     </p>
   </div>
 </div>
-<button class="btn">
+<button class="btn" id="buybutton">
   <p>book your order now</p>
   <span class="fa fa-cart-plus" aria-hidden="true">Go to the store</span>
 </button>
@@ -1361,42 +1629,331 @@ function loadFinalResult() {
   </button>
 </div>`;
 
-  document.getElementById("editarconfiguracion").addEventListener('click', goEdit, false)
+  document
+    .getElementById("editarconfiguracion")
+    .addEventListener("click", goEdit, false);
+  document
+    .getElementById("gotohome")
+    .addEventListener("click", startOver, false);
+  document
+    .getElementById("buybutton")
+    .addEventListener("click", makePurchase, false);
+
   function goEdit() {
-    step = stepOptions[floorMaterial][step].lastStep
-    recoverOptinoneerScreen()
+    step = stepOptions[floorMaterial][step].lastStep;
+    recoverOptinoneerScreen();
   }
-  function startOver() {}
   function recoverOptinoneerScreen() {
     document.getElementById("interactive").innerHTML = `
-      <div class="backgroundimage">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/FONDO_GENERAL.jpg?v=1612267903"
-        alt="background"
-      />
+    <div class="backgroundimage">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/FONDO_GENERAL.jpg?v=1612267903"
+      alt="background"
+    />
+  </div>
+  <div class="slider" id="slider">
     </div>
-    <div class="slider" id="slider">
+  </div>
+  <div class="changeablecontent">
+    <div class="question part1" id="question1">
+      ¿QUÉ SUELO QUIERE USTED
     </div>
-    <div class="changeablecontent">
+    <div class="question part2" id="question2">PINTAR?</div>
     <div class="buttonarea" id="buttonarea">
+
     </div>
     <div class="menu">
-            <a id="back">Atras</a>
-            <div><p>
-              PINCHE EN UNA OPCIÓN PARA
-            </p>
-            <p>
-              CONTINUAR
-            </p></div>
-            <a id="gotohome" href="/">Inicio</a>
-            
-          </div>
-    </div>`;
+      <a id="back">Atras</a>
+      <div><p>
+        PINCHE EN UNA OPCIÓN PARA
+      </p>
+      <p>
+        CONTINUAR
+      </p></div>
+      <a id="gotohome" href="/">Inicio</a>
+      
+    </div>
+  </div>`;
     buttonAreaInnerHTMLGenerator();
     sliderGenerator();
     onWndLoad();
     const goBack = document.getElementById("back");
     goBack.addEventListener("click", prevStep, false);
-
   }
+  function startOver() {
+    localStorage.removeItem("floorType");
+    localStorage.removeItem("Desperfectos");
+    localStorage.removeItem("Manos");
+    localStorage.removeItem("floorMaterial");
+    localStorage.removeItem("Cubos");
+    localStorage.removeItem("Rodillos");
+    localStorage.removeItem("Balanza");
+    localStorage.removeItem("Brochas");
+    localStorage.removeItem("Resina");
+    localStorage.removeItem("Brillo");
+    localStorage.removeItem("Area");
+    localStorage.removeItem("Color");
+    window.location.href = "/";
+  }
+  function makePurchase() {
+    console.log("purchasing");
+  }
+  let totalKgs = 0
+  let litersOfDisolvente = 0;
+  const tableTotal = document.getElementById("tabletotal");
+
+  const finalPriceNoTax = Number(createTablePinturas())+ Number(createTableDisolvente()) + Number(createTableHerramientas())
+  createTableFinalPrice()
+
+  function createTablePinturas() {
+    const tablePinturas = document.getElementById("tablepinturas");
+
+    let pinturasTotal = 0;
+    let pinturasElements = getPinturasElements();
+
+    function getPinturasElements() {
+      const MANOS = localStorage.getItem("Manos");
+      const AREA = localStorage.getItem("Area");
+      const COLOR = localStorage.getItem("Color");
+      const RESINA = localStorage.getItem("Resina");
+      const BRILLO = localStorage.getItem("Brillo");
+      const DESPERFECTOS = localStorage.getItem("Desperfectos");
+      console.log("desperfectos", DESPERFECTOS)
+      
+      let toReturnArray = [];
+      let gm2 = DESPERFECTOS == "No" ? 140 : 150;
+      
+      let kgAmountPerLayer = (gm2 * AREA) / 1000;
+
+      function calculateKits(isImprimacion) {
+        if (isImprimacion) {
+          let amountOf30KgsKits = Math.floor(kgAmountPerLayer / 30);
+          let doWeAddDisolvente =
+            (kgAmountPerLayer % 30) % 6 < 3 ? true : false;
+          let remainderKits = doWeAddDisolvente
+            ? (kgAmountPerLayer % 30) - ((kgAmountPerLayer % 30) % 6)
+            : (kgAmountPerLayer % 30) - ((kgAmountPerLayer % 30) % 6) + 6;
+
+          if(amountOf30KgsKits==0 && remainderKits==0){
+            return [
+              { name: "Kit 30Kgs Imprimación", qty: 0 },
+              { name: `Kit ${6}Kgs Imprimación`, qty: 1 },
+            ];}
+
+          if (doWeAddDisolvente) litersOfDisolvente += amountOf30KgsKits + 1;
+
+          if (!remainderKits){
+            return [{ name: "Kit 30Kgs Imprimación", qty: amountOf30KgsKits }];
+          }
+
+          return [
+            { name: "Kit 30Kgs Imprimación", qty: amountOf30KgsKits },
+            { name: `Kit ${remainderKits}Kgs Imprimación`, qty: 1 },
+          ];
+        } else {
+          let amountManos = MANOS.includes("dosmanos") ? 2 : 1;
+          let thisKgAmountPerLayer = kgAmountPerLayer * amountManos;
+
+          let amountOf30KgsKits =
+            Math.floor(thisKgAmountPerLayer / 30)
+          let doWeAddDisolvente =
+            (thisKgAmountPerLayer % 30) % 6 < 3 ? true : false;
+          let remainderKits = doWeAddDisolvente
+            ? (thisKgAmountPerLayer % 30) - ((thisKgAmountPerLayer % 30) % 6)
+            : (thisKgAmountPerLayer % 30) -
+              ((thisKgAmountPerLayer % 30) % 6) +
+              6;
+
+          if(amountOf30KgsKits==0 && remainderKits==0){
+            return [
+              { name: `Kit 30Kgs ${RESINA}`, qty: 0 },
+              { name: `Kit ${6}Kgs ${RESINA}`, qty: 1 },
+            ];}
+
+          if (doWeAddDisolvente || MANOS == "dosmanos")
+            litersOfDisolvente += amountOf30KgsKits + 1;
+
+          if (!remainderKits)
+            return [{ name: `Kit 30Kgs ${RESINA}`, qty: amountOf30KgsKits }];
+
+          return [
+            { name: `Kit 30Kgs ${RESINA}`, qty: amountOf30KgsKits },
+            { name: `Kit ${remainderKits}Kgs ${RESINA}`, qty: 1 },
+          ];
+        }
+      }
+
+      let imprimacionArray = calculateKits(true)
+      let layersArray = calculateKits(false)
+
+      calculateTotalKgs()
+      function calculateTotalKgs(){
+        if(imprimacionArray[0]) totalKgs += imprimacionArray[0].qty*Number(imprimacionArray[0].name.split(" ")[1].split("Kg")[0])
+        if(imprimacionArray[1]) totalKgs += imprimacionArray[1].qty*Number(imprimacionArray[1].name.split(" ")[1].split("Kg")[0])
+        if(layersArray[0]) totalKgs += layersArray[0].qty*Number(layersArray[0].name.split(" ")[1].split("Kg")[0])
+        if(layersArray[1]) totalKgs += layersArray[1].qty*Number(layersArray[1].name.split(" ")[1].split("Kg")[0])
+        let addDisolventeWeigth = litersOfDisolvente
+        if(AREA/100<litersOfDisolvente && litersOfDisolvente>2) {addDisolventeWeigth = Math.floor(AREA/100)}
+        totalKgs+=addDisolventeWeigth
+      }
+
+      function calculateImprimacionArray(){
+        if (!MANOS.includes("imprimacion")) return []
+
+
+        let thisAmountOfKgs = imprimacionArray[1].name.split(" ")[1].split("s")[0]
+        console.warn(imprimacionArray[1], priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs])
+          toReturnArray = toReturnArray.concat(imprimacionArray);
+          pinturasTotal +=
+            imprimacionArray[0].qty *
+            priceObject["epoxi"]["imprimacion"]["Incoloro"]["30Kg"];
+          if (
+            imprimacionArray[1] &&
+            priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs]
+          ) {
+            pinturasTotal +=
+              imprimacionArray[1].qty *
+              priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs];
+          }
+        
+      }
+      function calculateLayersArray(){
+        if (!MANOS.includes("manos"))return []
+        let thisColor = {
+          "Gris Claro": "Gris",
+          "Gris Medio": "Gris",
+          "Gris Oscuro": "Gris",
+          "Antracita": "Negro",
+          "Blanco": "Blanco",
+          "Rojo Óxido": "Rojo granate",
+          "Crema": "Crema",
+          "Amarillo Tráfico": "Amarillo",
+          "Ocre": "Crema",
+          "Negro": "Negro",
+          "Azul Acero": "Azul",
+          "Verde Bosque": "Verde",
+        };
+        toReturnArray = toReturnArray.concat(layersArray)
+
+        let priceObjectBrillo =
+          RESINA !== "acrilica"
+            ? priceObject[RESINA][BRILLO]
+            : priceObject[RESINA];
+
+        pinturasTotal +=
+          layersArray[0].qty *
+          priceObjectBrillo[thisColor[COLOR]]["30Kg"];
+
+        
+        if (
+          layersArray[1] &&
+          priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs]
+        ) {
+          let thisAmountOfKgs = layersArray[1].name.split(" ")[1].split("s")[0]
+          pinturasTotal +=
+            layersArray[1].qty * priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs];
+        }
+      }
+        
+      calculateImprimacionArray()
+      calculateLayersArray()
+      pinturasTotal = (pinturasTotal*DESCUENTO/100).toFixed(2)
+
+      return toReturnArray;
+    }
+
+    tablePinturas.innerHTML = `
+    <p>Pinturas y resinas
+    <span class="tableprice">${pinturasTotal}€
+      <sub></sub>
+    </span>   
+    <ul class="tableoptions">
+      ${pinturasElements
+        .map((element) =>
+          element.qty ? `<li>${element.name} x ${element.qty}</li>` : ""
+        )
+        .join("")}
+    </ul>
+  </p>
+  `;
+  return pinturasTotal
+  }
+  function createTableDisolvente() {
+
+    const AREA = localStorage.getItem("Area")
+    const tableDisolvente = document.getElementById("tabledisolvente");
+    
+    if(AREA/100<litersOfDisolvente && litersOfDisolvente>2) {litersOfDisolvente = Math.floor(AREA/100)}
+
+    let priceDisolvente = (DISOLVENTE_PRICE * Math.ceil(litersOfDisolvente/2)/2).toFixed(2)
+
+    tableDisolvente.innerHTML = `
+          <p>disolvente
+            <span class="tableprice">${priceDisolvente}€
+              <sub></sub>
+            </span>   
+            <ul class="tableoptions">
+              <li>Disolvente 2L x ${Math.ceil(litersOfDisolvente/2)}</li>
+            </ul>
+         </p>
+  `;
+  return priceDisolvente
+  }
+  function createTableHerramientas() {
+    const tableHerramientas = document.getElementById("tableherramientas");
+    let thisTableTotal = 0;
+    const HERRAMIENTAS_PRICES = {
+      "Brochas":6.5,
+      "Cubos":1.5,
+      "Rodillos":8.25,
+      "Balanza": 16
+    }
+    //0 si el pedido es de mas de 200€
+    function showElement(element) {
+      if (localStorage.getItem(element) > 0) {
+        thisTableTotal += localStorage.getItem(element) * HERRAMIENTAS_PRICES[element];
+        return `<li>${element} x ${localStorage.getItem(element)}</li>`;
+      }
+    }
+
+    let listItems = `
+    ${showElement("Brochas")}
+    ${showElement("Cubos")}
+    ${showElement("Rodillos")}
+    ${showElement("Balanza")}`;
+
+    tableHerramientas.innerHTML = `
+    <p>Herramientas
+    <span class="tableprice">${(thisTableTotal/2).toFixed(2)}€
+      <sub></sub>
+    </span>   
+    <ul class="tableoptions">
+      ${listItems}
+    </ul>
+  </p>
+    `;
+
+    return (thisTableTotal/2).toFixed(2)
+  }
+
+  function createTableFinalPrice(){
+    const priceTable = document.getElementById("tabletotal")
+    const portesPrice = PER_KG_PRICE_TRANPORT*totalKgs>17 ? PER_KG_PRICE_TRANPORT*totalKgs : 17
+    const TAX = Number((0.21*(finalPriceNoTax+portesPrice)).toFixed(2))
+
+    const finalPrice = (TAX+ finalPriceNoTax+portesPrice).toFixed(2)
+    priceTable.innerHTML=`
+    <p>
+      <ul class="tableoptions">
+        <li>portes ${portesPrice}</li>
+        <li>IVA ${TAX}</li>
+      </ul>
+      Total
+        <span class="tableprice">${finalPrice}€
+          <sub></sub>
+        </span>   
+    </p>
+    `
+  }
+  
 }
