@@ -763,3 +763,17 @@ body {
   -webkit-box-shadow: 1px 4px 2px rgba(0, 0, 0, .2);
   box-shadow: 1px 4px 2px rgba(0, 0, 0, .2);
 }
+
+.priceandtag{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.priceandtag span{
+  font-size: 1.5vh !important;
+}
+
+.smallsliderfont{
+  font-size: 1.7vh;
+}

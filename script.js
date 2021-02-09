@@ -1230,7 +1230,7 @@ function sliderGenerator() {
         (slide) => `
   <div class="slide">
     <img src="${slide.url}"/>
-    <p>${slide.name}</p>
+    <p ${slide.name.length>12 ? "class='smallsliderfont'":""}>${slide.name}</p>
   </div>`
       )
       .join("");
@@ -1726,27 +1726,70 @@ function loadFinalResult() {
       let kgAmountPerLayer = (gm2 * AREA) / 1000;
 
       function calculateKits(isImprimacion) {
+        
         if(isImprimacion && RESINA =="acrilica") return []
 
         else if(!isImprimacion && RESINA =="acrilica"){
           const AMOUNT_MANOS = MANOS.includes("dosmanos") ? 2 : 1;
           const MAX_BARREL_SIZE = 20
           const BARREL_VOLUME_DIFFERENCE = 5
-          let thisKgAmountPerLayer = kgAmountPerLayer * AMOUNT_MANOS;
+
+          return calculateSpecificLayersKits(AMOUNT_MANOS, MAX_BARREL_SIZE, BARREL_VOLUME_DIFFERENCE)
+      }
+
+        
+        else if (isImprimacion && RESINA=="epoxi") {
+
+          const MAX_BARREL_SIZE = 30
+          const BARREL_VOLUME_DIFFERENCE = 6
+
+          let amountOf30KgsKits = Math.floor(kgAmountPerLayer / MAX_BARREL_SIZE);
+          let doWeAddDisolvente =
+            (kgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE < BARREL_VOLUME_DIFFERENCE/2 ? true : false;
+          let remainderKits = doWeAddDisolvente
+            ? (kgAmountPerLayer % MAX_BARREL_SIZE) - ((kgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE)
+            : (kgAmountPerLayer % MAX_BARREL_SIZE) - ((kgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE) + BARREL_VOLUME_DIFFERENCE;
+
+          if(amountOf30KgsKits==0 && remainderKits==0){
+            return [
+              { name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`, qty: 0 },
+              { name: `Kit ${BARREL_VOLUME_DIFFERENCE}Kgs Imprimación`, qty: 1 },
+            ];}
+
+          if (doWeAddDisolvente) litersOfDisolvente += amountOf30KgsKits + 1;
+
+          if (!remainderKits){
+            return [{ name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`, qty: amountOf30KgsKits }];
+          }
+
+          return [
+            { name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`, qty: amountOf30KgsKits },
+            { name: `Kit ${remainderKits}Kgs Imprimación`, qty: 1 },
+          ];
+        } else {
+          const AMOUNT_MANOS = MANOS.includes("dosmanos") ? 2 : 1;
+          const MAX_BARREL_SIZE = 30
+          const BARREL_VOLUME_DIFFERENCE = 6
+          return calculateSpecificLayersKits(AMOUNT_MANOS, MAX_BARREL_SIZE, BARREL_VOLUME_DIFFERENCE)
+        }
+
+        function calculateSpecificLayersKits(manos, maxBarrelSize, barrelVolumeDiff){
+
+          let thisKgAmountPerLayer = kgAmountPerLayer * manos;
 
           let amountOfMaxKgsKits =
-          Math.floor(thisKgAmountPerLayer / MAX_BARREL_SIZE)
+          Math.floor(thisKgAmountPerLayer / maxBarrelSize)
         let doWeAddDisolvente =
-          (thisKgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE < BARREL_VOLUME_DIFFERENCE/2 ? true : false;
+          (thisKgAmountPerLayer % maxBarrelSize) % barrelVolumeDiff < barrelVolumeDiff/2 ? true : false;
         let remainderKits = doWeAddDisolvente
-          ? (thisKgAmountPerLayer % MAX_BARREL_SIZE) - ((thisKgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE)
-          : (thisKgAmountPerLayer % MAX_BARREL_SIZE) -
-            ((thisKgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE) +
-            BARREL_VOLUME_DIFFERENCE;
+          ? (thisKgAmountPerLayer % maxBarrelSize) - ((thisKgAmountPerLayer % maxBarrelSize) % barrelVolumeDiff)
+          : (thisKgAmountPerLayer % maxBarrelSize) -
+            ((thisKgAmountPerLayer % maxBarrelSize) % barrelVolumeDiff) +
+            barrelVolumeDiff;
 
         if(amountOfMaxKgsKits==0 && remainderKits==0){
           return [
-            { name: `Kit ${MAX_BARREL_SIZE} ${RESINA}`, qty: 0 },
+            { name: `Kit ${maxBarrelSize} ${RESINA}`, qty: 0 },
             { name: `Kit ${6}Kgs ${RESINA}`, qty: 1 },
           ];}
 
@@ -1754,69 +1797,12 @@ function loadFinalResult() {
           litersOfDisolvente += amountOfMaxKgsKits + 1;
 
         if (!remainderKits){
-          return [{ name: `Kit ${MAX_BARREL_SIZE}Kgs ${RESINA}`, qty: amountOfMaxKgsKits }];
+          return [{ name: `Kit ${maxBarrelSize}Kgs ${RESINA}`, qty: amountOfMaxKgsKits }];
         }
         return [
-          { name: `Kit ${MAX_BARREL_SIZE}Kgs ${RESINA}`, qty: amountOfMaxKgsKits },
+          { name: `Kit ${maxBarrelSize}Kgs ${RESINA}`, qty: amountOfMaxKgsKits },
           { name: `Kit ${remainderKits}Kgs ${RESINA}`, qty: 1 },
         ];
-      }
-
-        
-        else if (isImprimacion) {
-          let amountOf30KgsKits = Math.floor(kgAmountPerLayer / 30);
-          let doWeAddDisolvente =
-            (kgAmountPerLayer % 30) % 6 < 3 ? true : false;
-          let remainderKits = doWeAddDisolvente
-            ? (kgAmountPerLayer % 30) - ((kgAmountPerLayer % 30) % 6)
-            : (kgAmountPerLayer % 30) - ((kgAmountPerLayer % 30) % 6) + 6;
-
-          if(amountOf30KgsKits==0 && remainderKits==0){
-            return [
-              { name: "Kit 30Kgs Imprimación", qty: 0 },
-              { name: `Kit ${6}Kgs Imprimación`, qty: 1 },
-            ];}
-
-          if (doWeAddDisolvente) litersOfDisolvente += amountOf30KgsKits + 1;
-
-          if (!remainderKits){
-            return [{ name: "Kit 30Kgs Imprimación", qty: amountOf30KgsKits }];
-          }
-
-          return [
-            { name: "Kit 30Kgs Imprimación", qty: amountOf30KgsKits },
-            { name: `Kit ${remainderKits}Kgs Imprimación`, qty: 1 },
-          ];
-        } else {
-          let amountManos = MANOS.includes("dosmanos") ? 2 : 1;
-          let thisKgAmountPerLayer = kgAmountPerLayer * amountManos;
-
-          let amountOf30KgsKits =
-            Math.floor(thisKgAmountPerLayer / 30)
-          let doWeAddDisolvente =
-            (thisKgAmountPerLayer % 30) % 6 < 3 ? true : false;
-          let remainderKits = doWeAddDisolvente
-            ? (thisKgAmountPerLayer % 30) - ((thisKgAmountPerLayer % 30) % 6)
-            : (thisKgAmountPerLayer % 30) -
-              ((thisKgAmountPerLayer % 30) % 6) +
-              6;
-
-          if(amountOf30KgsKits==0 && remainderKits==0){
-            return [
-              { name: `Kit 30Kgs ${RESINA}`, qty: 0 },
-              { name: `Kit ${6}Kgs ${RESINA}`, qty: 1 },
-            ];}
-
-          if (doWeAddDisolvente || MANOS == "dosmanos")
-            litersOfDisolvente += amountOf30KgsKits + 1;
-
-          if (!remainderKits)
-            return [{ name: `Kit 30Kgs ${RESINA}`, qty: amountOf30KgsKits }];
-
-          return [
-            { name: `Kit 30Kgs ${RESINA}`, qty: amountOf30KgsKits },
-            { name: `Kit ${remainderKits}Kgs ${RESINA}`, qty: 1 },
-          ];
         }
       }
 
@@ -1986,8 +1972,8 @@ function loadFinalResult() {
     priceTable.innerHTML=`
     <p>
       <ul class="tableoptions">
-        <li>portes ${portesPrice}</li>
-        <li>IVA ${TAX}</li>
+        <li class="priceandtag"><span>portes</span> <span>${portesPrice}€</span></li>
+        <li class="priceandtag"><span>IVA</span> <span>${TAX}€</span></li>
       </ul>
       Total
         <span class="tableprice">${finalPrice}€
