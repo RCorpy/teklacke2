@@ -1726,7 +1726,44 @@ function loadFinalResult() {
       let kgAmountPerLayer = (gm2 * AREA) / 1000;
 
       function calculateKits(isImprimacion) {
-        if (isImprimacion) {
+        if(isImprimacion && RESINA =="acrilica") return []
+
+        else if(!isImprimacion && RESINA =="acrilica"){
+          const AMOUNT_MANOS = MANOS.includes("dosmanos") ? 2 : 1;
+          const MAX_BARREL_SIZE = 20
+          const BARREL_VOLUME_DIFFERENCE = 5
+          let thisKgAmountPerLayer = kgAmountPerLayer * AMOUNT_MANOS;
+
+          let amountOfMaxKgsKits =
+          Math.floor(thisKgAmountPerLayer / MAX_BARREL_SIZE)
+        let doWeAddDisolvente =
+          (thisKgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE < BARREL_VOLUME_DIFFERENCE/2 ? true : false;
+        let remainderKits = doWeAddDisolvente
+          ? (thisKgAmountPerLayer % MAX_BARREL_SIZE) - ((thisKgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE)
+          : (thisKgAmountPerLayer % MAX_BARREL_SIZE) -
+            ((thisKgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE) +
+            BARREL_VOLUME_DIFFERENCE;
+
+        if(amountOfMaxKgsKits==0 && remainderKits==0){
+          return [
+            { name: `Kit ${MAX_BARREL_SIZE} ${RESINA}`, qty: 0 },
+            { name: `Kit ${6}Kgs ${RESINA}`, qty: 1 },
+          ];}
+
+        if (doWeAddDisolvente || MANOS == "dosmanos")
+          litersOfDisolvente += amountOfMaxKgsKits + 1;
+
+        if (!remainderKits){
+          return [{ name: `Kit ${MAX_BARREL_SIZE}Kgs ${RESINA}`, qty: amountOfMaxKgsKits }];
+        }
+        return [
+          { name: `Kit ${MAX_BARREL_SIZE}Kgs ${RESINA}`, qty: amountOfMaxKgsKits },
+          { name: `Kit ${remainderKits}Kgs ${RESINA}`, qty: 1 },
+        ];
+      }
+
+        
+        else if (isImprimacion) {
           let amountOf30KgsKits = Math.floor(kgAmountPerLayer / 30);
           let doWeAddDisolvente =
             (kgAmountPerLayer % 30) % 6 < 3 ? true : false;
@@ -1798,7 +1835,7 @@ function loadFinalResult() {
       }
 
       function calculateImprimacionArray(){
-        if (!MANOS.includes("imprimacion")) return []
+        if (!MANOS.includes("imprimacion") || RESINA=="acrilica") return []
 
 
         let thisAmountOfKgs = imprimacionArray[1].name.split(" ")[1].split("s")[0]
@@ -1815,10 +1852,13 @@ function loadFinalResult() {
               imprimacionArray[1].qty *
               priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs];
           }
-        
+        console.log("pinturas total after imprimacion", pinturasTotal)
       }
       function calculateLayersArray(){
-        if (!MANOS.includes("manos"))return []
+        if (!MANOS.includes("manos") && RESINA!=="acrilica")return []
+
+        toReturnArray = toReturnArray.concat(layersArray)
+
         let thisColor = {
           "Gris Claro": "Gris",
           "Gris Medio": "Gris",
@@ -1833,7 +1873,11 @@ function loadFinalResult() {
           "Azul Acero": "Azul",
           "Verde Bosque": "Verde",
         };
-        toReturnArray = toReturnArray.concat(layersArray)
+
+        const MAX_BARREL_SIZE = {
+          "acrilica": "20Kg",
+          "epoxi":"30Kg"
+        }
 
         let priceObjectBrillo =
           RESINA !== "acrilica"
@@ -1842,23 +1886,20 @@ function loadFinalResult() {
 
         pinturasTotal +=
           layersArray[0].qty *
-          priceObjectBrillo[thisColor[COLOR]]["30Kg"];
+          priceObjectBrillo[thisColor[COLOR]][MAX_BARREL_SIZE[RESINA]];
 
-        
+          let thisAmountOfKgs = layersArray[1] ? layersArray[1].name.split(" ")[1].split("s")[0] : false
         if (
-          layersArray[1] &&
+          layersArray[1] && thisAmountOfKgs &&
           priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs]
         ) {
-          let thisAmountOfKgs = layersArray[1].name.split(" ")[1].split("s")[0]
           pinturasTotal +=
             layersArray[1].qty * priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs];
         }
       }
-        
       calculateImprimacionArray()
       calculateLayersArray()
       pinturasTotal = (pinturasTotal*DESCUENTO/100).toFixed(2)
-
       return toReturnArray;
     }
 
@@ -1938,7 +1979,7 @@ function loadFinalResult() {
 
   function createTableFinalPrice(){
     const priceTable = document.getElementById("tabletotal")
-    const portesPrice = PER_KG_PRICE_TRANPORT*totalKgs>17 ? PER_KG_PRICE_TRANPORT*totalKgs : 17
+    const portesPrice = Number((PER_KG_PRICE_TRANPORT*totalKgs>17 ? PER_KG_PRICE_TRANPORT*totalKgs : 17).toFixed(2))
     const TAX = Number((0.21*(finalPriceNoTax+portesPrice)).toFixed(2))
 
     const finalPrice = (TAX+ finalPriceNoTax+portesPrice).toFixed(2)
