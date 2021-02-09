@@ -1984,3 +1984,22 @@ function loadFinalResult() {
   }
   
 }
+
+function showPopUp(){
+  let popUp = document.getElementById("popup")
+
+  popUp.classList.add("expand");
+
+}
+
+window.addEventListener('keydown', maybeShowPopUp, false)
+
+function maybeShowPopUp(e){
+  if(e.keyCode=="13") showPopUp()
+
+  if(e.keyCode=="70") closePopUp()
+}
+
+function closePopUp(e){
+  document.querySelector('.email').classList.remove('expand');event.stopPropagation();
+}
