@@ -80,7 +80,7 @@ p{
   cursor: pointer;
   padding: 1vh;
   border: 0.2vh rgba(128,128,128, 0.5) solid;
-  margin: -1.2vh;
+  margin: -1vh;
 }
 .leftside {
   display: flex;
@@ -181,6 +181,7 @@ body {
 }
 
 .slider {
+  z-index: 10;
   position: relative;
   top: -92vh;
   left: 2.2vh;
@@ -214,6 +215,7 @@ body {
 }
 
 .menu{
+  z-index: 10;
   text-align: center;
   color: blue;
   font-weight: 700;
@@ -801,11 +803,11 @@ body {
 /*POPUP STYLES*/
 
 .popup{
-  z-index: 500;
+  z-index: 0;
   position: absolute;
   height: 100vh;
   width: 100vw;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -911,8 +913,8 @@ body {
   width: 45vh;
 }
 
-
 .email.expand {
+  z-index: 0;
   border-radius: 6px;
   box-shadow: 0 10px 2.9vh rgba(0,0,0,0.10), 0 6px 6px rgba(0,0,0,0.16);
   height: 30vh;
@@ -931,4 +933,9 @@ body {
 }
 .expand .to-contents {
   transform: scale(1);
+}
+
+.popup.appear{
+  z-index: 500;
+  display: flex;
 }

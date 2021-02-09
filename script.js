@@ -1987,8 +1987,9 @@ function loadFinalResult() {
 
 function showPopUp(){
   let popUp = document.getElementById("popup")
-
-  popUp.classList.add("expand");
+  let email = document.getElementById("email")
+  popUp.classList.add("appear");
+  email.classList.add("expand");
 
 }
 
@@ -2001,5 +2002,6 @@ function maybeShowPopUp(e){
 }
 
 function closePopUp(e){
-  document.querySelector('.email').classList.remove('expand');event.stopPropagation();
+  document.getElementById("email").classList.remove('expand');event.stopPropagation();
+  document.getElementById("popup").classList.remove('appear');event.stopPropagation();
 }
