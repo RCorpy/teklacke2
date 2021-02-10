@@ -3,6 +3,7 @@ let step;
 const DESCUENTO = 50
 const DISOLVENTE_PRICE = 19
 const PER_KG_PRICE_TRANPORT = 0.33
+const VOLVER_BUTTON = {id:"cerrarpopup", text: "volver", function: closePopUp}
 
 const stepOptions = {
   0: {
@@ -154,7 +155,7 @@ const stepOptions = {
 
   "Hormigón Liso": {
     2: {
-      middle: ["No", "Pocos", "Muchos"],
+      middle: [{text:"No", function: ()=>console.log("dfghjk")}, "Pocos", "callus Muchos"],
       question1: "¿SU SUELO TIENE",
       question2: "DESPERFECTOS?",
       slides: [
@@ -702,18 +703,43 @@ function reloadElement(el) {
 
 function changeStep() {
   let elements = document.getElementsByClassName("option");
-
+  const floorMaterial = localStorage.getItem('floorMaterial')
   if (step == 0) {
     onWndLoad();
   } else if (step == 1) {
   }
   for (let i = 0, len = elements.length; i < len; i++) {
     let myElement = elements[i];
-    elements[i].parentElement.addEventListener(
-      "click",
-      () => buttonClickedAt(myElement),
-      false
-    );
+
+    //console.log(elements[i].parentElement.classList)
+
+    if(myElement.parentElement.classList.contains("callus")){
+      myElement.parentElement.addEventListener(
+        "click",
+        () => showContactPopUp(),
+        false
+      )
+    }
+    else if(myElement.parentElement.classList.contains("forbidden")){
+
+    }
+    else if(myElement.parentElement.classList.contains("custom")){
+      //CUSTOMIZATOR
+      const thisStepOptions = stepOptions[floorMaterial][step].middle
+      myElement.parentElement.addEventListener(
+        "click",
+        ()=>thisStepOptions[i].function(),
+        false
+      );
+      
+    }
+    else{
+      myElement.parentElement.addEventListener(
+        "click",
+        () => buttonClickedAt(myElement),
+        false
+      );
+    }
   }
 }
 
@@ -1140,10 +1166,28 @@ function buttonAreaInnerHTMLGenerator() {
       middleDiv =
         '<div class="middleside side" >' +
         stepOptions[step].middle
-          .map((option) => `<a><div class="option">${option}</div></a>`)
+          .map((option) => {
+
+            if(typeof option !=='object'){
+              if(option.split(" ")[0]=="forbidden") {
+                return `<a class="forbidden"><div class="option">${option}</div></a>`
+              }
+              else if(option.split(" ")[0]=="callus") {
+                return `<a class="callus"><div class="option">${option}</div></a>`
+              }
+              else{
+              return `<a><div class="option">${option}</div></a>`
+            }
+          }
+            else{
+              return `<a class="custom" id="${option.text}"><div class="option">${option.text}</div></a>`
+            }
+
+          })
           .join("") +
         "</div>";
       document.getElementById("buttonarea").innerHTML = middleDiv;
+      
     } else {
       leftDiv =
         '<div class="leftside side" >' +
@@ -1184,7 +1228,18 @@ function buttonAreaInnerHTMLGenerator() {
       middleDiv =
         '<div class="middleside side" >' +
         stepOptions[floorMaterial][step].middle
-          .map((option) => `<a><div class="option">${option}</div></a>`)
+          .map((option) =>{
+            if(typeof option !=='object'){
+              if(option.split(" ")[0]=="forbidden") return `<a class="forbidden"><div class="option">${option.split(" ").splice(1,option.split(" ").length-1).join(" ")}</div></a>`
+              else if(option.split(" ")[0]=="callus") return `<a class="callus"><div class="option">${option.split(" ").splice(1,option.split(" ").length-1).join(" ") }</div></a>`
+              else{
+                return `<a><div class="option">${option}</div></a>`
+              }
+            }
+            else{
+              return `<a class="custom" id="${option.text}"><div class="option">${option.text}</div></a>`
+            }
+          })
           .join("") +
         "</div>";
       document.getElementById("buttonarea").innerHTML = middleDiv;
@@ -1985,6 +2040,8 @@ function loadFinalResult() {
   
 }
 
+
+
 function showPopUp(){
   let popUp = document.getElementById("popup")
   let email = document.getElementById("email")
@@ -2005,3 +2062,64 @@ function closePopUp(e){
   document.getElementById("email").classList.remove('expand');event.stopPropagation();
   document.getElementById("popup").classList.remove('appear');event.stopPropagation();
 }
+
+function showContactPopUp(){
+  
+  const prevPopUpMessage = document.getElementById("popupmessage")
+  reloadElement(prevPopUpMessage)
+  const popUpMessage = document.getElementById("popupmessage")
+
+  popUpMessage.innerHTML=`
+    <p>La selección que acaba de realizar es compleja, necesita la asistencia de un profesional, contacte con nosotros por whatsapp y envienos una foto de su suelo para aconsejarle</p>
+    <div class="emailbuttonarea" id="popupbuttonarea">
+      <button id="contactarbutton">Contactar</button>
+      <button id="cerrarpopup">Volver</button>
+    </div> 
+    `
+  showPopUp()
+
+  document.getElementById("contactarbutton").addEventListener('click', getContactarText, false)
+  document.getElementById("cerrarpopup").addEventListener('click', closePopUp, false)
+}
+
+
+function getContactarText(){
+  
+  const prevPopUpMessage = document.getElementById("popupmessage")
+  reloadElement(prevPopUpMessage)
+  const popUpMessage = document.getElementById("popupmessage")
+
+  popUpMessage.innerHTML=`
+  <p>Telefono/Whatsapp: 628042210</p>
+  <div class="emailbuttonarea" id="popupbuttonarea">
+  <button id="cerrarpopup">Volver</button>
+  </div> 
+  `
+  document.getElementById("cerrarpopup").addEventListener('click', closePopUp, false)
+}
+
+
+function showCustomPopUp(title, message, buttons){
+  
+  //buttons is an array of objects [{id:X, text:YYY, function: ZZZ},{id:X, text:YYY, function: ZZZ}]
+
+  const prevPopUpMessage = document.getElementById("popupmessage")
+  reloadElement(prevPopUpMessage)
+  const popUpMessage = document.getElementById("popupmessage")
+
+  popUpMessage.parentElement.firstElementChild.firstElementChild.innerHTML=title
+
+  popUpMessage.innerHTML=`
+  <p>${message}</p>
+  <div class="emailbuttonarea" id="popupbuttonarea">
+    ${buttons.map(button=>`<button id="${button.id}">${button.text}</button>`).join("")}
+  </div> 
+  `
+  showPopUp()
+  for(let i=0; i<buttons.length; i++){
+    document.getElementById(buttons[i].id).addEventListener('click', buttons[i].function, false)
+  }
+}
+
+//showCustomPopUp("mytitle", "it works baby", [VOLVER_BUTTON])
+//find a way to add forbidden o callus to div to the <a> tag
