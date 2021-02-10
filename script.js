@@ -709,7 +709,7 @@ function changeStep() {
   }
   for (let i = 0, len = elements.length; i < len; i++) {
     let myElement = elements[i];
-    elements[i].addEventListener(
+    elements[i].parentElement.addEventListener(
       "click",
       () => buttonClickedAt(myElement),
       false
