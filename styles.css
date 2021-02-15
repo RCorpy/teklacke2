@@ -249,6 +249,7 @@ body {
 .homeoption:hover{
   border: 1px rgba(128,128,128, 0.5) solid;
   margin: -1px;
+  cursor: pointer;
 }
 
 .homeoption:active{
@@ -1007,4 +1008,32 @@ body {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: contain;
+}
+
+@media only screen and (max-height: 700px){
+  .homeoption{
+    border: 1px rgba(128,128,128, 0.5) solid;
+    margin: -1px;
+  }
+  .leftside a{
+    border-bottom: 1px rgba(128,128,128, 0.5) solid;
+  }
+  .rightside a{
+    border-bottom: 1px rgba(128,128,128, 0.5) solid;
+  }
+  .middleside a{
+    border: 1px rgba(128,128,128, 0.5) solid;
+  }
+  .presupuestooption{
+    border: 1px rgba(128,128,128, 0.5) solid;
+  }
+  .resinaoption{
+    border: 1px rgba(128,128,128, 0.5) solid;
+  }
+
+  .onlybottomborder a{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
 }

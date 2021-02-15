@@ -1164,7 +1164,7 @@ function buttonAreaInnerHTMLGenerator() {
   if (step < 2) {
     if (stepOptions[step].middle) {
       middleDiv =
-        '<div class="middleside side" >' +
+        `<div class="middleside side ${stepOptions[step].variableName=="floorMaterial" ? "onlybottomborder" : ""}" >` +
         stepOptions[step].middle
           .map((option) => {
 
