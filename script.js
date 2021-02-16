@@ -319,6 +319,65 @@ const stepOptions = {
       variableName: "Color",
     },
     5: {
+      middle: ["Brillo", "Mate"],
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    6: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    7: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    8: {
       middle: "herramientas picker",
       question1: "¿NECESITA",
       question2: "HERRAMIENTAS?",
@@ -340,6 +399,199 @@ const stepOptions = {
         },
       ],
       variableName: "Herramientas",
+    },
+    9: {
+      middle: "fin",
+      lastStep: 8,
+    },
+  },
+  "Hormigón Muy Rugoso": {
+    2: {
+      middle: ["Si, muy rugoso", "No, bastante liso"],
+      question1: "¿SU SUELO ES MUY",
+      question2: "RUGOSO?",
+      slides: [
+        {
+          name: "Muchos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Pocos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Sin Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+        },
+      ],
+      variableName: "Rugoso",
+    },
+    3: {
+      middle: [{text:"No", function: ()=>console.log("dfghjk")}, "Pocos", "callus Muchos"],
+      question1: "¿SU SUELO TIENE",
+      question2: "DESPERFECTOS?",
+      slides: [
+        {
+          name: "Muchos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Pocos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Sin Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+        },
+      ],
+      variableName: "Desperfectos",
+    },
+    4: {
+      middle: "area picker",
+      question1: "¿CUÁNTOS M² QUIERE",
+      question2: "PINTAR DE SUELO?",
+      slides: [
+        {
+          name: "Parking",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PARKING-HS.jpg?v=1612267813",
+        },
+        {
+          name: "Patio Colegio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PATIO-COLEGIO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Taller Mecánico",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-TALLER-MECANICO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Terraza",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TERRAZA.jpg?v=1612267812",
+        },
+        {
+          name: "Supermercado",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-SUPERMERCADO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Trasteros",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TRASTERO.jpg?v=1612267812",
+        },
+        {
+          name: "Tiendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TIENDAS.jpg?v=1612267812",
+        },
+        {
+          name: "Almacén",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALMACEN-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Naves",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS_NAVES_HS.jpg?v=1612267812",
+        },
+        {
+          name: "Exterior",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-EXTERIOR-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Suelos Alimentarios",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALIMENTARIOS-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Viviendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-VIVIENDA-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Cocina Industrial",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-COCINA-INDUSTRIAL-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Garajes",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-GARAJES-HS.jpg?v=1612267812",
+        },
+      ],
+      variableName: "Area",
+    },
+    5: {
+      middle: ["color picker"],
+      question1: "¿DE QUE COLOR QUIERE",
+      question2: "PINTAR EL SUELO?",
+      slides: [
+        {
+          name: "Gris Oscuro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-OSCURO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Medio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-MEDIO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Blanco",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-BLANCO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Azul Acero",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-AZUL-ACERO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Negro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Antártica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Rojo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-ROJO-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Claro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-CLARO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Verde",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-VERDE-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Crema",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-CREMA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Ocre",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-OCRE-SLIDE.jpg?v=1612354971",
+        },
+      ],
+      variableName: "Color",
     },
     6: {
       middle: ["Brillo", "Mate"],
@@ -401,8 +653,1085 @@ const stepOptions = {
       variableName: "Resina",
     },
     9: {
+      middle: "herramientas picker",
+      question1: "¿NECESITA",
+      question2: "HERRAMIENTAS?",
+      slides: [
+        {
+          name: "Báscula Pequeña",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BASCULA-PEQUENA-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Brochas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BROCHAS-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Rodillos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-RODILLOS-SLIDE.jpg?v=1612355587",
+        },
+      ],
+      variableName: "Herramientas",
+    },
+    10: {
+      middle: "fin",
+      lastStep: 9,
+    },
+  },
+  "Cemento Sobre Hormigón": {
+    2: {
+      middle: [{text:"No", function: ()=>console.log("dfghjk")}, "Pocos", "callus Muchos"],
+      question1: "¿SU SUELO TIENE",
+      question2: "DESPERFECTOS?",
+      slides: [
+        {
+          name: "Muchos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Pocos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Sin Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+        },
+      ],
+      variableName: "Desperfectos",
+    },
+    3: {
+      middle: "area picker",
+      question1: "¿CUÁNTOS M² QUIERE",
+      question2: "PINTAR DE SUELO?",
+      slides: [
+        {
+          name: "Parking",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PARKING-HS.jpg?v=1612267813",
+        },
+        {
+          name: "Patio Colegio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PATIO-COLEGIO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Taller Mecánico",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-TALLER-MECANICO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Terraza",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TERRAZA.jpg?v=1612267812",
+        },
+        {
+          name: "Supermercado",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-SUPERMERCADO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Trasteros",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TRASTERO.jpg?v=1612267812",
+        },
+        {
+          name: "Tiendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TIENDAS.jpg?v=1612267812",
+        },
+        {
+          name: "Almacén",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALMACEN-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Naves",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS_NAVES_HS.jpg?v=1612267812",
+        },
+        {
+          name: "Exterior",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-EXTERIOR-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Suelos Alimentarios",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALIMENTARIOS-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Viviendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-VIVIENDA-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Cocina Industrial",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-COCINA-INDUSTRIAL-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Garajes",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-GARAJES-HS.jpg?v=1612267812",
+        },
+      ],
+      variableName: "Area",
+    },
+    4: {
+      middle: ["color picker"],
+      question1: "¿DE QUE COLOR QUIERE",
+      question2: "PINTAR EL SUELO?",
+      slides: [
+        {
+          name: "Gris Oscuro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-OSCURO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Medio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-MEDIO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Blanco",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-BLANCO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Azul Acero",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-AZUL-ACERO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Negro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Antártica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Rojo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-ROJO-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Claro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-CLARO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Verde",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-VERDE-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Crema",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-CREMA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Ocre",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-OCRE-SLIDE.jpg?v=1612354971",
+        },
+      ],
+      variableName: "Color",
+    },
+    5: {
+      middle: ["Brillo", "Mate"],
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    6: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    7: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    8: {
+      middle: "herramientas picker",
+      question1: "¿NECESITA",
+      question2: "HERRAMIENTAS?",
+      slides: [
+        {
+          name: "Báscula Pequeña",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BASCULA-PEQUENA-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Brochas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BROCHAS-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Rodillos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-RODILLOS-SLIDE.jpg?v=1612355587",
+        },
+      ],
+      variableName: "Herramientas",
+    },
+    9: {
       middle: "fin",
       lastStep: 8,
+    },
+  },
+  "Ya Está Pintado": {
+    2: {
+      middle: ["Quitar la capa de pintura antigua", "Pintar encima"],
+      question1: "¿QUIERE PINTAR ENCIMA O",
+      question2: "QUITAR LA PINTURA ANTERIOR?",
+      slides: [
+        {
+          name: "Muchos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Pocos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Sin Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+        },
+      ],
+      variableName: "isPintaEncima",
+    },
+    3: {
+      middle: [{text:"No", function: ()=>console.log("dfghjk")}, "Pocos", "callus Muchos"],
+      question1: "¿SU SUELO TIENE",
+      question2: "DESPERFECTOS?",
+      slides: [
+        {
+          name: "Muchos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Pocos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Sin Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+        },
+      ],
+      variableName: "Desperfectos",
+    },
+    4: {
+      middle: "area picker",
+      question1: "¿CUÁNTOS M² QUIERE",
+      question2: "PINTAR DE SUELO?",
+      slides: [
+        {
+          name: "Parking",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PARKING-HS.jpg?v=1612267813",
+        },
+        {
+          name: "Patio Colegio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PATIO-COLEGIO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Taller Mecánico",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-TALLER-MECANICO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Terraza",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TERRAZA.jpg?v=1612267812",
+        },
+        {
+          name: "Supermercado",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-SUPERMERCADO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Trasteros",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TRASTERO.jpg?v=1612267812",
+        },
+        {
+          name: "Tiendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TIENDAS.jpg?v=1612267812",
+        },
+        {
+          name: "Almacén",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALMACEN-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Naves",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS_NAVES_HS.jpg?v=1612267812",
+        },
+        {
+          name: "Exterior",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-EXTERIOR-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Suelos Alimentarios",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALIMENTARIOS-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Viviendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-VIVIENDA-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Cocina Industrial",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-COCINA-INDUSTRIAL-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Garajes",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-GARAJES-HS.jpg?v=1612267812",
+        },
+      ],
+      variableName: "Area",
+    },
+    5: {
+      middle: ["color picker"],
+      question1: "¿DE QUE COLOR QUIERE",
+      question2: "PINTAR EL SUELO?",
+      slides: [
+        {
+          name: "Gris Oscuro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-OSCURO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Medio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-MEDIO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Blanco",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-BLANCO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Azul Acero",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-AZUL-ACERO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Negro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Antártica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Rojo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-ROJO-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Claro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-CLARO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Verde",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-VERDE-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Crema",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-CREMA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Ocre",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-OCRE-SLIDE.jpg?v=1612354971",
+        },
+      ],
+      variableName: "Color",
+    },
+    6: {
+      middle: ["Brillo", "Mate"],
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    7: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    8: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    9: {
+      middle: "herramientas picker",
+      question1: "¿NECESITA",
+      question2: "HERRAMIENTAS?",
+      slides: [
+        {
+          name: "Báscula Pequeña",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BASCULA-PEQUENA-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Brochas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BROCHAS-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Rodillos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-RODILLOS-SLIDE.jpg?v=1612355587",
+        },
+      ],
+      variableName: "Herramientas",
+    },
+    10: {
+      middle: "fin",
+      lastStep: 9,
+    },
+  },
+  "Terrazo": {
+    2: {
+      middle: ["No", "Si"],
+      question1: "¿QUIERE QUE SE VEAN",
+      question2: "LAS JUNTAS?",
+      slides: [
+        {
+          name: "Muchos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Pocos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Sin Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+        },
+      ],
+      variableName: "Juntas",
+    },
+    3: {
+      middle: "area picker",
+      question1: "¿CUÁNTOS M² QUIERE",
+      question2: "PINTAR DE SUELO?",
+      slides: [
+        {
+          name: "Parking",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PARKING-HS.jpg?v=1612267813",
+        },
+        {
+          name: "Patio Colegio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PATIO-COLEGIO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Taller Mecánico",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-TALLER-MECANICO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Terraza",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TERRAZA.jpg?v=1612267812",
+        },
+        {
+          name: "Supermercado",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-SUPERMERCADO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Trasteros",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TRASTERO.jpg?v=1612267812",
+        },
+        {
+          name: "Tiendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TIENDAS.jpg?v=1612267812",
+        },
+        {
+          name: "Almacén",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALMACEN-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Naves",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS_NAVES_HS.jpg?v=1612267812",
+        },
+        {
+          name: "Exterior",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-EXTERIOR-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Suelos Alimentarios",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALIMENTARIOS-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Viviendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-VIVIENDA-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Cocina Industrial",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-COCINA-INDUSTRIAL-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Garajes",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-GARAJES-HS.jpg?v=1612267812",
+        },
+      ],
+      variableName: "Area",
+    },
+    4: {
+      middle: ["color picker"],
+      question1: "¿DE QUE COLOR QUIERE",
+      question2: "PINTAR EL SUELO?",
+      slides: [
+        {
+          name: "Gris Oscuro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-OSCURO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Medio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-MEDIO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Blanco",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-BLANCO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Azul Acero",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-AZUL-ACERO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Negro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Antártica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Rojo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-ROJO-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Claro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-CLARO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Verde",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-VERDE-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Crema",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-CREMA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Ocre",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-OCRE-SLIDE.jpg?v=1612354971",
+        },
+      ],
+      variableName: "Color",
+    },
+    5: {
+      middle: ["Brillo", "Mate"],
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    6: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    7: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    8: {
+      middle: "herramientas picker",
+      question1: "¿NECESITA",
+      question2: "HERRAMIENTAS?",
+      slides: [
+        {
+          name: "Báscula Pequeña",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BASCULA-PEQUENA-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Brochas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BROCHAS-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Rodillos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-RODILLOS-SLIDE.jpg?v=1612355587",
+        },
+      ],
+      variableName: "Herramientas",
+    },
+    9: {
+      middle: "fin",
+      lastStep: 8,
+    },
+  },
+  "Baldosa": {
+    2: {
+      middle: [{text:"Si, se ha roto alguna al pisar", funtion: ()=>showContactPopUp()}, "No, están bien agarradas"],
+      question1: "¿LAS BALDOSAS ESTAN HUECAS",
+      question2: "POR DEBAJO?",
+      slides: [
+        {
+          name: "Muchos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Pocos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Sin Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+        },
+      ],
+      variableName: "Huecas",
+    },
+    3: {
+      middle: ["No", "Si"],
+      question1: "¿QUIERE QUE SE VEAN",
+      question2: "LAS JUNTAS?",
+      slides: [
+        {
+          name: "Muchos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Pocos Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
+        },
+        {
+          name: "Sin Desperfectos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+        },
+      ],
+      variableName: "Juntas",
+    },
+    4: {
+      middle: "area picker",
+      question1: "¿CUÁNTOS M² QUIERE",
+      question2: "PINTAR DE SUELO?",
+      slides: [
+        {
+          name: "Parking",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PARKING-HS.jpg?v=1612267813",
+        },
+        {
+          name: "Patio Colegio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PATIO-COLEGIO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Taller Mecánico",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-TALLER-MECANICO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Terraza",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TERRAZA.jpg?v=1612267812",
+        },
+        {
+          name: "Supermercado",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-SUPERMERCADO-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Trasteros",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TRASTERO.jpg?v=1612267812",
+        },
+        {
+          name: "Tiendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-TIENDAS.jpg?v=1612267812",
+        },
+        {
+          name: "Almacén",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALMACEN-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Naves",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS_NAVES_HS.jpg?v=1612267812",
+        },
+        {
+          name: "Exterior",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-EXTERIOR-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Suelos Alimentarios",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-ALIMENTARIOS-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Viviendas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-VIVIENDA-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Cocina Industrial",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-COCINA-INDUSTRIAL-HS.jpg?v=1612267812",
+        },
+        {
+          name: "Garajes",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELOS-GARAJES-HS.jpg?v=1612267812",
+        },
+      ],
+      variableName: "Area",
+    },
+    5: {
+      middle: ["color picker"],
+      question1: "¿DE QUE COLOR QUIERE",
+      question2: "PINTAR EL SUELO?",
+      slides: [
+        {
+          name: "Gris Oscuro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-OSCURO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Medio",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-MEDIO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Blanco",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-BLANCO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Azul Acero",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-AZUL-ACERO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Negro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Antártica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Rojo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-ROJO-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Gris Claro",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-CLARO-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Verde",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-VERDE-CARTA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Crema",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-CREMA-SLIDE.jpg?v=1612354971",
+        },
+        {
+          name: "Ocre",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-OCRE-SLIDE.jpg?v=1612354971",
+        },
+      ],
+      variableName: "Color",
+    },
+    6: {
+      middle: ["Brillo", "Mate"],
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    7: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    8: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    9: {
+      middle: "herramientas picker",
+      question1: "¿NECESITA",
+      question2: "HERRAMIENTAS?",
+      slides: [
+        {
+          name: "Báscula Pequeña",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BASCULA-PEQUENA-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Brochas",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-BROCHAS-SLIDE.jpg?v=1612355587",
+        },
+        {
+          name: "Rodillos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HERRAMIENTAS-RODILLOS-SLIDE.jpg?v=1612355587",
+        },
+      ],
+      variableName: "Herramientas",
+    },
+    10: {
+      middle: "fin",
+      lastStep: 9,
     },
   },
 };
