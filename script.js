@@ -109,7 +109,7 @@ const stepOptions = {
       "Ya Está Pintado",
       "Terrazo",
       "Baldosa",
-      "Otros",
+      "callus Otros",
     ],
     question1: "¿DE QUÉ MATERIAL ES EL",
     question2: "SUELO DE SU GARAJE?",
@@ -2502,7 +2502,7 @@ function buttonAreaInnerHTMLGenerator() {
                 return `<a class="forbidden"><div class="option">${option}</div></a>`
               }
               else if(option.split(" ")[0]=="callus") {
-                return `<a class="callus"><div class="option">${option}</div></a>`
+                return `<a class="callus"><div class="option">${option.split(" ")[1]}</div></a>`
               }
               else{
               return `<a><div class="option">${option}</div></a>`
