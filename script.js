@@ -1139,7 +1139,7 @@ const stepOptions = {
       variableName: "Brillo",
     },
     7: {
-      middle: "presupuesto picker",
+      middle: "ya pintado presupuesto picker",
       question1: "ELIJA SU",
       question2: "PRESUPUESTO",
       slides: [
@@ -1461,7 +1461,7 @@ const stepOptions = {
   },
   "Baldosa": {
     2: {
-      middle: [{text:"Si, se ha roto alguna al pisar", funtion: ()=>showContactPopUp()}, "No, están bien agarradas"],
+      middle: ["callus Si, se ha roto alguna al pisar", "No, están bien agarradas"],
       question1: "¿LAS BALDOSAS ESTAN HUECAS",
       question2: "POR DEBAJO?",
       slides: [
@@ -2551,6 +2551,10 @@ function buttonAreaInnerHTMLGenerator() {
       stepOptions[floorMaterial][step].middle == "presupuesto picker"
     ) {
       loadPresupuestoPicker();
+    } else if (
+      stepOptions[floorMaterial][step].middle == "ya pintado presupuesto picker"
+    ) {
+      loadYaPintadoPresupuestoPicker();
     } else if (stepOptions[floorMaterial][step].middle == "fin") {
       loadFinalResult();
     } else if (stepOptions[floorMaterial][step].middle) {
@@ -2921,6 +2925,65 @@ function loadPresupuestoPicker() {
   });
 }
 
+function loadYaPintadoPresupuestoPicker() {
+  const PINTA_ENCIMA = localStorage.getItem('isPintaEncima')
+
+  if(PINTA_ENCIMA=="Quitar la capa de pintura antigua"){
+    document.getElementById("buttonarea").innerHTML = `
+    <div class="presupuestopicker">
+      <div class="presupuestooption" id="imprimacionydosmanos">
+        <h3>DOS MANOS E IMPRIMACION</h3>
+        <p>Esto es lo que recomendamos.<b>(Recomendada)</b></p>
+      </div>
+      <div class="presupuestooption" id="dosmanos">
+        <h3>SOLO DOS MANOS</h3>
+        <p>Se puede ahorrar la imprimación, pero va a quedar</p>
+        <p>menos capa. Para suelos nuevos funciona bien</p>
+      </div>
+      <div class="presupuestooption" id="soloimprimacion">
+        <h3>UNA MANO TRANSPARENTE</h3>
+        <p>Ideal para cuando solo se quiere evitar el polvo</p>
+        <p>y gastar poco</p>
+      </div>
+    </div>`;
+
+  function setAndContinue(id) {
+    localStorage.setItem("Manos", id);
+    nextStep();
+  }
+
+  [...document.getElementsByClassName("presupuestooption")].map((div) => {
+    div.addEventListener("click", () => setAndContinue(div.id), "false");
+  });
+  }
+  else{
+    document.getElementById("buttonarea").innerHTML = `
+    <div class="presupuestopicker">
+      <div class="presupuestooption" id="unamano">
+        <h3>UNA SOLA MANO</h3>
+        <p>Se puede ahorrar una capa, pero va a quedar</p>
+        <p>menos capa, puede quedar un poco peor</p>
+        <p>o aguantar menos</p>
+      </div>
+      <div class="presupuestooption" id="dosmanos">
+        <h3>SOLO DOS MANOS</h3>
+        <p>Esto es lo que recomendamos.<b>(Recomendada)</b></p>
+      </div>
+    </div>`;
+
+  function setAndContinue(id) {
+    localStorage.setItem("Manos", id);
+    nextStep();
+  }
+
+  [...document.getElementsByClassName("presupuestooption")].map((div) => {
+    div.addEventListener("click", () => setAndContinue(div.id), "false");
+  });
+  }
+
+  
+}
+
 function loadResinaPicker() {
   document.getElementById("buttonarea").innerHTML = `
   <div class="resinapicker">
@@ -3102,15 +3165,25 @@ function loadFinalResult() {
       const RESINA = localStorage.getItem("Resina");
       const BRILLO = localStorage.getItem("Brillo");
       const DESPERFECTOS = localStorage.getItem("Desperfectos");
+      const RUGOSO = localStorage.getItem("Rugoso")
       console.log("desperfectos", DESPERFECTOS)
       
       let toReturnArray = [];
+
+
       let gm2 = DESPERFECTOS == "No" ? 140 : 150;
-      
+      if(RUGOSO && RUGOSO=="Si, muy rugoso"){
+        gm2=gm2*1.2
+        console.log("gm2 actualizados por ser suelo rugoso")
+      }
       let kgAmountPerLayer = (gm2 * AREA) / 1000;
 
       function calculateKits(isImprimacion) {
         
+        if(RESINA=="politop"){
+          return []
+        }
+
         if(isImprimacion && RESINA =="acrilica") return []
 
         else if(!isImprimacion && RESINA =="acrilica"){
@@ -3193,6 +3266,8 @@ function loadFinalResult() {
       let imprimacionArray = calculateKits(true)
       let layersArray = calculateKits(false)
 
+console.log(layersArray)
+
       calculateTotalKgs()
       function calculateTotalKgs(){
         if(imprimacionArray[0]) totalKgs += imprimacionArray[0].qty*Number(imprimacionArray[0].name.split(" ")[1].split("Kg")[0])
@@ -3225,7 +3300,7 @@ function loadFinalResult() {
         console.log("pinturas total after imprimacion", pinturasTotal)
       }
       function calculateLayersArray(){
-        if (!MANOS.includes("manos") && RESINA!=="acrilica")return []
+        if (!MANOS.includes("mano") && RESINA!=="acrilica")return []
 
         toReturnArray = toReturnArray.concat(layersArray)
 
@@ -3293,8 +3368,13 @@ function loadFinalResult() {
 
     const AREA = localStorage.getItem("Area")
     const tableDisolvente = document.getElementById("tabledisolvente");
-    
+    const RUGOSO = localStorage.getItem("Rugoso")
+
     if(AREA/100<litersOfDisolvente && litersOfDisolvente>2) {litersOfDisolvente = Math.floor(AREA/100)}
+    if(RUGOSO && RUGOSO=="Si, muy rugoso") {
+      console.log("litersOfDisolvente actualizados por ser muy rugoso", litersOfDisolvente)
+      litersOfDisolvente=litersOfDisolvente*2
+    }
 
     let priceDisolvente = (DISOLVENTE_PRICE * Math.ceil(litersOfDisolvente/2)/2).toFixed(2)
 
