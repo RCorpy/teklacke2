@@ -3,7 +3,7 @@ let step;
 const DESCUENTO = 50
 const DISOLVENTE_PRICE = 19
 const PER_KG_PRICE_TRANPORT = 0.33
-const VOLVER_BUTTON = {id:"cerrarpopup", text: "volver", function: closePopUp}
+const VOLVER_BUTTON = {id:"cerrarpopup", text: "Volver", function: closePopUp}
 
 const stepOptions = {
   0: {
@@ -112,7 +112,7 @@ const stepOptions = {
       "callus Otros",
     ],
     question1: "¿DE QUÉ MATERIAL ES EL",
-    question2: "SUELO DE SU GARAJE?",
+    question2: "SUELO DE SU ",
     slides: [
       {
         name: "Hormigón Liso",
@@ -407,9 +407,10 @@ const stepOptions = {
   },
   "Hormigón Muy Rugoso": {
     2: {
-      middle: ["Si, muy rugoso", "No, bastante liso"],
-      question1: "¿SU SUELO ES MUY",
-      question2: "RUGOSO?",
+      middle: ["Quiero que siga rugoso", {text: "Quiero que se quede liso", function: ()=>showCustomPopUp("titulo", `Hay varias formas de dejar totalmente liso un suelo, incluso sin usar nivelantes.
+      Contacte con nosotros por whatsapp y envienos una foto de su suelo para darle la mejor opción.`, [{id:"contactarbutton", text:"Contactar", function: ()=>getContactarText()}, VOLVER_BUTTON])}],
+      question1: "¿CÓMO QUIERE EL TERMINADO",
+      question2: "DE SU SUELO?",
       slides: [
         {
           name: "Muchos Desperfectos",
@@ -2198,10 +2199,12 @@ function nextStep() {
 function prevStep() {
   console.log("prevStep, current step", step);
   if (!step) {
+    step = 0
     window.location.href = "/";
   } else {
+    console.log("it goes down")
     step--;
-
+    console.log("currentStep:", step)
     slideToTheRight(document.getElementById("question1"));
     slideToTheRight(document.getElementById("question2"));
     slideToTheRight(document.getElementById("buttonarea"));
@@ -2485,10 +2488,10 @@ function buttonAreaInnerHTMLGenerator() {
   if (!floorType) {
     console.log("forced to step 0");
     step = 0;
-  } else if (!floorMaterial) {
+  } /*else if (!floorMaterial) {
     console.log("forced to step 1", floorMaterial);
     step = 1;
-  }
+  }*/
 
   if (step < 2) {
     if (stepOptions[step].middle) {
@@ -2534,9 +2537,15 @@ function buttonAreaInnerHTMLGenerator() {
     }
     document.getElementById("question1").innerHTML =
       stepOptions[step].question1;
-    document.getElementById("question2").innerHTML =
-      stepOptions[step].question2;
+      if(step==1){
+        const FLOOR_TYPE = localStorage.getItem('floorType').toUpperCase()
+        document.getElementById("question2").innerHTML =
+      stepOptions[step].question2 + FLOOR_TYPE+"?";
+      }
+      else{document.getElementById("question2").innerHTML =
+        stepOptions[step].question2;}
   } else {
+    console.log(step < 2, step)
     if (stepOptions[floorMaterial][step].middle == "area picker") {
       loadAreaPicker();
     } else if (stepOptions[floorMaterial][step].middle == "color picker") {
@@ -2748,7 +2757,7 @@ function loadHerramientasPicker() {
   const RUGOSO = localStorage.getItem('Rugoso')
 
   const hasBalanza = RESINA=="epoxi"
-  const hasRodillos = !RUGOSO || RUGOSO!=="Si, muy rugoso"
+  const hasRodillos = !RUGOSO || RUGOSO!=="Quiero que siga rugoso"
 
   const balanzaDiv=`  <div class="herramientasrow">
   <p>Balanza 2g a 5Kgs</p>
@@ -2953,7 +2962,7 @@ if(hasRodillos){  const decreaseRodillosButton = document.getElementById("decrea
 
     if(hasBalanza)localStorage.setItem("Balanza", balanzaInput.value);
     if(hasRodillos){localStorage.setItem("Rodillos", rodillosInput.value);}
-    else{localStorage.setItem("Rodillos pelo grueso", rodillosPeloLargoInput.value)}
+    else{localStorage.setItem("Rodillos pelo largo", rodillosPeloLargoInput.value)}
     localStorage.setItem("Brochas", brochasInput.value);
     localStorage.setItem("Cubos", cubosInput.value);
     nextStep();
@@ -2961,6 +2970,18 @@ if(hasRodillos){  const decreaseRodillosButton = document.getElementById("decrea
 }
 
 function loadPresupuestoPicker() {
+
+  const FLOOR_MATERIAL= localStorage.getItem('floorMaterial')
+  const JUNTAS = localStorage.getItem('Juntas')
+
+  const hasUnaManoTransparente = ((FLOOR_MATERIAL=="Baldosa" || FLOOR_MATERIAL=="Terrazo") && (JUNTAS && JUNTAS=="Si") || (FLOOR_MATERIAL!=="Baldosa" && FLOOR_MATERIAL!=="Terrazo"))
+
+  const unaManoTransparenteDiv = `
+  <div class="presupuestooption" id="soloimprimacion">
+  <h3>UNA MANO TRANSPARENTE</h3>
+  <p>Ideal para cuando solo se quiere evitar el polvo</p>
+  <p>y gastar poco</p>
+</div>`
   document.getElementById("buttonarea").innerHTML = `
     <div class="presupuestopicker">
       <div class="presupuestooption" id="imprimacionydosmanos">
@@ -2972,11 +2993,7 @@ function loadPresupuestoPicker() {
         <p>Se puede ahorrar la imprimación, pero va a quedar</p>
         <p>menos capa. Para suelos nuevos funciona bien</p>
       </div>
-      <div class="presupuestooption" id="soloimprimacion">
-        <h3>UNA MANO TRANSPARENTE</h3>
-        <p>Ideal para cuando solo se quiere evitar el polvo</p>
-        <p>y gastar poco</p>
-      </div>
+  ${hasUnaManoTransparente ? unaManoTransparenteDiv : ""}
     </div>`;
 
   function setAndContinue(id) {
@@ -3049,6 +3066,18 @@ function loadYaPintadoPresupuestoPicker() {
 }
 
 function loadResinaPicker() {
+
+  const FLOOR_MATERIAL = localStorage.getItem('floorMaterial')
+
+  const hasAcrilica = FLOOR_MATERIAL!=="Baldosa" && FLOOR_MATERIAL!=="Terrazo"
+
+  const acrilicaDiv = `    <div class="resinaoption" id="acrilica">
+  <h3>ACRILICA MONOCOMPONENTE</h3>
+  <p>No aguanta manchas ni la presión de ruedas. </p>
+  <p>Solo evita el polvo. No protege el suelo</p>
+  <p>de un garaje, nave o taller.</p>
+</div>`
+
   document.getElementById("buttonarea").innerHTML = `
   <div class="resinapicker">
     <div class="resinaoption" id="epoxi">
@@ -3056,11 +3085,7 @@ function loadResinaPicker() {
       <p>Epoxi bicomponente pura, calidad profesional.</p>
       <p>se diluye con disolvente.  <b>(Recomendada)</b></p>
     </div>
-    <div class="resinaoption" id="acrilica">
-      <h3>ACRILICA MONOCOMPONENTE</h3>
-      <p>La de toda la vida, más barata, esfuerzos como la</p>
-      <p>presión de neumáticos pueden llegar a dañarla.</p>
-    </div>
+  ${hasAcrilica ? acrilicaDiv : ""}
   </div>`;
 
   function setAndContinue(id) {
@@ -3145,7 +3170,7 @@ function loadFinalResult() {
     .addEventListener("click", goEdit, false);
   document
     .getElementById("gotohome")
-    .addEventListener("click", startOver, false);
+    .addEventListener("click", ()=>startOver("/"), false);
   document
     .getElementById("buybutton")
     .addEventListener("click", makePurchase, false);
@@ -3191,21 +3216,7 @@ function loadFinalResult() {
     const goBack = document.getElementById("back");
     goBack.addEventListener("click", prevStep, false);
   }
-  function startOver() {
-    localStorage.removeItem("floorType");
-    localStorage.removeItem("Desperfectos");
-    localStorage.removeItem("Manos");
-    localStorage.removeItem("floorMaterial");
-    localStorage.removeItem("Cubos");
-    localStorage.removeItem("Rodillos");
-    localStorage.removeItem("Balanza");
-    localStorage.removeItem("Brochas");
-    localStorage.removeItem("Resina");
-    localStorage.removeItem("Brillo");
-    localStorage.removeItem("Area");
-    localStorage.removeItem("Color");
-    window.location.href = "/";
-  }
+
   function makePurchase() {
     console.log("purchasing");
   }
@@ -3236,7 +3247,7 @@ function loadFinalResult() {
 
 
       let gm2 = DESPERFECTOS == "No" ? 140 : 150;
-      if(RUGOSO && RUGOSO=="Si, muy rugoso"){
+      if(RUGOSO && RUGOSO=="Quiero que siga rugoso"){
         gm2=gm2*1.2
         console.log("gm2 actualizados por ser suelo rugoso")
       }
@@ -3435,7 +3446,7 @@ console.log(layersArray)
     const RUGOSO = localStorage.getItem("Rugoso")
 
     if(AREA/100<litersOfDisolvente && litersOfDisolvente>2) {litersOfDisolvente = Math.floor(AREA/100)}
-    if(RUGOSO && RUGOSO=="Si, muy rugoso") {
+    if(RUGOSO && RUGOSO=="Quiero que siga rugoso") {
       console.log("litersOfDisolvente actualizados por ser muy rugoso", litersOfDisolvente)
       litersOfDisolvente=litersOfDisolvente*2
     }
@@ -3547,7 +3558,7 @@ function showContactPopUp(){
   const popUpMessage = document.getElementById("popupmessage")
 
   popUpMessage.innerHTML=`
-    <p>La selección que acaba de realizar es compleja, necesita la asistencia de un profesional, contacte con nosotros por whatsapp y envienos una foto de su suelo para aconsejarle</p>
+    <p>La selección que acaba de realizar necesita que la evalúe nuestro equipo de soporte, contacte con nosotros por whatsapp y envienos una foto de su suelo para darle la mejor opción.</p>
     <div class="emailbuttonarea" id="popupbuttonarea">
       <button id="contactarbutton">Contactar</button>
       <button id="cerrarpopup">Volver</button>
@@ -3567,7 +3578,7 @@ function getContactarText(){
   const popUpMessage = document.getElementById("popupmessage")
 
   popUpMessage.innerHTML=`
-  <p>Telefono/Whatsapp: 628042210</p>
+  <p><a href="wa.me/34682312307">Telefono/Whatsapp: 628042210</a></p>
   <div class="emailbuttonarea" id="popupbuttonarea">
   <button id="cerrarpopup">Volver</button>
   </div> 
@@ -3598,5 +3609,22 @@ function showCustomPopUp(title, message, buttons){
   }
 }
 
+function startOver(relativePath) {
+  localStorage.removeItem("floorType");
+  localStorage.removeItem("Desperfectos");
+  localStorage.removeItem("Manos");
+  localStorage.removeItem("floorMaterial");
+  localStorage.removeItem("Rugoso");
+  localStorage.removeItem("Cubos");
+  localStorage.removeItem("Rodillos");
+  localStorage.removeItem("Rodillos pelo largo")
+  localStorage.removeItem("Balanza");
+  localStorage.removeItem("Brochas");
+  localStorage.removeItem("Resina");
+  localStorage.removeItem("Brillo");
+  localStorage.removeItem("Area");
+  localStorage.removeItem("Color");
+  window.location.href = `${relativePath}`;
+}
 //showCustomPopUp("mytitle", "it works baby", [VOLVER_BUTTON])
 //find a way to add forbidden o callus to div to the <a> tag
