@@ -2744,40 +2744,65 @@ function loadColorPicker() {
 }
 
 function loadHerramientasPicker() {
+  const RESINA = localStorage.getItem('Resina')
+  const RUGOSO = localStorage.getItem('Rugoso')
+
+  const hasBalanza = RESINA=="epoxi"
+  const hasRodillos = !RUGOSO || RUGOSO!=="Si, muy rugoso"
+
+  const balanzaDiv=`  <div class="herramientasrow">
+  <p>Balanza 2g a 5Kgs</p>
+  <div class="herramientasinput">
+      <span class="herramientasdecrement" id="decreasebalanza">–</span>
+      <input id="balanzainput" class="herramientasnumber" type="number" value="1" min="0" max="1">
+      <span class="herramientasincrement" id="increasebalanza">+</span>
+  </div>
+</div>`
+
+  const rodillosDiv = `  <div  class="herramientasrow">
+  <p>Rodillos 220mm</p>
+  <div class="herramientasinput">
+      <span class="herramientasdecrement" id="decreaserodillos">–</span>
+      <input id="rodillosinput" class="herramientasnumber" type="number" value="1" min="0">
+      <span class="herramientasincrement" id="increaserodillos">+</span>
+  </div>
+</div>`
+
+  const brochasDiv = `  <div  class="herramientasrow">
+  <p>Brochas</p>
+  <div class="herramientasinput">
+      <span class="herramientasdecrement" id="decreasebrochas">–</span>
+      <input id="brochasinput" class="herramientasnumber" type="number" value="1" min="0">
+      <span class="herramientasincrement" id="increasebrochas">+</span>
+  </div>
+</div>`
+
+  const cubosDiv = `  <div  class="herramientasrow">
+  <p>Cubos de Mezcla</p>
+  <div class="herramientasinput">
+      <span class="herramientasdecrement" id="decreasecubos">–</span>
+      <input id="cubosinput" class="herramientasnumber" type="number" value="1" min="0">
+      <span class="herramientasincrement" id="increasecubos">+</span>
+  </div>
+</div>`
+
+  const rodillosPeloLargoDiv =`<div  class="herramientasrow">
+  <p>Rodillos de pelo largo</p>
+  <div class="herramientasinput">
+      <span class="herramientasdecrement" id="decreaserodillospelolargo">–</span>
+      <input id="rodillospelolargoinput" class="herramientasnumber" type="number" value="1" min="0">
+      <span class="herramientasincrement" id="increaserodillospelolargo">+</span>
+  </div>
+</div>`
+
+
   document.getElementById("buttonarea").innerHTML = `
   <div class="herramientaspicker">
-  <div class="herramientasrow">
-      <p>Balanza 2g a 5Kgs</p>
-      <div class="herramientasinput">
-          <span class="herramientasdecrement" id="decreasebalanza">–</span>
-          <input id="balanzainput" class="herramientasnumber" type="number" value="1" min="0">
-          <span class="herramientasincrement" id="increasebalanza">+</span>
-      </div>
-  </div>
-  <div  class="herramientasrow">
-      <p>Rodillos 220mm</p>
-      <div class="herramientasinput">
-          <span class="herramientasdecrement" id="decreaserodillos">–</span>
-          <input id="rodillosinput" class="herramientasnumber" type="number" value="1" min="0">
-          <span class="herramientasincrement" id="increaserodillos">+</span>
-      </div>
-  </div>
-  <div  class="herramientasrow">
-      <p>Brochas</p>
-      <div class="herramientasinput">
-          <span class="herramientasdecrement" id="decreasebrochas">–</span>
-          <input id="brochasinput" class="herramientasnumber" type="number" value="1" min="0">
-          <span class="herramientasincrement" id="increasebrochas">+</span>
-      </div>
-  </div>
-  <div  class="herramientasrow">
-      <p>Cubos de Mezcla</p>
-      <div class="herramientasinput">
-          <span class="herramientasdecrement" id="decreasecubos">–</span>
-          <input id="cubosinput" class="herramientasnumber" type="number" value="1" min="0">
-          <span class="herramientasincrement" id="increasecubos">+</span>
-      </div>
-  </div>
+    ${hasBalanza ? balanzaDiv : ""}
+    ${hasRodillos ? rodillosDiv : rodillosPeloLargoDiv }
+    ${brochasDiv}
+    ${cubosDiv}
+    
   <div class="acceptandcontinue" id="acceptandcontinue">
       CONTINUAR
   </div>`;
@@ -2786,26 +2811,10 @@ function loadHerramientasPicker() {
     "acceptandcontinue"
   );
 
-  const decreaseBalanzaButton = document.getElementById("decreasebalanza");
+if(hasBalanza){  const decreaseBalanzaButton = document.getElementById("decreasebalanza");
   const increaseBalanzaButton = document.getElementById("increasebalanza");
   const balanzaInput = document.getElementById("balanzainput");
   const balanzaStoredValue = localStorage.getItem("Balanzas");
-
-  const decreaseRodillosButton = document.getElementById("decreaserodillos");
-  const increaseRodillosButton = document.getElementById("increaserodillos");
-  const rodillosInput = document.getElementById("rodillosinput");
-  const rodillosStoredValue = localStorage.getItem("Rodillos");
-
-  const decreaseBrochasButton = document.getElementById("decreasebrochas");
-  const increaseBrochasButton = document.getElementById("increasebrochas");
-  const brochasInput = document.getElementById("brochasinput");
-  const brochasStoredValue = localStorage.getItem("Brochas");
-
-  const decreaseCubosButton = document.getElementById("decreasecubos");
-  const increaseCubosButton = document.getElementById("increasecubos");
-  const cubosInput = document.getElementById("cubosinput");
-  const cubosStoredValue = localStorage.getItem("Cubos");
-
   if (balanzaStoredValue > 0) {
     balanzaInput.value = balanzaStoredValue;
   }
@@ -2824,6 +2833,14 @@ function loadHerramientasPicker() {
     },
     "false"
   );
+}else{localStorage.removeItem('Balanza')}
+
+if(hasRodillos){  const decreaseRodillosButton = document.getElementById("decreaserodillos");
+  const increaseRodillosButton = document.getElementById("increaserodillos");
+  const rodillosInput = document.getElementById("rodillosinput");
+  const rodillosStoredValue = localStorage.getItem("Rodillos");
+
+  localStorage.removeItem('Rodillos pelo largo')
 
   if (rodillosStoredValue > 0) {
     rodillosInput.value = rodillosStoredValue;
@@ -2843,6 +2860,48 @@ function loadHerramientasPicker() {
     },
     "false"
   );
+}
+  else{
+  const decreaseRodillosPeloLargoButton = document.getElementById("decreaserodillospelolargo");
+  const increaseRodillosPeloLargoButton = document.getElementById("increaserodillospelolargo");
+  const rodillosPeloLargoInput = document.getElementById("rodillospelolargoinput");
+  const rodillosPeloLargoStoredValue = localStorage.getItem("Rodillos pelo largo");
+
+  localStorage.removeItem('Rodillos')
+
+  if (rodillosPeloLargoStoredValue > 0) {
+    rodillosPeloLargoInput.value = rodillosPeloLargoStoredValue;
+  }
+  decreaseRodillosPeloLargoButton.addEventListener(
+    "click",
+    () => {
+      if (Number(rodillosPeloLargoInput.value) > 0)
+        rodillosPeloLargoInput.value = Number(rodillosPeloLargoInput.value) - 1;
+    },
+    "false"
+  );
+  increaseRodillosPeloLargoButton.addEventListener(
+    "click",
+    () => {
+      rodillosPeloLargoInput.value = Number(rodillosPeloLargoInput.value) + 1;
+    },
+    "false"
+  );
+  }
+
+  const decreaseBrochasButton = document.getElementById("decreasebrochas");
+  const increaseBrochasButton = document.getElementById("increasebrochas");
+  const brochasInput = document.getElementById("brochasinput");
+  const brochasStoredValue = localStorage.getItem("Brochas");
+
+  const decreaseCubosButton = document.getElementById("decreasecubos");
+  const increaseCubosButton = document.getElementById("increasecubos");
+  const cubosInput = document.getElementById("cubosinput");
+  const cubosStoredValue = localStorage.getItem("Cubos");
+
+
+
+
 
   if (brochasStoredValue > 0) {
     brochasInput.value = brochasStoredValue;
@@ -2888,8 +2947,13 @@ function loadHerramientasPicker() {
   );
 
   function herramientasPickerGoNext() {
-    localStorage.setItem("Balanza", balanzaInput.value);
-    localStorage.setItem("Rodillos", rodillosInput.value);
+    const balanzaInput = document.getElementById('balanzainput')
+    const rodillosInput = document.getElementById('rodillosinput')
+    const rodillosPeloLargoInput = document.getElementById('rodillospelolargoinput')
+
+    if(hasBalanza)localStorage.setItem("Balanza", balanzaInput.value);
+    if(hasRodillos){localStorage.setItem("Rodillos", rodillosInput.value);}
+    else{localStorage.setItem("Rodillos pelo grueso", rodillosPeloLargoInput.value)}
     localStorage.setItem("Brochas", brochasInput.value);
     localStorage.setItem("Cubos", cubosInput.value);
     nextStep();
@@ -3401,7 +3465,10 @@ console.log(layersArray)
     }
     //0 si el pedido es de mas de 200€
     function showElement(element) {
-      if (localStorage.getItem(element) > 0) {
+      if(element="Balanza" && RESINA!=="epoxi"){
+        return `<li>${element} no necesaria</li>`
+      }
+      else if (localStorage.getItem(element) > 0) {
         thisTableTotal += localStorage.getItem(element) * HERRAMIENTAS_PRICES[element];
         return `<li>${element} x ${localStorage.getItem(element)}</li>`;
       }
@@ -3411,7 +3478,8 @@ console.log(layersArray)
     ${showElement("Brochas")}
     ${showElement("Cubos")}
     ${showElement("Rodillos")}
-    ${showElement("Balanza")}`;
+    ${showElement("Balanza")}
+    ${showElement("Rodillo pelo largo")}`;
 
     tableHerramientas.innerHTML = `
     <p>Herramientas
