@@ -1,9 +1,13 @@
 let step;
 
-const DESCUENTO = 50
-const DISOLVENTE_PRICE = 19
-const PER_KG_PRICE_TRANPORT = 0.33
-const VOLVER_BUTTON = {id:"cerrarpopup", text: "Volver", function: closePopUp}
+const DESCUENTO = 50;
+const DISOLVENTE_PRICE = 19;
+const PER_KG_PRICE_TRANPORT = 0.33;
+const VOLVER_BUTTON = {
+  id: "cerrarpopup",
+  text: "Volver",
+  function: closePopUp,
+};
 
 const stepOptions = {
   0: {
@@ -155,7 +159,11 @@ const stepOptions = {
 
   "Hormigón Liso": {
     2: {
-      middle: [{text:"No", function: ()=>console.log("dfghjk")}, "Pocos", "callus Muchos"],
+      middle: [
+        { text: "No", function: () => console.log("dfghjk") },
+        "Pocos",
+        "callus Muchos",
+      ],
       question1: "¿SU SUELO TIENE",
       question2: "DESPERFECTOS?",
       slides: [
@@ -407,8 +415,26 @@ const stepOptions = {
   },
   "Hormigón Muy Rugoso": {
     2: {
-      middle: ["Quiero que siga rugoso", {text: "Quiero que se quede liso", function: ()=>showCustomPopUp("titulo", `Hay varias formas de dejar totalmente liso un suelo, incluso sin usar nivelantes.
-      Contacte con nosotros por whatsapp y envienos una foto de su suelo para darle la mejor opción.`, [{id:"contactarbutton", text:"Contactar", function: ()=>getContactarText()}, VOLVER_BUTTON])}],
+      middle: [
+        "Quiero que siga rugoso",
+        {
+          text: "Quiero que se quede liso",
+          function: () =>
+            showCustomPopUp(
+              "titulo",
+              `Hay varias formas de dejar totalmente liso un suelo, incluso sin usar nivelantes.
+      Contacte con nosotros por whatsapp y envienos una foto de su suelo para darle la mejor opción.`,
+              [
+                {
+                  id: "contactarbutton",
+                  text: "Contactar",
+                  function: () => getContactarText(),
+                },
+                VOLVER_BUTTON,
+              ]
+            ),
+        },
+      ],
       question1: "¿CÓMO QUIERE EL TERMINADO",
       question2: "DE SU SUELO?",
       slides: [
@@ -431,7 +457,11 @@ const stepOptions = {
       variableName: "Rugoso",
     },
     3: {
-      middle: [{text:"No", function: ()=>console.log("dfghjk")}, "Pocos", "callus Muchos"],
+      middle: [
+        { text: "No", function: () => console.log("dfghjk") },
+        "Pocos",
+        "callus Muchos",
+      ],
       question1: "¿SU SUELO TIENE",
       question2: "DESPERFECTOS?",
       slides: [
@@ -683,7 +713,11 @@ const stepOptions = {
   },
   "Cemento Sobre Hormigón": {
     2: {
-      middle: [{text:"No", function: ()=>console.log("dfghjk")}, "Pocos", "callus Muchos"],
+      middle: [
+        { text: "No", function: () => console.log("dfghjk") },
+        "Pocos",
+        "callus Muchos",
+      ],
       question1: "¿SU SUELO TIENE",
       question2: "DESPERFECTOS?",
       slides: [
@@ -958,7 +992,11 @@ const stepOptions = {
       variableName: "isPintaEncima",
     },
     3: {
-      middle: [{text:"No", function: ()=>console.log("dfghjk")}, "Pocos", "callus Muchos"],
+      middle: [
+        { text: "No", function: () => console.log("dfghjk") },
+        "Pocos",
+        "callus Muchos",
+      ],
       question1: "¿SU SUELO TIENE",
       question2: "DESPERFECTOS?",
       slides: [
@@ -1208,7 +1246,7 @@ const stepOptions = {
       lastStep: 9,
     },
   },
-  "Terrazo": {
+  Terrazo: {
     2: {
       middle: ["No", "Si"],
       question1: "¿QUIERE QUE SE VEAN",
@@ -1460,9 +1498,12 @@ const stepOptions = {
       lastStep: 8,
     },
   },
-  "Baldosa": {
+  Baldosa: {
     2: {
-      middle: ["callus Si, se ha roto alguna al pisar", "No, están bien agarradas"],
+      middle: [
+        "callus Si, se ha roto alguna al pisar",
+        "No, están bien agarradas",
+      ],
       question1: "¿LAS BALDOSAS ESTAN HUECAS",
       question2: "POR DEBAJO?",
       slides: [
@@ -2006,6 +2047,68 @@ const priceObject = {
       "20Kg": 348.195,
     },
   },
+  politop: {
+    "Incoloro": {
+      "5Kg": 87.12,
+      "10Kg": 141.24,
+      "15Kg": 206.8,
+      "20Kg": 270.6
+    },
+    "Gris": {
+      "5Kg": 98.28,
+      "10Kg": 160.02,
+      "15Kg": 235.2,
+      "20Kg": 308.7
+    },
+    "Azul": {
+      "5Kg": 123.48,
+      "10Kg": 202.02,
+      "15Kg": 298.2,
+      "20Kg": 392.7
+    },
+    "Rojo granate": {
+      "5Kg": 123.48,
+      "10Kg": 202.02,
+      "15Kg": 298.2,
+      "20Kg": 392.7
+    },
+    "Verde": {
+      "5Kg": 161.28,
+      "10Kg": 265.02,
+      "15Kg": 392.7,
+      "20Kg": 518.7
+    },
+    "Amarillo": {
+      "5Kg": 211.68,
+      "10Kg": 349.02,
+      "15Kg": 518.7,
+      "20Kg": 686.7
+    },
+    "Crema": {
+      "5Kg": 98.28,
+      "10Kg": 160.02,
+      "15Kg": 235.2,
+      "20Kg": 308.7
+    },
+    "Blanco": {
+      "5Kg": 98.28,
+      "10Kg": 160.02,
+      "15Kg": 235.2,
+      "20Kg": 308.7
+    },
+    "Negro": {
+      "5Kg": 98.28,
+      "10Kg": 160.02,
+      "15Kg": 235.2,
+      "20Kg": 308.7
+    },
+    "Rojo Ferrari": {
+      "5Kg": 123.48,
+      "10Kg": 202.02,
+      "15Kg": 298.2,
+      "20Kg": 392.7
+    }
+  }
 };
 
 const SLIDE_TIME = 500;
@@ -2033,7 +2136,7 @@ function reloadElement(el) {
 
 function changeStep() {
   let elements = document.getElementsByClassName("option");
-  const floorMaterial = localStorage.getItem('floorMaterial')
+  const floorMaterial = localStorage.getItem("floorMaterial");
   if (step == 0) {
     onWndLoad();
   } else if (step == 1) {
@@ -2043,27 +2146,22 @@ function changeStep() {
 
     //console.log(elements[i].parentElement.classList)
 
-    if(myElement.parentElement.classList.contains("callus")){
+    if (myElement.parentElement.classList.contains("callus")) {
       myElement.parentElement.addEventListener(
         "click",
         () => showContactPopUp(),
         false
-      )
-    }
-    else if(myElement.parentElement.classList.contains("forbidden")){
-
-    }
-    else if(myElement.parentElement.classList.contains("custom")){
+      );
+    } else if (myElement.parentElement.classList.contains("forbidden")) {
+    } else if (myElement.parentElement.classList.contains("custom")) {
       //CUSTOMIZATOR
-      const thisStepOptions = stepOptions[floorMaterial][step].middle
+      const thisStepOptions = stepOptions[floorMaterial][step].middle;
       myElement.parentElement.addEventListener(
         "click",
-        ()=>thisStepOptions[i].function(),
+        () => thisStepOptions[i].function(),
         false
       );
-      
-    }
-    else{
+    } else {
       myElement.parentElement.addEventListener(
         "click",
         () => buttonClickedAt(myElement),
@@ -2199,12 +2297,12 @@ function nextStep() {
 function prevStep() {
   console.log("prevStep, current step", step);
   if (!step) {
-    step = 0
+    step = 0;
     window.location.href = "/";
   } else {
-    console.log("it goes down")
+    console.log("it goes down");
     step--;
-    console.log("currentStep:", step)
+    console.log("currentStep:", step);
     slideToTheRight(document.getElementById("question1"));
     slideToTheRight(document.getElementById("question2"));
     slideToTheRight(document.getElementById("buttonarea"));
@@ -2496,30 +2594,30 @@ function buttonAreaInnerHTMLGenerator() {
   if (step < 2) {
     if (stepOptions[step].middle) {
       middleDiv =
-        `<div class="middleside side ${stepOptions[step].variableName=="floorMaterial" ? "onlybottomborder" : ""}" >` +
+        `<div class="middleside side ${
+          stepOptions[step].variableName == "floorMaterial"
+            ? "onlybottomborder"
+            : ""
+        }" >` +
         stepOptions[step].middle
           .map((option) => {
-
-            if(typeof option !=='object'){
-              if(option.split(" ")[0]=="forbidden") {
-                return `<a class="forbidden"><div class="option">${option}</div></a>`
+            if (typeof option !== "object") {
+              if (option.split(" ")[0] == "forbidden") {
+                return `<a class="forbidden"><div class="option">${option}</div></a>`;
+              } else if (option.split(" ")[0] == "callus") {
+                return `<a class="callus"><div class="option">${
+                  option.split(" ")[1]
+                }</div></a>`;
+              } else {
+                return `<a><div class="option">${option}</div></a>`;
               }
-              else if(option.split(" ")[0]=="callus") {
-                return `<a class="callus"><div class="option">${option.split(" ")[1]}</div></a>`
-              }
-              else{
-              return `<a><div class="option">${option}</div></a>`
+            } else {
+              return `<a class="custom" id="${option.text}"><div class="option">${option.text}</div></a>`;
             }
-          }
-            else{
-              return `<a class="custom" id="${option.text}"><div class="option">${option.text}</div></a>`
-            }
-
           })
           .join("") +
         "</div>";
       document.getElementById("buttonarea").innerHTML = middleDiv;
-      
     } else {
       leftDiv =
         '<div class="leftside side" >' +
@@ -2537,15 +2635,16 @@ function buttonAreaInnerHTMLGenerator() {
     }
     document.getElementById("question1").innerHTML =
       stepOptions[step].question1;
-      if(step==1){
-        const FLOOR_TYPE = localStorage.getItem('floorType').toUpperCase()
-        document.getElementById("question2").innerHTML =
-      stepOptions[step].question2 + FLOOR_TYPE+"?";
-      }
-      else{document.getElementById("question2").innerHTML =
-        stepOptions[step].question2;}
+    if (step == 1) {
+      const FLOOR_TYPE = localStorage.getItem("floorType").toUpperCase();
+      document.getElementById("question2").innerHTML =
+        stepOptions[step].question2 + FLOOR_TYPE + "?";
+    } else {
+      document.getElementById("question2").innerHTML =
+        stepOptions[step].question2;
+    }
   } else {
-    console.log(step < 2, step)
+    console.log(step < 2, step);
     if (stepOptions[floorMaterial][step].middle == "area picker") {
       loadAreaPicker();
     } else if (stepOptions[floorMaterial][step].middle == "color picker") {
@@ -2570,16 +2669,23 @@ function buttonAreaInnerHTMLGenerator() {
       middleDiv =
         '<div class="middleside side" >' +
         stepOptions[floorMaterial][step].middle
-          .map((option) =>{
-            if(typeof option !=='object'){
-              if(option.split(" ")[0]=="forbidden") return `<a class="forbidden"><div class="option">${option.split(" ").splice(1,option.split(" ").length-1).join(" ")}</div></a>`
-              else if(option.split(" ")[0]=="callus") return `<a class="callus"><div class="option">${option.split(" ").splice(1,option.split(" ").length-1).join(" ") }</div></a>`
-              else{
-                return `<a><div class="option">${option}</div></a>`
+          .map((option) => {
+            if (typeof option !== "object") {
+              if (option.split(" ")[0] == "forbidden")
+                return `<a class="forbidden"><div class="option">${option
+                  .split(" ")
+                  .splice(1, option.split(" ").length - 1)
+                  .join(" ")}</div></a>`;
+              else if (option.split(" ")[0] == "callus")
+                return `<a class="callus"><div class="option">${option
+                  .split(" ")
+                  .splice(1, option.split(" ").length - 1)
+                  .join(" ")}</div></a>`;
+              else {
+                return `<a><div class="option">${option}</div></a>`;
               }
-            }
-            else{
-              return `<a class="custom" id="${option.text}"><div class="option">${option.text}</div></a>`
+            } else {
+              return `<a class="custom" id="${option.text}"><div class="option">${option.text}</div></a>`;
             }
           })
           .join("") +
@@ -2627,7 +2733,9 @@ function sliderGenerator() {
         (slide) => `
   <div class="slide">
     <img src="${slide.url}"/>
-    <p ${slide.name.length>12 ? "class='smallsliderfont'":""}>${slide.name}</p>
+    <p ${slide.name.length > 12 ? "class='smallsliderfont'" : ""}>${
+          slide.name
+        }</p>
   </div>`
       )
       .join("");
@@ -2753,20 +2861,20 @@ function loadColorPicker() {
 }
 
 function loadHerramientasPicker() {
-  const RESINA = localStorage.getItem('Resina')
-  const RUGOSO = localStorage.getItem('Rugoso')
+  const RESINA = localStorage.getItem("Resina");
+  const RUGOSO = localStorage.getItem("Rugoso");
 
-  const hasBalanza = RESINA=="epoxi"
-  const hasRodillos = !RUGOSO || RUGOSO!=="Quiero que siga rugoso"
+  const hasBalanza = RESINA == "epoxi";
+  const hasRodillos = !RUGOSO || RUGOSO !== "Quiero que siga rugoso";
 
-  const balanzaDiv=`  <div class="herramientasrow">
+  const balanzaDiv = `  <div class="herramientasrow">
   <p>Balanza 2g a 5Kgs</p>
   <div class="herramientasinput">
       <span class="herramientasdecrement" id="decreasebalanza">–</span>
       <input id="balanzainput" class="herramientasnumber" type="number" value="1" min="0" max="1">
       <span class="herramientasincrement" id="increasebalanza">+</span>
   </div>
-</div>`
+</div>`;
 
   const rodillosDiv = `  <div  class="herramientasrow">
   <p>Rodillos 220mm</p>
@@ -2775,7 +2883,7 @@ function loadHerramientasPicker() {
       <input id="rodillosinput" class="herramientasnumber" type="number" value="1" min="0">
       <span class="herramientasincrement" id="increaserodillos">+</span>
   </div>
-</div>`
+</div>`;
 
   const brochasDiv = `  <div  class="herramientasrow">
   <p>Brochas</p>
@@ -2784,7 +2892,7 @@ function loadHerramientasPicker() {
       <input id="brochasinput" class="herramientasnumber" type="number" value="1" min="0">
       <span class="herramientasincrement" id="increasebrochas">+</span>
   </div>
-</div>`
+</div>`;
 
   const cubosDiv = `  <div  class="herramientasrow">
   <p>Cubos de Mezcla</p>
@@ -2793,22 +2901,21 @@ function loadHerramientasPicker() {
       <input id="cubosinput" class="herramientasnumber" type="number" value="1" min="0">
       <span class="herramientasincrement" id="increasecubos">+</span>
   </div>
-</div>`
+</div>`;
 
-  const rodillosPeloLargoDiv =`<div  class="herramientasrow">
+  const rodillosPeloLargoDiv = `<div  class="herramientasrow">
   <p>Rodillos de pelo largo</p>
   <div class="herramientasinput">
       <span class="herramientasdecrement" id="decreaserodillospelolargo">–</span>
       <input id="rodillospelolargoinput" class="herramientasnumber" type="number" value="1" min="0">
       <span class="herramientasincrement" id="increaserodillospelolargo">+</span>
   </div>
-</div>`
-
+</div>`;
 
   document.getElementById("buttonarea").innerHTML = `
   <div class="herramientaspicker">
     ${hasBalanza ? balanzaDiv : ""}
-    ${hasRodillos ? rodillosDiv : rodillosPeloLargoDiv }
+    ${hasRodillos ? rodillosDiv : rodillosPeloLargoDiv}
     ${brochasDiv}
     ${cubosDiv}
     
@@ -2820,82 +2927,94 @@ function loadHerramientasPicker() {
     "acceptandcontinue"
   );
 
-if(hasBalanza){  const decreaseBalanzaButton = document.getElementById("decreasebalanza");
-  const increaseBalanzaButton = document.getElementById("increasebalanza");
-  const balanzaInput = document.getElementById("balanzainput");
-  const balanzaStoredValue = localStorage.getItem("Balanzas");
-  if (balanzaStoredValue > 0) {
-    balanzaInput.value = balanzaStoredValue;
+  if (hasBalanza) {
+    const decreaseBalanzaButton = document.getElementById("decreasebalanza");
+    const increaseBalanzaButton = document.getElementById("increasebalanza");
+    const balanzaInput = document.getElementById("balanzainput");
+    const balanzaStoredValue = localStorage.getItem("Balanzas");
+    if (balanzaStoredValue > 0) {
+      balanzaInput.value = balanzaStoredValue;
+    }
+    decreaseBalanzaButton.addEventListener(
+      "click",
+      () => {
+        if (Number(balanzaInput.value) > 0)
+          balanzaInput.value = Number(balanzaInput.value) - 1;
+      },
+      "false"
+    );
+    increaseBalanzaButton.addEventListener(
+      "click",
+      () => {
+        balanzaInput.value = Number(balanzaInput.value) + 1;
+      },
+      "false"
+    );
+  } else {
+    localStorage.removeItem("Balanza");
   }
-  decreaseBalanzaButton.addEventListener(
-    "click",
-    () => {
-      if (Number(balanzaInput.value) > 0)
-        balanzaInput.value = Number(balanzaInput.value) - 1;
-    },
-    "false"
-  );
-  increaseBalanzaButton.addEventListener(
-    "click",
-    () => {
-      balanzaInput.value = Number(balanzaInput.value) + 1;
-    },
-    "false"
-  );
-}else{localStorage.removeItem('Balanza')}
 
-if(hasRodillos){  const decreaseRodillosButton = document.getElementById("decreaserodillos");
-  const increaseRodillosButton = document.getElementById("increaserodillos");
-  const rodillosInput = document.getElementById("rodillosinput");
-  const rodillosStoredValue = localStorage.getItem("Rodillos");
+  if (hasRodillos) {
+    const decreaseRodillosButton = document.getElementById("decreaserodillos");
+    const increaseRodillosButton = document.getElementById("increaserodillos");
+    const rodillosInput = document.getElementById("rodillosinput");
+    const rodillosStoredValue = localStorage.getItem("Rodillos");
 
-  localStorage.removeItem('Rodillos pelo largo')
+    localStorage.removeItem("Rodillos pelo largo");
 
-  if (rodillosStoredValue > 0) {
-    rodillosInput.value = rodillosStoredValue;
-  }
-  decreaseRodillosButton.addEventListener(
-    "click",
-    () => {
-      if (Number(rodillosInput.value) > 0)
-        rodillosInput.value = Number(rodillosInput.value) - 1;
-    },
-    "false"
-  );
-  increaseRodillosButton.addEventListener(
-    "click",
-    () => {
-      rodillosInput.value = Number(rodillosInput.value) + 1;
-    },
-    "false"
-  );
-}
-  else{
-  const decreaseRodillosPeloLargoButton = document.getElementById("decreaserodillospelolargo");
-  const increaseRodillosPeloLargoButton = document.getElementById("increaserodillospelolargo");
-  const rodillosPeloLargoInput = document.getElementById("rodillospelolargoinput");
-  const rodillosPeloLargoStoredValue = localStorage.getItem("Rodillos pelo largo");
+    if (rodillosStoredValue > 0) {
+      rodillosInput.value = rodillosStoredValue;
+    }
+    decreaseRodillosButton.addEventListener(
+      "click",
+      () => {
+        if (Number(rodillosInput.value) > 0)
+          rodillosInput.value = Number(rodillosInput.value) - 1;
+      },
+      "false"
+    );
+    increaseRodillosButton.addEventListener(
+      "click",
+      () => {
+        rodillosInput.value = Number(rodillosInput.value) + 1;
+      },
+      "false"
+    );
+  } else {
+    const decreaseRodillosPeloLargoButton = document.getElementById(
+      "decreaserodillospelolargo"
+    );
+    const increaseRodillosPeloLargoButton = document.getElementById(
+      "increaserodillospelolargo"
+    );
+    const rodillosPeloLargoInput = document.getElementById(
+      "rodillospelolargoinput"
+    );
+    const rodillosPeloLargoStoredValue = localStorage.getItem(
+      "Rodillos pelo largo"
+    );
 
-  localStorage.removeItem('Rodillos')
+    localStorage.removeItem("Rodillos");
 
-  if (rodillosPeloLargoStoredValue > 0) {
-    rodillosPeloLargoInput.value = rodillosPeloLargoStoredValue;
-  }
-  decreaseRodillosPeloLargoButton.addEventListener(
-    "click",
-    () => {
-      if (Number(rodillosPeloLargoInput.value) > 0)
-        rodillosPeloLargoInput.value = Number(rodillosPeloLargoInput.value) - 1;
-    },
-    "false"
-  );
-  increaseRodillosPeloLargoButton.addEventListener(
-    "click",
-    () => {
-      rodillosPeloLargoInput.value = Number(rodillosPeloLargoInput.value) + 1;
-    },
-    "false"
-  );
+    if (rodillosPeloLargoStoredValue > 0) {
+      rodillosPeloLargoInput.value = rodillosPeloLargoStoredValue;
+    }
+    decreaseRodillosPeloLargoButton.addEventListener(
+      "click",
+      () => {
+        if (Number(rodillosPeloLargoInput.value) > 0)
+          rodillosPeloLargoInput.value =
+            Number(rodillosPeloLargoInput.value) - 1;
+      },
+      "false"
+    );
+    increaseRodillosPeloLargoButton.addEventListener(
+      "click",
+      () => {
+        rodillosPeloLargoInput.value = Number(rodillosPeloLargoInput.value) + 1;
+      },
+      "false"
+    );
   }
 
   const decreaseBrochasButton = document.getElementById("decreasebrochas");
@@ -2907,10 +3026,6 @@ if(hasRodillos){  const decreaseRodillosButton = document.getElementById("decrea
   const increaseCubosButton = document.getElementById("increasecubos");
   const cubosInput = document.getElementById("cubosinput");
   const cubosStoredValue = localStorage.getItem("Cubos");
-
-
-
-
 
   if (brochasStoredValue > 0) {
     brochasInput.value = brochasStoredValue;
@@ -2956,13 +3071,18 @@ if(hasRodillos){  const decreaseRodillosButton = document.getElementById("decrea
   );
 
   function herramientasPickerGoNext() {
-    const balanzaInput = document.getElementById('balanzainput')
-    const rodillosInput = document.getElementById('rodillosinput')
-    const rodillosPeloLargoInput = document.getElementById('rodillospelolargoinput')
+    const balanzaInput = document.getElementById("balanzainput");
+    const rodillosInput = document.getElementById("rodillosinput");
+    const rodillosPeloLargoInput = document.getElementById(
+      "rodillospelolargoinput"
+    );
 
-    if(hasBalanza)localStorage.setItem("Balanza", balanzaInput.value);
-    if(hasRodillos){localStorage.setItem("Rodillos", rodillosInput.value);}
-    else{localStorage.setItem("Rodillos pelo largo", rodillosPeloLargoInput.value)}
+    if (hasBalanza) localStorage.setItem("Balanza", balanzaInput.value);
+    if (hasRodillos) {
+      localStorage.setItem("Rodillos", rodillosInput.value);
+    } else {
+      localStorage.setItem("Rodillos pelo largo", rodillosPeloLargoInput.value);
+    }
     localStorage.setItem("Brochas", brochasInput.value);
     localStorage.setItem("Cubos", cubosInput.value);
     nextStep();
@@ -2970,18 +3090,21 @@ if(hasRodillos){  const decreaseRodillosButton = document.getElementById("decrea
 }
 
 function loadPresupuestoPicker() {
+  const FLOOR_MATERIAL = localStorage.getItem("floorMaterial");
+  const JUNTAS = localStorage.getItem("Juntas");
 
-  const FLOOR_MATERIAL= localStorage.getItem('floorMaterial')
-  const JUNTAS = localStorage.getItem('Juntas')
-
-  const hasUnaManoTransparente = ((FLOOR_MATERIAL=="Baldosa" || FLOOR_MATERIAL=="Terrazo") && (JUNTAS && JUNTAS=="Si") || (FLOOR_MATERIAL!=="Baldosa" && FLOOR_MATERIAL!=="Terrazo"))
+  const hasUnaManoTransparente =
+    ((FLOOR_MATERIAL == "Baldosa" || FLOOR_MATERIAL == "Terrazo") &&
+      JUNTAS &&
+      JUNTAS == "Si") ||
+    (FLOOR_MATERIAL !== "Baldosa" && FLOOR_MATERIAL !== "Terrazo");
 
   const unaManoTransparenteDiv = `
   <div class="presupuestooption" id="soloimprimacion">
   <h3>UNA MANO TRANSPARENTE</h3>
   <p>Ideal para cuando solo se quiere evitar el polvo</p>
   <p>y gastar poco</p>
-</div>`
+</div>`;
   document.getElementById("buttonarea").innerHTML = `
     <div class="presupuestopicker">
       <div class="presupuestooption" id="imprimacionydosmanos">
@@ -3007,9 +3130,9 @@ function loadPresupuestoPicker() {
 }
 
 function loadYaPintadoPresupuestoPicker() {
-  const PINTA_ENCIMA = localStorage.getItem('isPintaEncima')
+  const PINTA_ENCIMA = localStorage.getItem("isPintaEncima");
 
-  if(PINTA_ENCIMA=="Quitar la capa de pintura antigua"){
+  if (PINTA_ENCIMA == "Quitar la capa de pintura antigua") {
     document.getElementById("buttonarea").innerHTML = `
     <div class="presupuestopicker">
       <div class="presupuestooption" id="imprimacionydosmanos">
@@ -3028,16 +3151,15 @@ function loadYaPintadoPresupuestoPicker() {
       </div>
     </div>`;
 
-  function setAndContinue(id) {
-    localStorage.setItem("Manos", id);
-    nextStep();
-  }
+    function setAndContinue(id) {
+      localStorage.setItem("Manos", id);
+      nextStep();
+    }
 
-  [...document.getElementsByClassName("presupuestooption")].map((div) => {
-    div.addEventListener("click", () => setAndContinue(div.id), "false");
-  });
-  }
-  else{
+    [...document.getElementsByClassName("presupuestooption")].map((div) => {
+      div.addEventListener("click", () => setAndContinue(div.id), "false");
+    });
+  } else {
     document.getElementById("buttonarea").innerHTML = `
     <div class="presupuestopicker">
       <div class="presupuestooption" id="unamano">
@@ -3052,31 +3174,29 @@ function loadYaPintadoPresupuestoPicker() {
       </div>
     </div>`;
 
-  function setAndContinue(id) {
-    localStorage.setItem("Manos", id);
-    nextStep();
-  }
+    function setAndContinue(id) {
+      localStorage.setItem("Manos", id);
+      nextStep();
+    }
 
-  [...document.getElementsByClassName("presupuestooption")].map((div) => {
-    div.addEventListener("click", () => setAndContinue(div.id), "false");
-  });
+    [...document.getElementsByClassName("presupuestooption")].map((div) => {
+      div.addEventListener("click", () => setAndContinue(div.id), "false");
+    });
   }
-
-  
 }
 
 function loadResinaPicker() {
+  const FLOOR_MATERIAL = localStorage.getItem("floorMaterial");
 
-  const FLOOR_MATERIAL = localStorage.getItem('floorMaterial')
-
-  const hasAcrilica = FLOOR_MATERIAL!=="Baldosa" && FLOOR_MATERIAL!=="Terrazo"
+  const hasAcrilica =
+    FLOOR_MATERIAL !== "Baldosa" && FLOOR_MATERIAL !== "Terrazo";
 
   const acrilicaDiv = `    <div class="resinaoption" id="acrilica">
   <h3>ACRILICA MONOCOMPONENTE</h3>
   <p>No aguanta manchas ni la presión de ruedas. </p>
   <p>Solo evita el polvo. No protege el suelo</p>
   <p>de un garaje, nave o taller.</p>
-</div>`
+</div>`;
 
   document.getElementById("buttonarea").innerHTML = `
   <div class="resinapicker">
@@ -3097,6 +3217,116 @@ function loadResinaPicker() {
     div.addEventListener("click", () => setAndContinue(div.id), "false");
   });
 }
+
+
+
+function showPopUp() {
+  let popUp = document.getElementById("popup");
+  let email = document.getElementById("email");
+  popUp.classList.add("appear");
+  email.classList.add("expand");
+}
+
+window.addEventListener("keydown", maybeShowPopUp, false);
+
+function maybeShowPopUp(e) {
+  if (e.keyCode == "13") showPopUp();
+
+  if (e.keyCode == "70") closePopUp();
+}
+
+function closePopUp(e) {
+  document.getElementById("email").classList.remove("expand");
+  event.stopPropagation();
+  document.getElementById("popup").classList.remove("appear");
+  event.stopPropagation();
+}
+
+function showContactPopUp() {
+  const prevPopUpMessage = document.getElementById("popupmessage");
+  reloadElement(prevPopUpMessage);
+  const popUpMessage = document.getElementById("popupmessage");
+
+  popUpMessage.innerHTML = `
+    <p>La selección que acaba de realizar necesita que la evalúe nuestro equipo de soporte, contacte con nosotros por whatsapp y envienos una foto de su suelo para darle la mejor opción.</p>
+    <div class="emailbuttonarea" id="popupbuttonarea">
+      <button id="contactarbutton">Contactar</button>
+      <button id="cerrarpopup">Volver</button>
+    </div> 
+    `;
+  showPopUp();
+
+  document
+    .getElementById("contactarbutton")
+    .addEventListener("click", getContactarText, false);
+  document
+    .getElementById("cerrarpopup")
+    .addEventListener("click", closePopUp, false);
+}
+
+function getContactarText() {
+  const prevPopUpMessage = document.getElementById("popupmessage");
+  reloadElement(prevPopUpMessage);
+  const popUpMessage = document.getElementById("popupmessage");
+
+  popUpMessage.innerHTML = `
+  <p><a href="wa.me/34682312307">Telefono/Whatsapp: 628042210</a></p>
+  <div class="emailbuttonarea" id="popupbuttonarea">
+  <button id="cerrarpopup">Volver</button>
+  </div> 
+  `;
+  document
+    .getElementById("cerrarpopup")
+    .addEventListener("click", closePopUp, false);
+}
+
+function showCustomPopUp(title, message, buttons) {
+  //buttons is an array of objects [{id:X, text:YYY, function: ZZZ},{id:X, text:YYY, function: ZZZ}]
+
+  const prevPopUpMessage = document.getElementById("popupmessage");
+  reloadElement(prevPopUpMessage);
+  const popUpMessage = document.getElementById("popupmessage");
+
+  popUpMessage.parentElement.firstElementChild.firstElementChild.innerHTML = title;
+
+  popUpMessage.innerHTML = `
+  <p>${message}</p>
+  <div class="emailbuttonarea" id="popupbuttonarea">
+  ${buttons.map(button=>("<button id='"+button.id+"'>"+button.text+"</button>")).join("")}
+  </div> 
+  `;
+  
+  showPopUp();
+  for (let i = 0; i < buttons.length; i++) {
+    document
+      .getElementById(buttons[i].id)
+      .addEventListener("click", buttons[i].function, false);
+  }
+}
+
+function startOver(relativePath) {
+  localStorage.removeItem("floorType");
+  localStorage.removeItem("Desperfectos");
+  localStorage.removeItem("Manos");
+  localStorage.removeItem("floorMaterial");
+  localStorage.removeItem("Rugoso");
+  localStorage.removeItem("Cubos");
+  localStorage.removeItem("Rodillos");
+  localStorage.removeItem("Rodillos pelo largo");
+  localStorage.removeItem("Balanza");
+  localStorage.removeItem("Brochas");
+  localStorage.removeItem("Resina");
+  localStorage.removeItem("Brillo");
+  localStorage.removeItem("Area");
+  localStorage.removeItem("Color");
+  window.location.href = `${relativePath}`;
+}
+//showCustomPopUp("mytitle", "it works baby", [VOLVER_BUTTON])
+//find a way to add forbidden o callus to div to the <a> tag
+
+
+
+
 
 function loadFinalResult() {
   document.getElementById("interactive").innerHTML = `
@@ -3170,7 +3400,7 @@ function loadFinalResult() {
     .addEventListener("click", goEdit, false);
   document
     .getElementById("gotohome")
-    .addEventListener("click", ()=>startOver("/"), false);
+    .addEventListener("click", () => startOver("/"), false);
   document
     .getElementById("buybutton")
     .addEventListener("click", makePurchase, false);
@@ -3220,12 +3450,15 @@ function loadFinalResult() {
   function makePurchase() {
     console.log("purchasing");
   }
-  let totalKgs = 0
+  let totalKgs = 0;
   let litersOfDisolvente = 0;
   const tableTotal = document.getElementById("tabletotal");
 
-  const finalPriceNoTax = Number(createTablePinturas())+ Number(createTableDisolvente()) + Number(createTableHerramientas())
-  createTableFinalPrice()
+  const finalPriceNoTax =
+    Number(createTablePinturas()) +
+    Number(createTableDisolvente()) +
+    Number(createTableHerramientas());
+  createTableFinalPrice();
 
   function createTablePinturas() {
     const tablePinturas = document.getElementById("tablepinturas");
@@ -3240,167 +3473,231 @@ function loadFinalResult() {
       const RESINA = localStorage.getItem("Resina");
       const BRILLO = localStorage.getItem("Brillo");
       const DESPERFECTOS = localStorage.getItem("Desperfectos");
-      const RUGOSO = localStorage.getItem("Rugoso")
-      console.log("desperfectos", DESPERFECTOS)
-      
+      const RUGOSO = localStorage.getItem("Rugoso");
+      console.log("desperfectos", DESPERFECTOS);
+
       let toReturnArray = [];
 
-
       let gm2 = DESPERFECTOS == "No" ? 140 : 150;
-      if(RUGOSO && RUGOSO=="Quiero que siga rugoso"){
-        gm2=gm2*1.2
-        console.log("gm2 actualizados por ser suelo rugoso")
+      if (RUGOSO && RUGOSO == "Quiero que siga rugoso") {
+        gm2 = gm2 * 1.2;
+        console.log("gm2 actualizados por ser suelo rugoso");
       }
       let kgAmountPerLayer = (gm2 * AREA) / 1000;
 
       function calculateKits(isImprimacion) {
-        
-        if(RESINA=="politop"){
-          return []
+        if (RESINA == "politop") {
+          if(isImprimacion)return [];
+          else{
+            const AMOUNT_MANOS=1
+            const MAX_BARREL_SIZE=20
+            const BARREL_VOLUME_DIFFERENCE=5
+
+            return calculateSpecificLayersKits(AMOUNT_MANOS,MAX_BARREL_SIZE,BARREL_VOLUME_DIFFERENCE)
+          }
         }
 
-        if(isImprimacion && RESINA =="acrilica") return []
-
-        else if(!isImprimacion && RESINA =="acrilica"){
+        if (isImprimacion && RESINA == "acrilica") return [];
+        else if (!isImprimacion && RESINA == "acrilica") {
           const AMOUNT_MANOS = MANOS.includes("dosmanos") ? 2 : 1;
-          const MAX_BARREL_SIZE = 20
-          const BARREL_VOLUME_DIFFERENCE = 5
+          const MAX_BARREL_SIZE = 20;
+          const BARREL_VOLUME_DIFFERENCE = 5;
 
-          return calculateSpecificLayersKits(AMOUNT_MANOS, MAX_BARREL_SIZE, BARREL_VOLUME_DIFFERENCE)
-      }
+          return calculateSpecificLayersKits(
+            AMOUNT_MANOS,
+            MAX_BARREL_SIZE,
+            BARREL_VOLUME_DIFFERENCE
+          );
+        } else if (isImprimacion && RESINA == "epoxi") {
+          const MAX_BARREL_SIZE = 30;
+          const BARREL_VOLUME_DIFFERENCE = 6;
 
-        
-        else if (isImprimacion && RESINA=="epoxi") {
-
-          const MAX_BARREL_SIZE = 30
-          const BARREL_VOLUME_DIFFERENCE = 6
-
-          let amountOf30KgsKits = Math.floor(kgAmountPerLayer / MAX_BARREL_SIZE);
+          let amountOf30KgsKits = Math.floor(
+            kgAmountPerLayer / MAX_BARREL_SIZE
+          );
           let doWeAddDisolvente =
-            (kgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE < BARREL_VOLUME_DIFFERENCE/2 ? true : false;
+            (kgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE <
+            BARREL_VOLUME_DIFFERENCE / 2
+              ? true
+              : false;
           let remainderKits = doWeAddDisolvente
-            ? (kgAmountPerLayer % MAX_BARREL_SIZE) - ((kgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE)
-            : (kgAmountPerLayer % MAX_BARREL_SIZE) - ((kgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE) + BARREL_VOLUME_DIFFERENCE;
+            ? (kgAmountPerLayer % MAX_BARREL_SIZE) -
+              ((kgAmountPerLayer % MAX_BARREL_SIZE) % BARREL_VOLUME_DIFFERENCE)
+            : (kgAmountPerLayer % MAX_BARREL_SIZE) -
+              ((kgAmountPerLayer % MAX_BARREL_SIZE) %
+                BARREL_VOLUME_DIFFERENCE) +
+              BARREL_VOLUME_DIFFERENCE;
 
-          if(amountOf30KgsKits==0 && remainderKits==0){
+          if (amountOf30KgsKits == 0 && remainderKits == 0) {
             return [
               { name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`, qty: 0 },
-              { name: `Kit ${BARREL_VOLUME_DIFFERENCE}Kgs Imprimación`, qty: 1 },
-            ];}
+              {
+                name: `Kit ${BARREL_VOLUME_DIFFERENCE}Kgs Imprimación`,
+                qty: 1,
+              },
+            ];
+          }
 
           if (doWeAddDisolvente) litersOfDisolvente += amountOf30KgsKits + 1;
 
-          if (!remainderKits){
-            return [{ name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`, qty: amountOf30KgsKits }];
+          if (!remainderKits) {
+            return [
+              {
+                name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`,
+                qty: amountOf30KgsKits,
+              },
+            ];
           }
 
           return [
-            { name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`, qty: amountOf30KgsKits },
+            {
+              name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`,
+              qty: amountOf30KgsKits,
+            },
             { name: `Kit ${remainderKits}Kgs Imprimación`, qty: 1 },
           ];
         } else {
           const AMOUNT_MANOS = MANOS.includes("dosmanos") ? 2 : 1;
-          const MAX_BARREL_SIZE = 30
-          const BARREL_VOLUME_DIFFERENCE = 6
-          return calculateSpecificLayersKits(AMOUNT_MANOS, MAX_BARREL_SIZE, BARREL_VOLUME_DIFFERENCE)
+          const MAX_BARREL_SIZE = 30;
+          const BARREL_VOLUME_DIFFERENCE = 6;
+          return calculateSpecificLayersKits(
+            AMOUNT_MANOS,
+            MAX_BARREL_SIZE,
+            BARREL_VOLUME_DIFFERENCE
+          );
         }
 
-        function calculateSpecificLayersKits(manos, maxBarrelSize, barrelVolumeDiff){
-
+        function calculateSpecificLayersKits(
+          manos,
+          maxBarrelSize,
+          barrelVolumeDiff
+        ) {
           let thisKgAmountPerLayer = kgAmountPerLayer * manos;
 
-          let amountOfMaxKgsKits =
-          Math.floor(thisKgAmountPerLayer / maxBarrelSize)
-        let doWeAddDisolvente =
-          (thisKgAmountPerLayer % maxBarrelSize) % barrelVolumeDiff < barrelVolumeDiff/2 ? true : false;
-        let remainderKits = doWeAddDisolvente
-          ? (thisKgAmountPerLayer % maxBarrelSize) - ((thisKgAmountPerLayer % maxBarrelSize) % barrelVolumeDiff)
-          : (thisKgAmountPerLayer % maxBarrelSize) -
-            ((thisKgAmountPerLayer % maxBarrelSize) % barrelVolumeDiff) +
-            barrelVolumeDiff;
+          let amountOfMaxKgsKits = Math.floor(
+            thisKgAmountPerLayer / maxBarrelSize
+          );
+          let doWeAddDisolvente =
+            (thisKgAmountPerLayer % maxBarrelSize) % barrelVolumeDiff <
+            barrelVolumeDiff / 2
+              ? true
+              : false;
+          let remainderKits = doWeAddDisolvente
+            ? (thisKgAmountPerLayer % maxBarrelSize) -
+              ((thisKgAmountPerLayer % maxBarrelSize) % barrelVolumeDiff)
+            : (thisKgAmountPerLayer % maxBarrelSize) -
+              ((thisKgAmountPerLayer % maxBarrelSize) % barrelVolumeDiff) +
+              barrelVolumeDiff;
 
-        if(amountOfMaxKgsKits==0 && remainderKits==0){
-          return [
-            { name: `Kit ${maxBarrelSize} ${RESINA}`, qty: 0 },
-            { name: `Kit ${6}Kgs ${RESINA}`, qty: 1 },
-          ];}
-
-        if (doWeAddDisolvente || MANOS == "dosmanos")
-          litersOfDisolvente += amountOfMaxKgsKits + 1;
-
-        if (!remainderKits){
-          return [{ name: `Kit ${maxBarrelSize}Kgs ${RESINA}`, qty: amountOfMaxKgsKits }];
-        }
-        return [
-          { name: `Kit ${maxBarrelSize}Kgs ${RESINA}`, qty: amountOfMaxKgsKits },
-          { name: `Kit ${remainderKits}Kgs ${RESINA}`, qty: 1 },
-        ];
-        }
-      }
-
-      let imprimacionArray = calculateKits(true)
-      let layersArray = calculateKits(false)
-
-console.log(layersArray)
-
-      calculateTotalKgs()
-      function calculateTotalKgs(){
-        if(imprimacionArray[0]) totalKgs += imprimacionArray[0].qty*Number(imprimacionArray[0].name.split(" ")[1].split("Kg")[0])
-        if(imprimacionArray[1]) totalKgs += imprimacionArray[1].qty*Number(imprimacionArray[1].name.split(" ")[1].split("Kg")[0])
-        if(layersArray[0]) totalKgs += layersArray[0].qty*Number(layersArray[0].name.split(" ")[1].split("Kg")[0])
-        if(layersArray[1]) totalKgs += layersArray[1].qty*Number(layersArray[1].name.split(" ")[1].split("Kg")[0])
-        let addDisolventeWeigth = litersOfDisolvente
-        if(AREA/100<litersOfDisolvente && litersOfDisolvente>2) {addDisolventeWeigth = Math.floor(AREA/100)}
-        totalKgs+=addDisolventeWeigth
-      }
-
-      function calculateImprimacionArray(){
-        if (!MANOS.includes("imprimacion") || RESINA=="acrilica") return []
-
-
-        let thisAmountOfKgs = imprimacionArray[1].name.split(" ")[1].split("s")[0]
-        console.warn(imprimacionArray[1], priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs])
-          toReturnArray = toReturnArray.concat(imprimacionArray);
-          pinturasTotal +=
-            imprimacionArray[0].qty *
-            priceObject["epoxi"]["imprimacion"]["Incoloro"]["30Kg"];
-          if (
-            imprimacionArray[1] &&
-            priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs]
-          ) {
-            pinturasTotal +=
-              imprimacionArray[1].qty *
-              priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs];
+          if (amountOfMaxKgsKits == 0 && remainderKits == 0) {
+            return [
+              { name: `Kit ${maxBarrelSize} ${RESINA}`, qty: 0 },
+              { name: `Kit ${barrelVolumeDiff}Kgs ${RESINA}`, qty: 1 },
+            ];
           }
-        console.log("pinturas total after imprimacion", pinturasTotal)
-      }
-      function calculateLayersArray(){
-        if (!MANOS.includes("mano") && RESINA!=="acrilica")return []
 
-        toReturnArray = toReturnArray.concat(layersArray)
+          if (doWeAddDisolvente || MANOS == "dosmanos")
+            litersOfDisolvente += amountOfMaxKgsKits + 1;
+
+          if (!remainderKits) {
+            return [
+              {
+                name: `Kit ${maxBarrelSize}Kgs ${RESINA}`,
+                qty: amountOfMaxKgsKits,
+              },
+            ];
+          }
+          return [
+            {
+              name: `Kit ${maxBarrelSize}Kgs ${RESINA}`,
+              qty: amountOfMaxKgsKits,
+            },
+            { name: `Kit ${remainderKits}Kgs ${RESINA}`, qty: 1 },
+          ];
+        }
+      }
+
+      let imprimacionArray = calculateKits(true);
+      let layersArray = calculateKits(false);
+
+      calculateTotalKgs();
+      function calculateTotalKgs() {
+        if (imprimacionArray[0])
+          totalKgs +=
+            imprimacionArray[0].qty *
+            Number(imprimacionArray[0].name.split(" ")[1].split("Kg")[0]);
+        if (imprimacionArray[1])
+          totalKgs +=
+            imprimacionArray[1].qty *
+            Number(imprimacionArray[1].name.split(" ")[1].split("Kg")[0]);
+        if (layersArray[0])
+          totalKgs +=
+            layersArray[0].qty *
+            Number(layersArray[0].name.split(" ")[1].split("Kg")[0]);
+        if (layersArray[1])
+          totalKgs +=
+            layersArray[1].qty *
+            Number(layersArray[1].name.split(" ")[1].split("Kg")[0]);
+        let addDisolventeWeigth = litersOfDisolvente;
+        if (AREA / 100 < litersOfDisolvente && litersOfDisolvente > 2) {
+          addDisolventeWeigth = Math.floor(AREA / 100);
+        }
+        totalKgs += addDisolventeWeigth;
+      }
+
+      function calculateImprimacionArray() {
+        if (!MANOS.includes("imprimacion") || RESINA == "acrilica") return [];
+
+        let thisAmountOfKgs = imprimacionArray[1].name
+          .split(" ")[1]
+          .split("s")[0];
+        console.warn(
+          imprimacionArray[1],
+          priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs]
+        );
+        toReturnArray = toReturnArray.concat(imprimacionArray);
+        pinturasTotal +=
+          imprimacionArray[0].qty *
+          priceObject["epoxi"]["imprimacion"]["Incoloro"]["30Kg"];
+        if (
+          imprimacionArray[1] &&
+          priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs]
+        ) {
+          pinturasTotal +=
+            imprimacionArray[1].qty *
+            priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs];
+        }
+        console.log("pinturas total after imprimacion", pinturasTotal);
+      }
+
+      function calculateLayersArray() {
+        if (!MANOS.includes("mano") && RESINA !== "acrilica") return [];
+
+        toReturnArray = toReturnArray.concat(layersArray);
 
         let thisColor = {
           "Gris Claro": "Gris",
           "Gris Medio": "Gris",
           "Gris Oscuro": "Gris",
-          "Antracita": "Negro",
-          "Blanco": "Blanco",
+          Antracita: "Negro",
+          Blanco: "Blanco",
           "Rojo Óxido": "Rojo granate",
-          "Crema": "Crema",
+          Crema: "Crema",
           "Amarillo Tráfico": "Amarillo",
-          "Ocre": "Crema",
-          "Negro": "Negro",
+          Ocre: "Crema",
+          Negro: "Negro",
           "Azul Acero": "Azul",
           "Verde Bosque": "Verde",
         };
 
         const MAX_BARREL_SIZE = {
-          "acrilica": "20Kg",
-          "epoxi":"30Kg"
-        }
+          politop: "20Kg",
+          acrilica: "20Kg",
+          epoxi: "30Kg",
+        };
 
         let priceObjectBrillo =
-          RESINA !== "acrilica"
+          RESINA == "epoxi"
             ? priceObject[RESINA][BRILLO]
             : priceObject[RESINA];
 
@@ -3408,18 +3705,22 @@ console.log(layersArray)
           layersArray[0].qty *
           priceObjectBrillo[thisColor[COLOR]][MAX_BARREL_SIZE[RESINA]];
 
-          let thisAmountOfKgs = layersArray[1] ? layersArray[1].name.split(" ")[1].split("s")[0] : false
+        let thisAmountOfKgs = layersArray[1]
+          ? layersArray[1].name.split(" ")[1].split("s")[0]
+          : false;
         if (
-          layersArray[1] && thisAmountOfKgs &&
+          layersArray[1] &&
+          thisAmountOfKgs &&
           priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs]
         ) {
           pinturasTotal +=
-            layersArray[1].qty * priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs];
+            layersArray[1].qty *
+            priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs];
         }
       }
-      calculateImprimacionArray()
-      calculateLayersArray()
-      pinturasTotal = (pinturasTotal*DESCUENTO/100).toFixed(2)
+      calculateImprimacionArray();
+      calculateLayersArray();
+      pinturasTotal = ((pinturasTotal * DESCUENTO) / 100).toFixed(2);
       return toReturnArray;
     }
 
@@ -3431,27 +3732,34 @@ console.log(layersArray)
     <ul class="tableoptions">
       ${pinturasElements
         .map((element) =>
-          element.qty ? `<li>${element.name} x ${element.qty}</li>` : ""
+          element.qty ? "<li>"+element.name+" x "+ element.qty +"</li>" : ""
         )
         .join("")}
     </ul>
   </p>
   `;
-  return pinturasTotal
+    return pinturasTotal;
   }
   function createTableDisolvente() {
-
-    const AREA = localStorage.getItem("Area")
+    const AREA = localStorage.getItem("Area");
     const tableDisolvente = document.getElementById("tabledisolvente");
-    const RUGOSO = localStorage.getItem("Rugoso")
+    const RUGOSO = localStorage.getItem("Rugoso");
 
-    if(AREA/100<litersOfDisolvente && litersOfDisolvente>2) {litersOfDisolvente = Math.floor(AREA/100)}
-    if(RUGOSO && RUGOSO=="Quiero que siga rugoso") {
-      console.log("litersOfDisolvente actualizados por ser muy rugoso", litersOfDisolvente)
-      litersOfDisolvente=litersOfDisolvente*2
+    if (AREA / 100 < litersOfDisolvente && litersOfDisolvente > 2) {
+      litersOfDisolvente = Math.floor(AREA / 100);
+    }
+    if (RUGOSO && RUGOSO == "Quiero que siga rugoso") {
+      console.log(
+        "litersOfDisolvente actualizados por ser muy rugoso",
+        litersOfDisolvente
+      );
+      litersOfDisolvente = litersOfDisolvente * 2;
     }
 
-    let priceDisolvente = (DISOLVENTE_PRICE * Math.ceil(litersOfDisolvente/2)/2).toFixed(2)
+    let priceDisolvente = (
+      (DISOLVENTE_PRICE * Math.ceil(litersOfDisolvente / 2)) /
+      2
+    ).toFixed(2);
 
     tableDisolvente.innerHTML = `
           <p>disolvente
@@ -3459,29 +3767,41 @@ console.log(layersArray)
               <sub></sub>
             </span>   
             <ul class="tableoptions">
-              <li>Disolvente 2L x ${Math.ceil(litersOfDisolvente/2)}</li>
+              <li>Disolvente 2L x ${Math.ceil(litersOfDisolvente / 2)}</li>
             </ul>
          </p>
   `;
-  return priceDisolvente
+    return priceDisolvente;
   }
   function createTableHerramientas() {
+    const RESINA = localStorage.getItem("Resina");
     const tableHerramientas = document.getElementById("tableherramientas");
     let thisTableTotal = 0;
     const HERRAMIENTAS_PRICES = {
-      "Brochas":6.5,
-      "Cubos":1.5,
-      "Rodillos":8.25,
-      "Balanza": 16
-    }
+      Brochas: 6.5,
+      Cubos: 1.5,
+      Rodillos: 8.25,
+      Balanza: 16,
+      "Rodillos pelo largo": 12,
+    };
     //0 si el pedido es de mas de 200€
     function showElement(element) {
-      if(element="Balanza" && RESINA!=="epoxi"){
-        return `<li>${element} no necesaria</li>`
-      }
-      else if (localStorage.getItem(element) > 0) {
-        thisTableTotal += localStorage.getItem(element) * HERRAMIENTAS_PRICES[element];
+      console.log("elemento", localStorage.getItem(element), element);
+      if ((element == "Balanza" && RESINA !== "epoxi")) {
+        return `<li>${element} no necesaria</li>`;
+      } else if (localStorage.getItem(element) > 0) {
+        console.log(
+          "triplete",
+          localStorage.getItem(element),
+          HERRAMIENTAS_PRICES[element],
+          thisTableTotal
+        );
+        thisTableTotal +=
+          localStorage.getItem(element) * HERRAMIENTAS_PRICES[element];
+
         return `<li>${element} x ${localStorage.getItem(element)}</li>`;
+      } else {
+        return "";
       }
     }
 
@@ -3490,11 +3810,11 @@ console.log(layersArray)
     ${showElement("Cubos")}
     ${showElement("Rodillos")}
     ${showElement("Balanza")}
-    ${showElement("Rodillo pelo largo")}`;
+    ${showElement("Rodillos pelo largo")}`;
 
     tableHerramientas.innerHTML = `
     <p>Herramientas
-    <span class="tableprice">${(thisTableTotal/2).toFixed(2)}€
+    <span class="tableprice">${(thisTableTotal / 2).toFixed(2)}€
       <sub></sub>
     </span>   
     <ul class="tableoptions">
@@ -3503,16 +3823,21 @@ console.log(layersArray)
   </p>
     `;
 
-    return (thisTableTotal/2).toFixed(2)
+    return (thisTableTotal / 2).toFixed(2);
   }
 
-  function createTableFinalPrice(){
-    const priceTable = document.getElementById("tabletotal")
-    const portesPrice = Number((PER_KG_PRICE_TRANPORT*totalKgs>17 ? PER_KG_PRICE_TRANPORT*totalKgs : 17).toFixed(2))
-    const TAX = Number((0.21*(finalPriceNoTax+portesPrice)).toFixed(2))
+  function createTableFinalPrice() {
+    const priceTable = document.getElementById("tabletotal");
+    const portesPrice = Number(
+      (PER_KG_PRICE_TRANPORT * totalKgs > 17
+        ? PER_KG_PRICE_TRANPORT * totalKgs
+        : 17
+      ).toFixed(2)
+    );
+    const TAX = Number((0.21 * (finalPriceNoTax + portesPrice)).toFixed(2));
 
-    const finalPrice = (TAX+ finalPriceNoTax+portesPrice).toFixed(2)
-    priceTable.innerHTML=`
+    const finalPrice = (TAX + finalPriceNoTax + portesPrice).toFixed(2);
+    priceTable.innerHTML = `
     <p>
       <ul class="tableoptions">
         <li class="priceandtag"><span>portes</span> <span>${portesPrice}€</span></li>
@@ -3523,108 +3848,6 @@ console.log(layersArray)
           <sub></sub>
         </span>   
     </p>
-    `
-  }
-  
-}
-
-
-
-function showPopUp(){
-  let popUp = document.getElementById("popup")
-  let email = document.getElementById("email")
-  popUp.classList.add("appear");
-  email.classList.add("expand");
-
-}
-
-window.addEventListener('keydown', maybeShowPopUp, false)
-
-function maybeShowPopUp(e){
-  if(e.keyCode=="13") showPopUp()
-
-  if(e.keyCode=="70") closePopUp()
-}
-
-function closePopUp(e){
-  document.getElementById("email").classList.remove('expand');event.stopPropagation();
-  document.getElementById("popup").classList.remove('appear');event.stopPropagation();
-}
-
-function showContactPopUp(){
-  
-  const prevPopUpMessage = document.getElementById("popupmessage")
-  reloadElement(prevPopUpMessage)
-  const popUpMessage = document.getElementById("popupmessage")
-
-  popUpMessage.innerHTML=`
-    <p>La selección que acaba de realizar necesita que la evalúe nuestro equipo de soporte, contacte con nosotros por whatsapp y envienos una foto de su suelo para darle la mejor opción.</p>
-    <div class="emailbuttonarea" id="popupbuttonarea">
-      <button id="contactarbutton">Contactar</button>
-      <button id="cerrarpopup">Volver</button>
-    </div> 
-    `
-  showPopUp()
-
-  document.getElementById("contactarbutton").addEventListener('click', getContactarText, false)
-  document.getElementById("cerrarpopup").addEventListener('click', closePopUp, false)
-}
-
-
-function getContactarText(){
-  
-  const prevPopUpMessage = document.getElementById("popupmessage")
-  reloadElement(prevPopUpMessage)
-  const popUpMessage = document.getElementById("popupmessage")
-
-  popUpMessage.innerHTML=`
-  <p><a href="wa.me/34682312307">Telefono/Whatsapp: 628042210</a></p>
-  <div class="emailbuttonarea" id="popupbuttonarea">
-  <button id="cerrarpopup">Volver</button>
-  </div> 
-  `
-  document.getElementById("cerrarpopup").addEventListener('click', closePopUp, false)
-}
-
-
-function showCustomPopUp(title, message, buttons){
-  
-  //buttons is an array of objects [{id:X, text:YYY, function: ZZZ},{id:X, text:YYY, function: ZZZ}]
-
-  const prevPopUpMessage = document.getElementById("popupmessage")
-  reloadElement(prevPopUpMessage)
-  const popUpMessage = document.getElementById("popupmessage")
-
-  popUpMessage.parentElement.firstElementChild.firstElementChild.innerHTML=title
-
-  popUpMessage.innerHTML=`
-  <p>${message}</p>
-  <div class="emailbuttonarea" id="popupbuttonarea">
-    ${buttons.map(button=>`<button id="${button.id}">${button.text}</button>`).join("")}
-  </div> 
-  `
-  showPopUp()
-  for(let i=0; i<buttons.length; i++){
-    document.getElementById(buttons[i].id).addEventListener('click', buttons[i].function, false)
+    `;
   }
 }
-
-function startOver(relativePath) {
-  localStorage.removeItem("floorType");
-  localStorage.removeItem("Desperfectos");
-  localStorage.removeItem("Manos");
-  localStorage.removeItem("floorMaterial");
-  localStorage.removeItem("Rugoso");
-  localStorage.removeItem("Cubos");
-  localStorage.removeItem("Rodillos");
-  localStorage.removeItem("Rodillos pelo largo")
-  localStorage.removeItem("Balanza");
-  localStorage.removeItem("Brochas");
-  localStorage.removeItem("Resina");
-  localStorage.removeItem("Brillo");
-  localStorage.removeItem("Area");
-  localStorage.removeItem("Color");
-  window.location.href = `${relativePath}`;
-}
-//showCustomPopUp("mytitle", "it works baby", [VOLVER_BUTTON])
-//find a way to add forbidden o callus to div to the <a> tag
