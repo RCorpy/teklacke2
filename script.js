@@ -3187,10 +3187,17 @@ function loadYaPintadoPresupuestoPicker() {
 
 function loadResinaPicker() {
   const FLOOR_MATERIAL = localStorage.getItem("floorMaterial");
+  const FLOOR_TYPE = localStorage.getItem("floorType")
 
-  const hasAcrilica =
+  let hasAcrilica =
     FLOOR_MATERIAL !== "Baldosa" && FLOOR_MATERIAL !== "Terrazo";
-
+  let hasEpoxi =true
+  let hasPolitop = false
+  if(FLOOR_TYPE=="Patio Colegio"){
+    hasAcrilica=true
+    hasEpoxi=false
+    hasPolitop=false
+  }
   const acrilicaDiv = `    <div class="resinaoption" id="acrilica">
   <h3>ACRILICA MONOCOMPONENTE</h3>
   <p>No aguanta manchas ni la presión de ruedas. </p>
@@ -3198,14 +3205,23 @@ function loadResinaPicker() {
   <p>de un garaje, nave o taller.</p>
 </div>`;
 
+  const epoxiDiv = `    <div class="resinaoption" id="epoxi">
+  <h3>EPOXI 100% SOLIDOS</h3>
+  <p>Epoxi bicomponente pura, calidad profesional.</p>
+  <p>se diluye con disolvente.  <b>(Recomendada)</b></p>
+</div>`
+
+  const politopDiv = `    <div class="resinaoption" id="politop">
+<h3>POLITOP</h3>
+<p>bli bla blu blo ble</p>
+<p>se diluye con disolvente.  </p>
+</div>`
+
   document.getElementById("buttonarea").innerHTML = `
   <div class="resinapicker">
-    <div class="resinaoption" id="epoxi">
-      <h3>EPOXI 100% SOLIDOS</h3>
-      <p>Epoxi bicomponente pura, calidad profesional.</p>
-      <p>se diluye con disolvente.  <b>(Recomendada)</b></p>
-    </div>
+  ${hasEpoxi ? epoxiDiv : ""}
   ${hasAcrilica ? acrilicaDiv : ""}
+  ${hasPolitop ? politopDiv : ""}
   </div>`;
 
   function setAndContinue(id) {
@@ -3782,7 +3798,7 @@ function loadFinalResult() {
       Cubos: 1.5,
       Rodillos: 8.25,
       Balanza: 16,
-      "Rodillos pelo largo": 12,
+      "Rodillos pelo largo":12,
     };
     //0 si el pedido es de mas de 200€
     function showElement(element) {
