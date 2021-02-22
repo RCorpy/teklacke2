@@ -1012,6 +1012,10 @@ body {
   background-size: contain;
 }
 
+.section-header{
+  display: none;
+}
+
 @media only screen and (max-height: 700px){
   .homeoption{
     border: 1px rgba(128,128,128, 0.5) solid;
@@ -1038,4 +1042,18 @@ body {
     border-left: 0;
     border-right: 0;
   }
+}
+.main-content {
+  opacity: 1; }
+
+.site-header{
+  display:none;
+}
+
+.menu > a {
+	color:blue;
+}
+
+.menu > div >p {
+	color:blue;
 }
