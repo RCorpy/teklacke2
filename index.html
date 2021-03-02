@@ -11,15 +11,15 @@
   </head>
   <body>
     <div class="page" id="page">
+      <a class="tiendahomehomelink" href="/"></a>
       <div class="interactive" id="interactive">
-        <a class="tiendahomehomelink" href="/"></a>
         <div class="backgroundimage">
           <img
-            src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/elegir-pintura-suelo-opciones.jpg?v=1613671411"
+            src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/tienda-pintura-suelo-home.jpg?v=1613671341"
             alt="background"
           />
         </div>
-        <div class="slider" id="slider">
+        <div class="slider homeslider">
           <div class="slide" id="slider">
             <img
               src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/HOME-SUELO-PARKING-HS.jpg?v=1612267813"
@@ -106,65 +106,50 @@
           </div>
         </div>
         <div class="changeablecontent">
-          <div class="question part1" id="question1">
-            ¿QUÉ SUELO QUIERE USTED
-          </div>
-          <div class="question part2" id="question2">PINTAR?</div>
-          <div class="buttonarea" id="buttonarea">
-            <div class="leftside side">
-              <a><div class="option">Garaje</div></a>
-              <a><div class="option">Almacén</div></a>
-              <a><div class="option">Nave Alimentación</div></a>
-              <a><div class="option">Cocina Industrial</div></a>
-              <a><div class="option">Suelo vivienda</div></a>
-              <a><div class="option">Supermercado</div></a>
-              <a><div class="option">Terraza</div></a>
+          <div class="homequestion">¿SABE QUÉ TIPO DE PINTURA</div>
+          <div class="homequestion">FUNCIONARÁ MEJOR EN SU SUELO?</div>
+          <div class="homeoption" id="gotostore">
+            <div class="homeoptiontitle">SI, LLEVAME A LA TIENDA</div>
+            <div>
+              <p class="homeoptionparagraph">
+                Compre una cantidad determinada de resina o pintura
+              </p>
+              <p class="homeoptionparagraph">
+                para suelos si sabe lo que necesita (pinche aquí)
+              </p>
             </div>
-            <div class="rightside side">
-              <a><div class="option">Nave Industrial</div></a>
-              <a><div class="option">Taller Mecánico</div></a>
-              <a><div class="option">Parking</div></a>
-              <a><div class="option">Suelo Exterior</div></a>
-              <a><div class="option">Suelo Perrera</div></a>
-              <a><div class="option">Patio Colegio</div></a>
-              <a><div class="option">Trasteros</div></a>
-            </div>
+            <img
+            class="homeoptionemoji"
+            src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/shopping-cart-304843_640.png?v=1612267479"
+          />
           </div>
-          <div class="menu">
-            <a id="back">Atras</a>
-            <div><p>
+          <div class="homeoption" id="gotooptioneer">
+            <div class="homeoptiontitle">NO ESTOY SEGURO, ¡AYÚDAME!</div>
+            <div>
+              <p class="homeoptionparagraph">
+                Elija esta opción si no sabe con certeza lo que
+              </p>
+              <p class="homeoptionparagraph">
+                necesita para pintar su suelo (pinche aquí)
+              </p>
+            </div>
+            <img
+            class="homeoptionemoji"
+            src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/gear-2935358_640.png?v=1612267479"
+          />
+          </div>
+          <div class="homemenu">
+            <p>
               PINCHE EN UNA OPCIÓN PARA
             </p>
             <p>
               CONTINUAR
-            </p></div>
-            <a id="gotohome" href="/">Inicio</a>
-            
-          </div>
-        </div>
-      </div>
-      <div class="popup" id="popup">
-        <div class="email" id="email" onclick="this.classList.add('expand')">
-          <div class="from">
-
-          </div>
-          <div class="to">
-            <div class="to-contents">
-              <div class="top">
-                <div class="name-large">Reymon te Avisa</div>
-              </div>
-            <div class="popupmessage" id="popupmessage">
-              <p>La selección de X es incompatible con Y, use el boton de "Atras" para cambiar X o modifique su selección de Y</p>
-              <div class="emailbuttonarea" id="popupbuttonarea">
-                <button>here</button>
-                <button>here</button>
-              </div> 
-            </div>
-            </div>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </body>
-  <script src="script.js"></script>
+  <script src="homescript.js"></script>
+  
 </html>

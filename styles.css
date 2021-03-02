@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
 @-webkit-keyframes animation {
   from {
     opacity: 0;
@@ -18,12 +21,54 @@
   }
 }
 
+
+
+/* BORRAR LUEGO*/
+/*
+.page{
+	height: 100vh;
+  	width: auto;
+}
+.myheader{
+ 	height: 100vh; 
+}
+
+.myheader img{
+	height: 100%;
+    width: auto;
+}
+
+.page > p{
+  position: absolute;
+}
+
+*/
+/* FIN BORRAR LUEGO */
+
+/*=============== Critical CSS ===================*/
+.main-content {
+  opacity: 1; }
+
+.site-header{display:none;}
+
+.menu > a {
+	color:blue;
+}
+
+.menu > div >p {
+	color:blue;
+}
+
+
+/*---------------------------*/
+
+
 * {
 
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
-  font-size: 2.4vh;
+  font-family: 'Architects Daughter', "Open Sans", sans-serif;
+  font-size: 2.3vh;
 }
 
 
@@ -209,6 +254,12 @@ body {
 }
 
 .homemenu{
+  text-align: center;
+  color: blue;
+  font-weight: 700;
+}
+
+.homemenu >p{
   text-align: center;
   color: blue;
   font-weight: 700;
@@ -416,11 +467,17 @@ body {
 
 .grisoscuro{
   background-color: rgb(53,76,84);
+}
+
+.grisoscuro > p {
   color: white;
 }
 
 .antracita{
   background-color: rgb(25,39,40);
+}
+
+.antracita > p {
   color:white;
 }
 
@@ -442,21 +499,32 @@ body {
 
 .negro{
   background-color: rgb(6,10,11);
+}
+
+.negro > p{
   color:white;
 }
 
 .azulacero{
   background-color: rgb(1,85,157);
+}
+
+.azulacero > p{
   color: white;
 }
 
 .rojooxido{
   background-color: rgb(154,2,1);
-  color: white;
 }
 
+.rojooxido > p{
+  color: white;
+}
 .verdebosque{
   background-color: rgb(21,83,44);
+}
+
+.verdebosque >p{
   color: white;
 }
 
@@ -824,6 +892,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
   position: relative;
+  border: 1px solid black;
 
 
 }
@@ -845,11 +914,13 @@ body {
   opacity: 0;
   position: absolute;
   height: 100%;
+  
 }
 .to-contents {
   height: 100%;
   transform: scale(.55);
   transform-origin: 0 0;
+  
 }
 
 .top {
@@ -857,7 +928,7 @@ body {
   display: flex;
   flex-direction: row;
   transition: height 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
-  height: 23%;
+  height: 6vh;
   width: 45vh;
 }
 .avatar-large {
@@ -871,7 +942,7 @@ body {
 .name-large {
   color: white;
   font-size: 2.5vh;
-  line-height: 8vh;
+  line-height: 6vh;
   text-align: center;
   width: 100%;
 }
@@ -921,10 +992,19 @@ body {
 .email.expand {
   z-index: 0;
   border-radius: 6px;
-  box-shadow: 0 10px 2.9vh rgba(0,0,0,0.10), 0 6px 6px rgba(0,0,0,0.16);
+  
+  height: 60vh;
+  width: 45vh;
+}
+
+.email.expand:not(.withimage) {
+  z-index: 0;
+  border-radius: 6px;
+  
   height: 35vh;
   width: 45vh;
 }
+
 .expand .from {
   opacity: 0;
   transition: opacity 100ms cubic-bezier(0.4, 0.0, 1, 1);
@@ -962,6 +1042,7 @@ body {
   height: 77%;
   display: flex;
   flex-direction: column;
+
 }
 
 .popupmessage p{
@@ -1052,8 +1133,120 @@ body {
 
 .menu > a {
 	color:blue;
+  cursor: pointer;
 }
 
 .menu > div >p {
 	color:blue;
 }
+
+.tiendahomecontent{
+  position: absolute;
+  top: 10vh;
+  width: 56vh;
+  height: 79vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: darkblue;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.tiendahomecontent > p{
+  font-size: 2.2vh;
+  text-align: center;
+  margin-bottom: 1vh;
+  color: darkblue;
+}
+.tiendahomerow{
+  height: 26vh;
+  display: flex;
+  justify-content: space-around;
+  color: darkblue;
+}
+
+.tiendahomerow a{
+  width: 50%;
+  height: 100%;
+  color: darkblue;
+  font-family: 'Architects Daughter', serif;
+  color: darkblue;
+
+}
+.tiendahomeproduct{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: darkblue;
+}
+
+.tiendahomeproduct p{
+  text-align: center;
+  color: darkblue;
+}
+
+.tiendahomeproduct img{
+  width: 70%;
+  height: auto;
+}
+
+.tiendahomehomelink{
+  position:absolute;
+  top:0;
+  width: 56vh;
+  height: 10vh;
+}
+
+.tiendahomeoptioneerlink{
+  position:absolute;
+  width: 56vh;
+  bottom: 0vh;
+  height: 10vh;
+}
+
+.infobutton{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3vh;
+  height: 3vh;
+  margin: 1vh;
+}
+
+.infodiv{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom{
+  position: relative;
+}
+
+.infobutton > img {
+  width: 100%;
+  height: 100%;
+}
+
+.popupmessage > img {
+
+  
+  width: 100%;
+}
+
+.withimageimg{
+  height: 35vh;
+}
+
+.withimagep{
+  height:16vh;
+}
+
+.withimagebuttonarea{
+  height:10vh;
+}
+

@@ -9,6 +9,12 @@ const VOLVER_BUTTON = {
   function: closePopUp,
 };
 
+const RESINAS_TABLE_NAMES = {
+  "Epoxi": "Enepoxi HS100",
+  "Acrilica": "Enekril",
+  "Politop": "Politop"
+}
+
 const stepOptions = {
   0: {
     left: [
@@ -294,7 +300,7 @@ const stepOptions = {
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
         },
         {
-          name: "Gris Antártica",
+          name: "Gris Antracita",
           url:
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
         },
@@ -592,7 +598,7 @@ const stepOptions = {
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
         },
         {
-          name: "Gris Antártica",
+          name: "Gris Antracita",
           url:
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
         },
@@ -848,7 +854,7 @@ const stepOptions = {
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
         },
         {
-          name: "Gris Antártica",
+          name: "Gris Antracita",
           url:
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
         },
@@ -1127,7 +1133,7 @@ const stepOptions = {
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
         },
         {
-          name: "Gris Antártica",
+          name: "Gris Antracita",
           url:
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
         },
@@ -1253,19 +1259,14 @@ const stepOptions = {
       question2: "LAS JUNTAS?",
       slides: [
         {
-          name: "Muchos Desperfectos",
+          name: "Con Juntas",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/terrazo-pintado-con-juntas.jpg?v=1614610976",
         },
         {
-          name: "Pocos Desperfectos",
+          name: "Sin Juntas",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
-        },
-        {
-          name: "Sin Desperfectos",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/terrazo-pintado-sin-juntas.jpg?v=1614610976",
         },
       ],
       variableName: "Juntas",
@@ -1379,7 +1380,7 @@ const stepOptions = {
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
         },
         {
-          name: "Gris Antártica",
+          name: "Gris Antracita",
           url:
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
         },
@@ -1526,24 +1527,19 @@ const stepOptions = {
       variableName: "Huecas",
     },
     3: {
-      middle: ["No", "Si"],
+      middle: ["No", {id:"Si",text: "Si", infobutton: true, function: (myElement) => buttonClickedAt(myElement), infofunction: ()=>showCustomPopUp("INFORMATION", "THIS IS AN INFORMATIVE MESSAGE", [VOLVER_BUTTON], "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/baldosas-pintadas-sin-juntas.jpg?v=1614610988")}],
       question1: "¿QUIERE QUE SE VEAN",
       question2: "LAS JUNTAS?",
       slides: [
         {
-          name: "Muchos Desperfectos",
+          name: "Con Juntas",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-MUCHOS-DESPERFECTOS.jpg?v=1612354485",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/baldosas-pintado-con-juntas.jpg?v=1614610988",
         },
         {
-          name: "Pocos Desperfectos",
+          name: "Sin Juntas",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-CON-POCOS-DESPERFECTOS.jpg?v=1612354485",
-        },
-        {
-          name: "Sin Desperfectos",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/DESPERFECTOS-SUELO-SIN-DESPERFECTOS.jpg?v=1612354485",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/baldosas-pintadas-sin-juntas.jpg?v=1614610988",
         },
       ],
       variableName: "Juntas",
@@ -1657,7 +1653,7 @@ const stepOptions = {
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-NEGRO-SLIDE.jpg?v=1612354971",
         },
         {
-          name: "Gris Antártica",
+          name: "Gris Antracita",
           url:
             "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/COLOR-GRIS-ANTRACITA-SLIDE.jpg?v=1612354971",
         },
@@ -1782,53 +1778,53 @@ const priceObject = {
   epoxi: {
     imprimacion: {
       Incoloro: {
-        "6Kg": 89.568,
-        "12Kg": 144.96,
-        "18Kg": 207.72,
-        "24Kg": 276.96,
-        "30Kg": 339.2,
+        "6Kg": 94.05,
+        "12Kg": 152.20,
+        "18Kg": 218.10,
+        "24Kg": 290.80,
+        "30Kg": 356.16
       },
       Gris: {
-        "6Kg": 91.872,
-        "12Kg": 148.8,
-        "18Kg": 213.48,
-        "24Kg": 284.64,
-        "30Kg": 348.8,
+        "6Kg": 96.46559999999998,
+        "12Kg": 156.24,
+        "18Kg": 224.154,
+        "24Kg": 298.872,
+        "30Kg": 366.24
       },
       Azul: {
-        "6Kg": 96.48,
-        "12Kg": 156.48,
-        "18Kg": 225,
-        "24Kg": 300,
-        "30Kg": 368,
+        "6Kg": 101.304,
+        "12Kg": 164.304,
+        "18Kg": 236.25,
+        "24Kg": 315,
+        "30Kg": 386.40000000000003
       },
       "Rojo granate": {
-        "6Kg": 96.48,
-        "12Kg": 156.48,
-        "18Kg": 225,
-        "24Kg": 300,
-        "30Kg": 368,
+        "6Kg": 101.304,
+        "12Kg": 164.304,
+        "18Kg": 236.25,
+        "24Kg": 315,
+        "30Kg": 386.40000000000003
       },
       Verde: {
-        "6Kg": 112.32,
-        "12Kg": 182.88,
-        "18Kg": 264.6,
-        "24Kg": 352.8,
-        "30Kg": 434,
+        "6Kg": 117.93599999999999,
+        "12Kg": 192.024,
+        "18Kg": 277.83,
+        "24Kg": 370.44,
+        "30Kg": 455.70000000000005
       },
       Amarillo: {
-        "6Kg": 207.36,
-        "12Kg": 341.28,
-        "18Kg": 502.2,
-        "24Kg": 669.6,
-        "30Kg": 830,
+        "6Kg": 217.72800000000004,
+        "12Kg": 358.344,
+        "18Kg": 527.31,
+        "24Kg": 703.0799999999999,
+        "30Kg": 871.5
       },
       Crema: {
-        "6Kg": 91.872,
-        "12Kg": 148.8,
-        "18Kg": 213.48,
-        "24Kg": 284.64,
-        "30Kg": 348.8,
+        "6Kg": 96.46559999999998,
+        "12Kg": 156.24,
+        "18Kg": 224.154,
+        "24Kg": 298.872,
+        "30Kg": 366.24
       },
       Blanco: {
         "6Kg": 91.872,
@@ -1838,215 +1834,216 @@ const priceObject = {
         "30Kg": 348.8,
       },
       Negro: {
-        "6Kg": 91.872,
-        "12Kg": 148.8,
-        "18Kg": 213.48,
-        "24Kg": 284.64,
-        "30Kg": 348.8,
+        "6Kg": 96.46559999999998,
+        "12Kg": 156.24,
+        "18Kg": 224.154,
+        "24Kg": 298.872,
+        "30Kg": 366.24
       },
       "Rojo Ferrari": {
-        "6Kg": 112.32,
-        "12Kg": 182.88,
-        "18Kg": 264.6,
-        "24Kg": 352.8,
-        "30Kg": 434,
+        "6Kg": 117.93599999999999,
+        "12Kg": 192.024,
+        "18Kg": 277.83,
+        "24Kg": 370.44,
+        "30Kg": 455.70000000000005
       },
     },
     Brillo: {
-      notes: "Catalizador 5 a 1",
       Gris: {
-        "6Kg": 96.912,
-        "12Kg": 157.2,
-        "18Kg": 226.08,
-        "24Kg": 301.44,
-        "30Kg": 369.8,
+        "6Kg": 107.42399999999999,
+        "12Kg": 174.72,
+        "18Kg": 252.35999999999999,
+        "24Kg": 336.47999999999996,
+        "30Kg": 413.6
       },
       Azul: {
-        "6Kg": 103.104,
-        "12Kg": 167.52,
-        "18Kg": 241.56,
-        "24Kg": 322.08,
-        "30Kg": 395.6,
+        "6Kg": 110.87999999999998,
+        "12Kg": 180.48,
+        "18Kg": 261,
+        "24Kg": 348,
+        "30Kg": 428
       },
       "Rojo granate": {
-        "6Kg": 96.912,
-        "12Kg": 157.2,
-        "18Kg": 226.08,
-        "24Kg": 301.44,
-        "30Kg": 369.8,
+        "6Kg": 110.87999999999998,
+        "12Kg": 180.48,
+        "18Kg": 261,
+        "24Kg": 348,
+        "30Kg": 428
       },
       Verde: {
-        "6Kg": 122.112,
-        "12Kg": 199.2,
-        "18Kg": 289.08,
-        "24Kg": 385.44,
-        "30Kg": 474.8,
+        "6Kg": 136.224,
+        "12Kg": 222.72,
+        "18Kg": 324.36,
+        "24Kg": 432.47999999999996,
+        "30Kg": 533.6
       },
       Amarillo: {
-        "6Kg": 207.36,
+        "6Kg": 207.35999999999999,
         "12Kg": 341.28,
         "18Kg": 502.2,
         "24Kg": 669.6,
-        "30Kg": 830,
+        "30Kg": 830
       },
       Crema: {
-        "6Kg": 96.912,
-        "12Kg": 157.2,
-        "18Kg": 226.08,
-        "24Kg": 301.44,
-        "30Kg": 369.8,
+        "6Kg": 107.42399999999999,
+        "12Kg": 174.72,
+        "18Kg": 252.35999999999999,
+        "24Kg": 336.47999999999996,
+        "30Kg": 413.6
       },
       Blanco: {
-        "6Kg": 96.912,
-        "12Kg": 157.2,
-        "18Kg": 226.08,
-        "24Kg": 301.44,
-        "30Kg": 369.8,
+        "6Kg": 107.42399999999999,
+        "12Kg": 174.72,
+        "18Kg": 252.35999999999999,
+        "24Kg": 336.47999999999996,
+        "30Kg": 413.6
       },
       Negro: {
-        "6Kg": 96.912,
-        "12Kg": 157.2,
-        "18Kg": 226.08,
-        "24Kg": 301.44,
-        "30Kg": 369.8,
+        "6Kg": 107.42399999999999,
+        "12Kg": 174.72,
+        "18Kg": 252.35999999999999,
+        "24Kg": 336.47999999999996,
+        "30Kg": 413.6
       },
       "Rojo Ferrari": {
-        "6Kg": 122.112,
-        "12Kg": 199.2,
-        "18Kg": 289.08,
-        "24Kg": 385.44,
-        "30Kg": 474.8,
-      },
+        "6Kg": 136.79999999999998,
+        "12Kg": 223.68,
+        "18Kg": 325.8,
+        "24Kg": 434.4,
+        "30Kg": 536
+      }
     },
     Mate: {
-      notes: "Catalizador 10 a 1",
       Gris: {
-        "6Kg": 111.312,
-        "12Kg": 181.2,
-        "18Kg": 262.08,
-        "24Kg": 349.44,
-        "30Kg": 429.8,
+        "6Kg": 121.82399999999998,
+        "12Kg": 198.72,
+        "18Kg": 288.36,
+        "24Kg": 384.47999999999996,
+        "30Kg": 473.6
       },
       Azul: {
-        "6Kg": 117.504,
-        "12Kg": 191.52,
-        "18Kg": 277.56,
-        "24Kg": 370.08,
-        "30Kg": 455.6,
+        "6Kg": 125.27999999999999,
+        "12Kg": 204.48,
+        "18Kg": 297,
+        "24Kg": 396,
+        "30Kg": 488
       },
       "Rojo granate": {
-        "6Kg": 111.312,
-        "12Kg": 181.2,
-        "18Kg": 262.08,
-        "24Kg": 349.44,
-        "30Kg": 429.8,
+        "6Kg": 125.27999999999999,
+        "12Kg": 204.48,
+        "18Kg": 297,
+        "24Kg": 396,
+        "30Kg": 488
       },
       Verde: {
-        "6Kg": 136.512,
-        "12Kg": 223.2,
-        "18Kg": 325.08,
-        "24Kg": 433.44,
-        "30Kg": 534.8,
+        "6Kg": 150.62399999999997,
+        "12Kg": 246.71999999999997,
+        "18Kg": 360.36,
+        "24Kg": 480.47999999999996,
+        "30Kg": 593.6
       },
       Amarillo: {
-        "6Kg": 221.76,
+        "6Kg": 221.75999999999996,
         "12Kg": 365.28,
-        "18Kg": 538.2,
+        "18Kg": 538.1999999999999,
         "24Kg": 717.6,
-        "30Kg": 890,
+        "30Kg": 890
       },
       Crema: {
-        "6Kg": 111.312,
-        "12Kg": 181.2,
-        "18Kg": 262.08,
-        "24Kg": 349.44,
-        "30Kg": 429.8,
+        "6Kg": 121.82399999999998,
+        "12Kg": 198.72,
+        "18Kg": 288.36,
+        "24Kg": 384.47999999999996,
+        "30Kg": 473.6
       },
       Blanco: {
-        "6Kg": 111.312,
-        "12Kg": 181.2,
-        "18Kg": 262.08,
-        "24Kg": 349.44,
-        "30Kg": 429.8,
+        "6Kg": 121.82399999999998,
+        "12Kg": 198.72,
+        "18Kg": 288.36,
+        "24Kg": 384.47999999999996,
+        "30Kg": 473.6
       },
       Negro: {
-        "6Kg": 111.312,
-        "12Kg": 181.2,
-        "18Kg": 262.08,
-        "24Kg": 349.44,
-        "30Kg": 429.8,
+        "6Kg": 121.82399999999998,
+        "12Kg": 198.72,
+        "18Kg": 288.36,
+        "24Kg": 384.47999999999996,
+        "30Kg": 473.6
       },
       "Rojo Ferrari": {
-        "6Kg": 136.512,
-        "12Kg": 223.2,
-        "18Kg": 325.08,
-        "24Kg": 433.44,
-        "30Kg": 534.8,
-      },
+        "6Kg": 150.62399999999997,
+        "12Kg": 246.71999999999997,
+        "18Kg": 360.36,
+        "24Kg": 480.47999999999996,
+        "30Kg": 593.6
+      }
     },
   },
+
   acrilica: {
+
     Primer: {
-      "5Kg": 37.53,
+      "5Kg": 37.529999999999994,
       "10Kg": 58.797,
       "15Kg": 83.4,
-      "20Kg": 106.335,
+      "20Kg": 106.335
     },
     Gris: {
-      "5Kg": 52.542,
-      "10Kg": 83.817,
-      "15Kg": 120.93,
-      "20Kg": 156.375,
+      "5Kg": 52.541999999999994,
+      "10Kg": 83.81700000000001,
+      "15Kg": 120.92999999999999,
+      "20Kg": 156.375
     },
     Azul: {
       "5Kg": 57.546,
-      "10Kg": 92.157,
+      "10Kg": 92.15700000000001,
       "15Kg": 133.44,
-      "20Kg": 173.055,
+      "20Kg": 173.055
     },
     "Rojo granate": {
-      "5Kg": 78.813,
+      "5Kg": 78.81299999999999,
       "10Kg": 127.602,
       "15Kg": 186.6075,
-      "20Kg": 243.945,
+      "20Kg": 243.945
     },
     Verde: {
       "5Kg": 103.833,
       "10Kg": 169.302,
       "15Kg": 249.1575,
-      "20Kg": 327.345,
+      "20Kg": 327.34499999999997
     },
     Amarillo: {
       "5Kg": 185.148,
       "10Kg": 304.827,
       "15Kg": 452.445,
-      "20Kg": 598.395,
+      "20Kg": 598.395
     },
     Crema: {
       "5Kg": 57.546,
-      "10Kg": 92.157,
+      "10Kg": 92.15700000000001,
       "15Kg": 133.44,
-      "20Kg": 173.055,
+      "20Kg": 173.055
     },
     Blanco: {
       "5Kg": 57.546,
-      "10Kg": 92.157,
+      "10Kg": 92.15700000000001,
       "15Kg": 133.44,
-      "20Kg": 173.055,
+      "20Kg": 173.055
     },
     Negro: {
       "5Kg": 57.546,
-      "10Kg": 92.157,
+      "10Kg": 92.15700000000001,
       "15Kg": 133.44,
-      "20Kg": 173.055,
+      "20Kg": 173.055
     },
     "Rojo Ferrari": {
       "5Kg": 110.088,
       "10Kg": 179.727,
       "15Kg": 264.795,
-      "20Kg": 348.195,
-    },
+      "20Kg": 348.195
+    }
   },
+
   politop: {
     "Incoloro": {
       "5Kg": 87.12,
@@ -2054,13 +2051,13 @@ const priceObject = {
       "15Kg": 206.8,
       "20Kg": 270.6
     },
-    "Gris": {
+    Gris: {
       "5Kg": 98.28,
       "10Kg": 160.02,
-      "15Kg": 235.2,
+      "15Kg": 235.20000000000002,
       "20Kg": 308.7
     },
-    "Azul": {
+    Azul: {
       "5Kg": 123.48,
       "10Kg": 202.02,
       "15Kg": 298.2,
@@ -2072,34 +2069,34 @@ const priceObject = {
       "15Kg": 298.2,
       "20Kg": 392.7
     },
-    "Verde": {
+    Verde: {
       "5Kg": 161.28,
-      "10Kg": 265.02,
+      "10Kg": 265.02000000000004,
       "15Kg": 392.7,
       "20Kg": 518.7
     },
-    "Amarillo": {
+    Amarillo: {
       "5Kg": 211.68,
       "10Kg": 349.02,
       "15Kg": 518.7,
       "20Kg": 686.7
     },
-    "Crema": {
+    Crema: {
       "5Kg": 98.28,
       "10Kg": 160.02,
-      "15Kg": 235.2,
+      "15Kg": 235.20000000000002,
       "20Kg": 308.7
     },
-    "Blanco": {
+    Blanco: {
       "5Kg": 98.28,
       "10Kg": 160.02,
-      "15Kg": 235.2,
+      "15Kg": 235.20000000000002,
       "20Kg": 308.7
     },
-    "Negro": {
+    Negro: {
       "5Kg": 98.28,
       "10Kg": 160.02,
-      "15Kg": 235.2,
+      "15Kg": 235.20000000000002,
       "20Kg": 308.7
     },
     "Rojo Ferrari": {
@@ -2107,8 +2104,14 @@ const priceObject = {
       "10Kg": 202.02,
       "15Kg": 298.2,
       "20Kg": 392.7
+    },
+    Antracita: {
+      "5Kg": 123.48,
+      "10Kg": 202.02,
+      "15Kg": 298.2,
+      "20Kg": 392.7
     }
-  }
+  },
 };
 
 const SLIDE_TIME = 500;
@@ -2153,12 +2156,22 @@ function changeStep() {
         false
       );
     } else if (myElement.parentElement.classList.contains("forbidden")) {
-    } else if (myElement.parentElement.classList.contains("custom")) {
+
+    } else if (myElement.parentElement.classList.contains("custom") || myElement.parentElement.parentElement.classList.contains("custom")) {
+      if(myElement.parentElement.firstChild.classList.contains("infobutton")){
+        myElement.parentElement.firstChild.addEventListener('click', (e)=>{
+          e.stopPropagation()
+          thisStepOptions[i].infofunction()
+        }, false)
+      }
+
       //CUSTOMIZATOR
       const thisStepOptions = stepOptions[floorMaterial][step].middle;
       myElement.parentElement.addEventListener(
         "click",
-        () => thisStepOptions[i].function(),
+        () => {
+          thisStepOptions[i].function(myElement)
+        },
         false
       );
     } else {
@@ -2326,6 +2339,7 @@ function prevStep() {
 
 function buttonClickedAt(myElement) {
   let option = myElement.innerHTML;
+  console.log(option)
   if (step > 1) {
     localStorage.setItem(stepOptions[floorMaterial][step].variableName, option);
   } else if (step == 1) {
@@ -2685,7 +2699,12 @@ function buttonAreaInnerHTMLGenerator() {
                 return `<a><div class="option">${option}</div></a>`;
               }
             } else {
-              return `<a class="custom" id="${option.text}"><div class="option">${option.text}</div></a>`;
+              if(option.infobutton){
+                return `<a class="custom" id="${option.text}"><div class="infodiv"><div class="infobutton"><img src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/INFO-2.png?v=1614685382" /></div><div class="option">${option.text}</div></div></a>`
+              }
+              else{
+                return `<a class="custom" id="${option.text}"><div class="option">${option.text}</div></a>`;
+              }
             }
           })
           .join("") +
@@ -3263,6 +3282,10 @@ function showContactPopUp() {
   reloadElement(prevPopUpMessage);
   const popUpMessage = document.getElementById("popupmessage");
 
+  document.getElementById("email").classList.remove("withimage")
+
+  document.getElementById("email").classList.remove("withimage")
+
   popUpMessage.innerHTML = `
     <p>La selección que acaba de realizar necesita que la evalúe nuestro equipo de soporte, contacte con nosotros por whatsapp y envienos una foto de su suelo para darle la mejor opción.</p>
     <div class="emailbuttonarea" id="popupbuttonarea">
@@ -3285,6 +3308,8 @@ function getContactarText() {
   reloadElement(prevPopUpMessage);
   const popUpMessage = document.getElementById("popupmessage");
 
+  document.getElementById("email").classList.remove("withimage")
+
   popUpMessage.innerHTML = `
   <p><a href="wa.me/34682312307">Telefono/Whatsapp: 628042210</a></p>
   <div class="emailbuttonarea" id="popupbuttonarea">
@@ -3296,22 +3321,36 @@ function getContactarText() {
     .addEventListener("click", closePopUp, false);
 }
 
-function showCustomPopUp(title, message, buttons) {
+function showCustomPopUp(title, message, buttons, images=false) {
   //buttons is an array of objects [{id:X, text:YYY, function: ZZZ},{id:X, text:YYY, function: ZZZ}]
-
+  console.log(images)
   const prevPopUpMessage = document.getElementById("popupmessage");
   reloadElement(prevPopUpMessage);
   const popUpMessage = document.getElementById("popupmessage");
 
   popUpMessage.parentElement.firstElementChild.firstElementChild.innerHTML = title;
 
-  popUpMessage.innerHTML = `
-  <p>${message}</p>
-  <div class="emailbuttonarea" id="popupbuttonarea">
-  ${buttons.map(button=>("<button id='"+button.id+"'>"+button.text+"</button>")).join("")}
-  </div> 
-  `;
-  
+  if(images){
+    document.getElementById("email").classList.add("withimage")
+    popUpMessage.innerHTML = `
+    <img class="withimageimg" src="${images}" />
+    <p class="withimagep">${message}</p>
+    <div class="emailbuttonarea withimagebuttonarea" id="popupbuttonarea">
+    ${buttons.map(button=>("<button id='"+button.id+"'>"+button.text+"</button>")).join("")}
+    </div> 
+    `;
+  }else{
+    document.getElementById("email").classList.remove("withimage")
+    popUpMessage.innerHTML = `
+    <p>${message}</p>
+    <div class="emailbuttonarea" id="popupbuttonarea">
+    ${buttons.map(button=>("<button id='"+button.id+"'>"+button.text+"</button>")).join("")}
+    </div> 
+    `;
+  }
+
+
+
   showPopUp();
   for (let i = 0; i < buttons.length; i++) {
     document
@@ -3427,6 +3466,7 @@ function loadFinalResult() {
   }
   function recoverOptinoneerScreen() {
     document.getElementById("interactive").innerHTML = `
+    <a class="tiendahomehomelink" href="/"></a>
     <div class="backgroundimage">
     <img
       src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/FONDO_GENERAL.jpg?v=1612267903"
@@ -3466,6 +3506,7 @@ function loadFinalResult() {
   function makePurchase() {
     console.log("purchasing");
   }
+
   let totalKgs = 0;
   let litersOfDisolvente = 0;
   const tableTotal = document.getElementById("tabletotal");
@@ -3546,9 +3587,9 @@ function loadFinalResult() {
 
           if (amountOf30KgsKits == 0 && remainderKits == 0) {
             return [
-              { name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`, qty: 0 },
+              { name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimacion`, qty: 0 },
               {
-                name: `Kit ${BARREL_VOLUME_DIFFERENCE}Kgs Imprimación`,
+                name: `Kit ${BARREL_VOLUME_DIFFERENCE}Kgs Imprimacion`,
                 qty: 1,
               },
             ];
@@ -3559,7 +3600,7 @@ function loadFinalResult() {
           if (!remainderKits) {
             return [
               {
-                name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`,
+                name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimacion`,
                 qty: amountOf30KgsKits,
               },
             ];
@@ -3567,10 +3608,10 @@ function loadFinalResult() {
 
           return [
             {
-              name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimación`,
+              name: `Kit ${MAX_BARREL_SIZE}Kgs Imprimacion`,
               qty: amountOf30KgsKits,
             },
-            { name: `Kit ${remainderKits}Kgs Imprimación`, qty: 1 },
+            { name: `Kit ${remainderKits}Kgs Imprimacion`, qty: 1 },
           ];
         } else {
           const AMOUNT_MANOS = MANOS.includes("dosmanos") ? 2 : 1;
@@ -3748,9 +3789,9 @@ function loadFinalResult() {
     <ul class="tableoptions">
       ${pinturasElements
         .map((element) =>
-          element.qty ? "<li>"+element.name+" x "+ element.qty +"</li>" : ""
+          element.qty ? "<li> "+element.name+" x "+ element.qty +"</li>" : ""
         )
-        .join("")}
+        .join("").replaceAll("epoxi", RESINAS_TABLE_NAMES["Epoxi"]).replaceAll("Imprimacion", "Enepoxi HS100 (Imprimación)").replaceAll("acrilica", RESINAS_TABLE_NAMES["Acrilica"]).replaceAll("politop", RESINAS_TABLE_NAMES["Politop"])}
     </ul>
   </p>
   `;
