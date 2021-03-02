@@ -12,8 +12,11 @@ const VOLVER_BUTTON = {
 const RESINAS_TABLE_NAMES = {
   "Epoxi": "Enepoxi HS100",
   "Acrilica": "Enekril",
-  "Politop": "Politop"
+  "Politop": "Politop",
+  "Imprimacion":  "Enepoxi HS100 (Imprimación)"
 }
+
+let cartproductsArray = []
 
 const stepOptions = {
   0: {
@@ -2339,7 +2342,6 @@ function prevStep() {
 
 function buttonClickedAt(myElement) {
   let option = myElement.innerHTML;
-  console.log(option)
   if (step > 1) {
     localStorage.setItem(stepOptions[floorMaterial][step].variableName, option);
   } else if (step == 1) {
@@ -2658,7 +2660,6 @@ function buttonAreaInnerHTMLGenerator() {
         stepOptions[step].question2;
     }
   } else {
-    console.log(step < 2, step);
     if (stepOptions[floorMaterial][step].middle == "area picker") {
       loadAreaPicker();
     } else if (stepOptions[floorMaterial][step].middle == "color picker") {
@@ -3323,7 +3324,6 @@ function getContactarText() {
 
 function showCustomPopUp(title, message, buttons, images=false) {
   //buttons is an array of objects [{id:X, text:YYY, function: ZZZ},{id:X, text:YYY, function: ZZZ}]
-  console.log(images)
   const prevPopUpMessage = document.getElementById("popupmessage");
   reloadElement(prevPopUpMessage);
   const popUpMessage = document.getElementById("popupmessage");
@@ -3531,7 +3531,6 @@ function loadFinalResult() {
       const BRILLO = localStorage.getItem("Brillo");
       const DESPERFECTOS = localStorage.getItem("Desperfectos");
       const RUGOSO = localStorage.getItem("Rugoso");
-      console.log("desperfectos", DESPERFECTOS);
 
       let toReturnArray = [];
 
@@ -3673,9 +3672,11 @@ function loadFinalResult() {
           ];
         }
       }
-
+      cartproductsArray = []
       let imprimacionArray = calculateKits(true);
       let layersArray = calculateKits(false);
+
+      console.log("first", cartproductsArray[0], cartproductsArray)
 
       calculateTotalKgs();
       function calculateTotalKgs() {
@@ -3708,11 +3709,17 @@ function loadFinalResult() {
         let thisAmountOfKgs = imprimacionArray[1].name
           .split(" ")[1]
           .split("s")[0];
-        console.warn(
-          imprimacionArray[1],
-          priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs]
-        );
+
         toReturnArray = toReturnArray.concat(imprimacionArray);
+
+        if(imprimacionArray[0].qty){
+          cartproductsArray.push({
+            name: "imprimacion epoxi 30Kg",
+            price: imprimacionArray[0].qty *
+            priceObject["epoxi"]["imprimacion"]["Incoloro"]["30Kg"],
+            amount: imprimacionArray[0].qty
+        })}
+
         pinturasTotal +=
           imprimacionArray[0].qty *
           priceObject["epoxi"]["imprimacion"]["Incoloro"]["30Kg"];
@@ -3720,11 +3727,20 @@ function loadFinalResult() {
           imprimacionArray[1] &&
           priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs]
         ) {
+
+        if(imprimacionArray[1].qty){
+          cartproductsArray.push({
+            name: `imprimacion epoxi ${thisAmountOfKgs}`,
+            price: imprimacionArray[1].qty *
+            priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs],
+            amount: imprimacionArray[1].qty
+        })}
+
           pinturasTotal +=
             imprimacionArray[1].qty *
             priceObject["epoxi"]["imprimacion"]["Incoloro"][thisAmountOfKgs];
         }
-        console.log("pinturas total after imprimacion", pinturasTotal);
+        //console.log("pinturas total after imprimacion", pinturasTotal);
       }
 
       function calculateLayersArray() {
@@ -3758,6 +3774,12 @@ function loadFinalResult() {
             ? priceObject[RESINA][BRILLO]
             : priceObject[RESINA];
 
+        if(layersArray[0].qty){cartproductsArray.push({
+        name: `HS100 epoxi ${BRILLO} ${MAX_BARREL_SIZE[RESINA]} ${COLOR}`, 
+        price: layersArray[0].qty * priceObjectBrillo[thisColor[COLOR]][MAX_BARREL_SIZE[RESINA]],
+        amount: layersArray[0].qty
+      })}
+
         pinturasTotal +=
           layersArray[0].qty *
           priceObjectBrillo[thisColor[COLOR]][MAX_BARREL_SIZE[RESINA]];
@@ -3770,6 +3792,12 @@ function loadFinalResult() {
           thisAmountOfKgs &&
           priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs]
         ) {
+          if(layersArray[1].qty){cartproductsArray.push({
+            name: `HS100 epoxi ${BRILLO} ${thisAmountOfKgs} ${COLOR}`, 
+            price: layersArray[1].qty * priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs],
+            amount: layersArray[1].qty
+          })}
+
           pinturasTotal +=
             layersArray[1].qty *
             priceObjectBrillo[thisColor[COLOR]][thisAmountOfKgs];
@@ -3781,6 +3809,30 @@ function loadFinalResult() {
       return toReturnArray;
     }
 
+    function getPathToFicha(name){
+      if(name.includes('epoxi')){
+        return
+      }
+      else if(name.includes('Imprimacion')){
+        return
+      }
+      else if(name.includes('acrilica')){
+        return
+      }
+      else if(name.includes('politop')){
+        return
+      }
+      else{
+        return ''
+      }
+    }
+    console.log("second", cartproductsArray[0], cartproductsArray)
+    let index = 0
+
+    function addIndex(){
+      index = index+1 
+      return index-1
+    }
     tablePinturas.innerHTML = `
     <p>Pinturas y resinas
     <span class="tableprice">${pinturasTotal}€
@@ -3789,9 +3841,9 @@ function loadFinalResult() {
     <ul class="tableoptions">
       ${pinturasElements
         .map((element) =>
-          element.qty ? "<li> "+element.name+" x "+ element.qty +"</li>" : ""
+          element.qty ? `<li><a class='fichatecnicadownload' role='button' href='${getPathToFicha(element.name)}' download='fichatecnica'>`+element.name+" x "+ element.qty +"</a>"+"<p>"+(cartproductsArray[addIndex()].price*(100-DESCUENTO)/100).toFixed(2)+"€</p>"+"</li>" : ""
         )
-        .join("").replaceAll("epoxi", RESINAS_TABLE_NAMES["Epoxi"]).replaceAll("Imprimacion", "Enepoxi HS100 (Imprimación)").replaceAll("acrilica", RESINAS_TABLE_NAMES["Acrilica"]).replaceAll("politop", RESINAS_TABLE_NAMES["Politop"])}
+        .join("").replaceAll("epoxi", RESINAS_TABLE_NAMES["Epoxi"]).replaceAll("Imprimacion", RESINAS_TABLE_NAMES["Imprimacion"]).replaceAll("acrilica", RESINAS_TABLE_NAMES["Acrilica"]).replaceAll("politop", RESINAS_TABLE_NAMES["Politop"])}
     </ul>
   </p>
   `;
@@ -3843,16 +3895,10 @@ function loadFinalResult() {
     };
     //0 si el pedido es de mas de 200€
     function showElement(element) {
-      console.log("elemento", localStorage.getItem(element), element);
+      //console.log("elemento", localStorage.getItem(element), element);
       if ((element == "Balanza" && RESINA !== "epoxi")) {
         return `<li>${element} no necesaria</li>`;
       } else if (localStorage.getItem(element) > 0) {
-        console.log(
-          "triplete",
-          localStorage.getItem(element),
-          HERRAMIENTAS_PRICES[element],
-          thisTableTotal
-        );
         thisTableTotal +=
           localStorage.getItem(element) * HERRAMIENTAS_PRICES[element];
 

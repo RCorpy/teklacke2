@@ -820,6 +820,25 @@ body {
   text-transform: capitalize;
 }
 
+.tableblock li{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.tableblock li > p {
+  color: #676462;
+  font-weight: 600;
+  font-size: 1.5vh;
+  text-transform: capitalize;
+}
+
+.tableblock a {
+  color: #676462;
+
+}
+
 .tableblocks{
   height: 70%;
   display: flex;
@@ -1248,5 +1267,9 @@ body {
 
 .withimagebuttonarea{
   height:10vh;
+}
+
+.fichatecnicadownload{
+  font-size: 1.5vh;
 }
 
