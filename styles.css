@@ -820,22 +820,28 @@ body {
   text-transform: capitalize;
 }
 
-.tableblock li{
+.finaltableli{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-
-.tableblock li > p {
-  color: #676462;
+.insideli{
+  color: #676462 !important;
   font-weight: 600;
-  font-size: 1.5vh;
+  font-size: 1.5vh !important;
   text-transform: capitalize;
 }
 
-.tableblock a {
-  color: #676462;
+.finaltableli > p {
+  color: #676462 !important;
+  font-weight: 600;
+  font-size: 1.5vh !important;
+  text-transform: capitalize;
+}
+
+.tableoptions a {
+  color: #676462 !important;
 
 }
 
@@ -1270,6 +1276,6 @@ body {
 }
 
 .fichatecnicadownload{
-  font-size: 1.5vh;
+  font-size: 1.5vh !important;
 }
 

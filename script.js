@@ -3809,23 +3809,6 @@ function loadFinalResult() {
       return toReturnArray;
     }
 
-    function getPathToFicha(name){
-      if(name.includes('epoxi')){
-        return
-      }
-      else if(name.includes('Imprimacion')){
-        return
-      }
-      else if(name.includes('acrilica')){
-        return
-      }
-      else if(name.includes('politop')){
-        return
-      }
-      else{
-        return ''
-      }
-    }
     console.log("second", cartproductsArray[0], cartproductsArray)
     let index = 0
 
@@ -3841,7 +3824,7 @@ function loadFinalResult() {
     <ul class="tableoptions">
       ${pinturasElements
         .map((element) =>
-          element.qty ? `<li><a class='fichatecnicadownload' role='button' href='${getPathToFicha(element.name)}' download='fichatecnica'>`+element.name+" x "+ element.qty +"</a>"+"<p>"+(cartproductsArray[addIndex()].price*(100-DESCUENTO)/100).toFixed(2)+"€</p>"+"</li>" : ""
+          element.qty ? `<li class="finaltableli"><a class='fichatecnicadownload' role='button' href='${getPathToFicha(element.name)}' download='fichatecnica'>`+element.name+" x "+ element.qty +"</a>"+"<p class='insideli'>"+(cartproductsArray[addIndex()].price*(100-DESCUENTO)/100).toFixed(2)+"€</p>"+"</li>" : ""
         )
         .join("").replaceAll("epoxi", RESINAS_TABLE_NAMES["Epoxi"]).replaceAll("Imprimacion", RESINAS_TABLE_NAMES["Imprimacion"]).replaceAll("acrilica", RESINAS_TABLE_NAMES["Acrilica"]).replaceAll("politop", RESINAS_TABLE_NAMES["Politop"])}
     </ul>
@@ -3876,8 +3859,8 @@ function loadFinalResult() {
               <sub></sub>
             </span>   
             <ul class="tableoptions">
-              <li>Disolvente 2L x ${Math.ceil(litersOfDisolvente / 2)}</li>
-            </ul>
+            <li class="finaltableli"><a class='fichatecnicadownload' role='button' href='${getPathToFicha("disolvente")}' download='fichatecnica'>`+"Disolvente 2L x "+ Math.ceil(litersOfDisolvente / 2) +"</a><p class='insideli'>"+Number(priceDisolvente).toFixed(2)+"€</p></li>"+
+            `</ul>
          </p>
   `;
     return priceDisolvente;
@@ -3902,7 +3885,9 @@ function loadFinalResult() {
         thisTableTotal +=
           localStorage.getItem(element) * HERRAMIENTAS_PRICES[element];
 
-        return `<li>${element} x ${localStorage.getItem(element)}</li>`;
+          return `<li class="finaltableli"><a class='fichatecnicadownload' role='button' href='${getPathToFicha(element)}' download='fichatecnica'> ${element} x ${localStorage.getItem(element)} </a><p class='insideli'>${Number(localStorage.getItem(element) * HERRAMIENTAS_PRICES[element])*((100-DESCUENTO)/100).toFixed(2)}€</p></li>`
+
+        
       } else {
         return "";
       }
@@ -3952,5 +3937,22 @@ function loadFinalResult() {
         </span>   
     </p>
     `;
+  }
+  function getPathToFicha(name){
+    if(name.includes('epoxi')){
+      return
+    }
+    else if(name.includes('Imprimacion')){
+      return
+    }
+    else if(name.includes('acrilica')){
+      return
+    }
+    else if(name.includes('politop')){
+      return
+    }
+    else{
+      return
+    }
   }
 }
