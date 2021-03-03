@@ -56,7 +56,9 @@
 }
 
 .menu > div >p {
-	color:blue;
+	color:black;
+  font-size: 2vh;
+  font-weight: 600;
 }
 
 
@@ -185,7 +187,7 @@ p{
 }
 
 .option {
-  
+  color: blue;
   font-weight: 400;
 }
 
@@ -282,9 +284,7 @@ body {
   font-size: 2.2vh;
 }
 
-.menu > div > p {
-  font-size: 2vh;
-}
+
 
 .homeoption{
   width: 100%;
@@ -421,6 +421,7 @@ body {
 
 .areapickerheader{
   font-size: 2.2vh;
+  color: black;
 }
 
 .colorpicker{
@@ -1161,9 +1162,7 @@ body {
   cursor: pointer;
 }
 
-.menu > div >p {
-	color:blue;
-}
+
 
 .tiendahomecontent{
   position: absolute;
