@@ -2370,14 +2370,29 @@ function onWndLoad() {
   var Y_DIS = 10;
   var TRANS_DUR = 0.4;
 
-  var images = document.querySelectorAll("img");
+  var images = document.getElementById('slider').querySelectorAll("img");
   for (var i = 0; i < images.length; i++) {
+    let thisImage = images[i].src
     images[i].onmousemove = function (e) {
       e.preventDefault();
     };
     images[i].ondragstart = function (e) {
       return false;
     };
+    images[i].onclick = function (e) {
+      e.preventDefault()
+      e.stopPropagation()
+      function resetPopUpSliderImage(){
+        document.getElementsByClassName("popupsliderimage")[0].innerHTML=""
+        document.removeEventListener('click', resetPopUpSliderImage, false)
+        console.log("yes")
+      }
+
+      document.getElementsByClassName("popupsliderimage")[0].innerHTML=`
+      <img id="clickedimage" src='${thisImage}' alt="clickedimage" />
+      `
+      document.addEventListener('click', resetPopUpSliderImage,false)
+    }
   }
 
   function init() {
