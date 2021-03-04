@@ -2816,17 +2816,20 @@ function loadAreaPicker() {
 
 function loadColorPicker() {
   document.getElementById("buttonarea").innerHTML = `
+  <div class="cheapexpensive">
+    <img src="https://cdn.shopify.com/s/files/1/0520/4187/5656/files/cheap.png?v=1614878120" alt="cheap" />
+  </div>
   <div class="colorpicker">
     <div class="colorpickercolumn">
-        <div class="colorpickeroption grisclaro">
-            <p>Gris Claro</p>
-        </div>
-        <div class="colorpickeroption grismedio">
-            <p>Gris Medio</p>
-        </div>
-        <div class="colorpickeroption grisoscuro">
-            <p>Gris Oscuro</p>
-        </div>
+      <div class="colorpickeroption grisclaro">
+          <p>Gris Claro</p>
+      </div>
+      <div class="colorpickeroption grismedio">
+          <p>Gris Medio</p>
+      </div>
+      <div class="colorpickeroption grisoscuro">
+          <p>Gris Oscuro</p>
+      </div>
     </div>
     <div class="colorpickercolumn">
         <div class="colorpickeroption antracita">
@@ -2840,27 +2843,31 @@ function loadColorPicker() {
         </div>
     </div>
     <div class="colorpickercolumn">
-        <div class="colorpickeroption amarillotrafico">
-            <p>Amarillo Tráfico</p>
-        </div>
         <div class="colorpickeroption ocre">
             <p>Ocre</p>
         </div>
         <div class="colorpickeroption negro">
             <p>Negro</p>
         </div>
+        <div class="colorpickeroption rojooxido">
+            <p>Rojo Óxido</p>
+        </div>
+
     </div>
     <div class="colorpickercolumn">
         <div class="colorpickeroption azulacero">
             <p>Azul Acero</p>
         </div>
-        <div class="colorpickeroption rojooxido">
-            <p>Rojo Óxido</p>
-        </div>
         <div class="colorpickeroption verdebosque">
             <p>Verde Bosque</p>
         </div>
+        <div class="colorpickeroption amarillotrafico">
+            <p>Amarillo Tráfico</p>
+        </div>
     </div>
+  </div>
+  <div class="cheapexpensive">
+    <img src="https://cdn.shopify.com/s/files/1/0520/4187/5656/files/expensive.png?v=1614878120" alt="expensive" />
   </div>`;
 
   let elements = document.getElementsByClassName("colorpickeroption");
