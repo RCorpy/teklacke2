@@ -367,6 +367,10 @@ body {
   font-weight: 600;
 }
 
+#areapickercontinuar{
+  color: blue;
+  cursor: pointer;
+}
 .input-number{
   width: 25vh;;
   vertical-align: top;

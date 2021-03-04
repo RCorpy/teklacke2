@@ -2117,7 +2117,8 @@ const priceObject = {
   },
 };
 
-const SLIDE_TIME = 500;
+const SLIDE_TIME = 650;
+const SLIDE_TRACK = 140
 let floorType = localStorage.getItem("floorType");
 let floorMaterial = localStorage.getItem("floorMaterial");
 let color = localStorage.getItem("color");
@@ -2196,7 +2197,7 @@ function slideToTheLeft(element) {
 
       if (timePassed >= SLIDE_TIME) {
         clearInterval(timer); // finish the animation
-        element.style.left = 60 + "vw";
+        element.style.left = SLIDE_TRACK + "vw";
         return;
       }
 
@@ -2205,7 +2206,7 @@ function slideToTheLeft(element) {
     }, 20);
 
     function draw(timePassed) {
-      element.style.left = (-timePassed / SLIDE_TIME) * 60 + "vw";
+      element.style.left = (-timePassed / SLIDE_TIME) * SLIDE_TRACK + "vw";
       //element.style.left = '75vw';
     }
   }
@@ -2218,7 +2219,7 @@ function slideFromTheRight(element) {
       // how much time passed from the start?
       let timePassed = Date.now() - start;
 
-      if (timePassed >= 600) {
+      if (timePassed >= SLIDE_TIME) {
         clearInterval(timer); // finish the animation
         element.style.left = 0 + "vw";
         return;
@@ -2230,7 +2231,7 @@ function slideFromTheRight(element) {
 
     function draw(timePassed) {
       if (timePassed / SLIDE_TIME < 1) {
-        element.style.left = 60 - (timePassed / SLIDE_TIME) * 60 + "vw";
+        element.style.left = SLIDE_TRACK - (timePassed / SLIDE_TIME) * SLIDE_TRACK + "vw";
       }
       //element.style.left = '75vw';
     }
@@ -2246,7 +2247,7 @@ function slideToTheRight(element) {
 
       if (timePassed >= SLIDE_TIME) {
         clearInterval(timer); // finish the animation
-        element.style.left = -60 + "vw";
+        element.style.left = -SLIDE_TRACK + "vw";
         return;
       }
 
@@ -2255,7 +2256,7 @@ function slideToTheRight(element) {
     }, 20);
 
     function draw(timePassed) {
-      element.style.left = (timePassed / SLIDE_TIME) * 60 + "vw";
+      element.style.left = (timePassed / SLIDE_TIME) * SLIDE_TRACK + "vw";
       //element.style.left = '75vw';
     }
   }
@@ -2268,7 +2269,7 @@ function slideFromTheLeft(element) {
       // how much time passed from the start?
       let timePassed = Date.now() - start;
 
-      if (timePassed >= 600) {
+      if (timePassed >= SLIDE_TIME) {
         clearInterval(timer); // finish the animation
         element.style.left = 0 + "vw";
         return;
@@ -2280,7 +2281,7 @@ function slideFromTheLeft(element) {
 
     function draw(timePassed) {
       if (timePassed / SLIDE_TIME < 1) {
-        element.style.left = -60 + (timePassed / SLIDE_TIME) * 60 + "vw";
+        element.style.left = -SLIDE_TRACK + (timePassed / SLIDE_TIME) * SLIDE_TRACK + "vw";
       }
       //element.style.left = '75vw';
     }
