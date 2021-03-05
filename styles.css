@@ -659,6 +659,43 @@ body {
   background-color: rgba(100,200,240, 0.5);
 }
 
+.brillooption{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.brillopicker{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+.brillooption > h3 {
+  color: blue;
+}
+
+.brillooption > p {
+  font-size: 2.1vh;
+}
+
+.brillooption > p > b {
+  font-size: 2.2vh;
+}
+
+.brillooption:hover {
+  margin: -1px;
+  border: 1px lightgrey solid;
+  cursor: pointer;
+}
+
+.brillooption:active{
+  background-color: rgba(100,200,240, 0.5);
+}
 
 .resinaoption{
   display: flex;

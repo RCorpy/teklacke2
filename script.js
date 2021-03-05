@@ -336,22 +336,22 @@ const stepOptions = {
       variableName: "Color",
     },
     5: {
-      middle: ["Brillo", "Mate"],
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
       slides: [
         {
-          name: "Brillo",
+          name: "Epoxi",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
         },
         {
-          name: "Mate",
+          name: "Acrílica",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
         },
       ],
-      variableName: "Brillo",
+      variableName: "Resina",
     },
     6: {
       middle: "presupuesto picker",
@@ -377,22 +377,22 @@ const stepOptions = {
       variableName: "Presupuesto",
     },
     7: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
       slides: [
         {
-          name: "Epoxi",
+          name: "Brillo",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
         },
         {
-          name: "Acrílica",
+          name: "Mate",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
         },
       ],
-      variableName: "Resina",
+      variableName: "Brillo",
     },
     8: {
       middle: "herramientas picker",
@@ -634,22 +634,22 @@ const stepOptions = {
       variableName: "Color",
     },
     6: {
-      middle: ["Brillo", "Mate"],
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
       slides: [
         {
-          name: "Brillo",
+          name: "Epoxi",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
         },
         {
-          name: "Mate",
+          name: "Acrílica",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
         },
       ],
-      variableName: "Brillo",
+      variableName: "Resina",
     },
     7: {
       middle: "presupuesto picker",
@@ -675,22 +675,22 @@ const stepOptions = {
       variableName: "Presupuesto",
     },
     8: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
       slides: [
         {
-          name: "Epoxi",
+          name: "Brillo",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
         },
         {
-          name: "Acrílica",
+          name: "Mate",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
         },
       ],
-      variableName: "Resina",
+      variableName: "Brillo",
     },
     9: {
       middle: "herramientas picker",
@@ -890,22 +890,22 @@ const stepOptions = {
       variableName: "Color",
     },
     5: {
-      middle: ["Brillo", "Mate"],
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
       slides: [
         {
-          name: "Brillo",
+          name: "Epoxi",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
         },
         {
-          name: "Mate",
+          name: "Acrílica",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
         },
       ],
-      variableName: "Brillo",
+      variableName: "Resina",
     },
     6: {
       middle: "presupuesto picker",
@@ -931,23 +931,24 @@ const stepOptions = {
       variableName: "Presupuesto",
     },
     7: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
       slides: [
         {
-          name: "Epoxi",
+          name: "Brillo",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
         },
         {
-          name: "Acrílica",
+          name: "Mate",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
         },
       ],
-      variableName: "Resina",
+      variableName: "Brillo",
     },
+
     8: {
       middle: "herramientas picker",
       question1: "¿NECESITA",
@@ -1169,22 +1170,22 @@ const stepOptions = {
       variableName: "Color",
     },
     6: {
-      middle: ["Brillo", "Mate"],
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
       slides: [
         {
-          name: "Brillo",
+          name: "Epoxi",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
         },
         {
-          name: "Mate",
+          name: "Acrílica",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
         },
       ],
-      variableName: "Brillo",
+      variableName: "Resina",
     },
     7: {
       middle: "ya pintado presupuesto picker",
@@ -1210,23 +1211,24 @@ const stepOptions = {
       variableName: "Presupuesto",
     },
     8: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
       slides: [
         {
-          name: "Epoxi",
+          name: "Brillo",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
         },
         {
-          name: "Acrílica",
+          name: "Mate",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
         },
       ],
-      variableName: "Resina",
+      variableName: "Brillo",
     },
+
     9: {
       middle: "herramientas picker",
       question1: "¿NECESITA",
@@ -1416,22 +1418,22 @@ const stepOptions = {
       variableName: "Color",
     },
     5: {
-      middle: ["Brillo", "Mate"],
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
       slides: [
         {
-          name: "Brillo",
+          name: "Epoxi",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
         },
         {
-          name: "Mate",
+          name: "Acrílica",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
         },
       ],
-      variableName: "Brillo",
+      variableName: "Resina",
     },
     6: {
       middle: "presupuesto picker",
@@ -1457,23 +1459,24 @@ const stepOptions = {
       variableName: "Presupuesto",
     },
     7: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
       slides: [
         {
-          name: "Epoxi",
+          name: "Brillo",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
         },
         {
-          name: "Acrílica",
+          name: "Mate",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
         },
       ],
-      variableName: "Resina",
+      variableName: "Brillo",
     },
+
     8: {
       middle: "herramientas picker",
       question1: "¿NECESITA",
@@ -1689,22 +1692,22 @@ const stepOptions = {
       variableName: "Color",
     },
     6: {
-      middle: ["Brillo", "Mate"],
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
       slides: [
         {
-          name: "Brillo",
+          name: "Epoxi",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
         },
         {
-          name: "Mate",
+          name: "Acrílica",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
         },
       ],
-      variableName: "Brillo",
+      variableName: "Resina",
     },
     7: {
       middle: "presupuesto picker",
@@ -1730,23 +1733,24 @@ const stepOptions = {
       variableName: "Presupuesto",
     },
     8: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
       slides: [
         {
-          name: "Epoxi",
+          name: "Brillo",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
         },
         {
-          name: "Acrílica",
+          name: "Mate",
           url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
         },
       ],
-      variableName: "Resina",
+      variableName: "Brillo",
     },
+
     9: {
       middle: "herramientas picker",
       question1: "¿NECESITA",
@@ -2680,7 +2684,9 @@ function buttonAreaInnerHTMLGenerator() {
       loadAreaPicker();
     } else if (stepOptions[floorMaterial][step].middle == "color picker") {
       loadColorPicker();
-    } else if (
+    } else if (stepOptions[floorMaterial][step].middle == "brillo picker") {
+      loadBrilloPicker();
+    }else if (
       stepOptions[floorMaterial][step].middle == "herramientas picker"
     ) {
       loadHerramientasPicker();
@@ -2901,6 +2907,48 @@ function loadColorPicker() {
     localStorage.setItem("Color", element.children[0].innerHTML);
     nextStep();
   }
+}
+
+function loadBrilloPicker(){
+  const RESINA = localStorage.getItem("Resina");
+
+  let hasBrillo = RESINA=="epoxi" || RESINA=="politop"
+  let hasMate = RESINA=="epoxi"
+  let hasSemiMate = RESINA=="acrilica"
+
+  const SEMIMATE_OPTION = `
+  <div class="brillooption" id="Mate">
+    <h3>Semi-mate</h3>
+    <p></p>
+  </div>`;
+
+  const BRILLO_OPTION = `
+  <div class="brillooption" id="Brillo">
+    <h3>Brillo</h3>
+    <p></p>
+  </div>`;
+
+  const MATE_OPTION = `
+  <div class="brillooption" id="Mate">
+    <h3>Mate</h3>
+    <p></p>
+  </div>`;
+
+  document.getElementById("buttonarea").innerHTML = `
+    <div class="brillopicker">
+      ${hasBrillo ? BRILLO_OPTION : ""}
+      ${hasMate ? MATE_OPTION : ""}
+      ${hasSemiMate ? SEMIMATE_OPTION : ""}
+    </div>`;
+
+  function setAndContinue(id) {
+    localStorage.setItem("Brillo", id);
+    nextStep();
+  }
+
+  [...document.getElementsByClassName("brillooption")].map((div) => {
+    div.addEventListener("click", () => setAndContinue(div.id), "false");
+  });
 }
 
 function loadHerramientasPicker() {
@@ -3135,30 +3183,52 @@ function loadHerramientasPicker() {
 function loadPresupuestoPicker() {
   const FLOOR_MATERIAL = localStorage.getItem("floorMaterial");
   const JUNTAS = localStorage.getItem("Juntas");
+  const RESINA = localStorage.getItem("Resina")
 
-  const hasUnaManoTransparente =
-    ((FLOOR_MATERIAL == "Baldosa" || FLOOR_MATERIAL == "Terrazo") &&
+  const hasUnaManoTransparente = RESINA!=="acrilica" &&
+    (((FLOOR_MATERIAL == "Baldosa" || FLOOR_MATERIAL == "Terrazo") &&
       JUNTAS &&
       JUNTAS == "Si") ||
-    (FLOOR_MATERIAL !== "Baldosa" && FLOOR_MATERIAL !== "Terrazo");
+    (FLOOR_MATERIAL !== "Baldosa" && FLOOR_MATERIAL !== "Terrazo"));
+
+  const hasDosManosEImprimacion = RESINA=="epoxi"  
+
+  const hasDosManos = RESINA!=="politop"
+
+  const hasUnaMano = RESINA =="politop"
+
+  const unaManoDiv = `
+  <div class="presupuestooption" id="unamano">
+    <h3>UNA MANO</h3>
+    <p>Ideal para cuando solo se quiere evitar el polvo</p>
+    <p>y gastar poco</p>
+  </div>`;
 
   const unaManoTransparenteDiv = `
   <div class="presupuestooption" id="soloimprimacion">
-  <h3>UNA MANO TRANSPARENTE</h3>
-  <p>Ideal para cuando solo se quiere evitar el polvo</p>
-  <p>y gastar poco</p>
-</div>`;
+    <h3>UNA MANO TRANSPARENTE</h3>
+    <p>Ideal para cuando solo se quiere evitar el polvo</p>
+    <p>y gastar poco</p>
+  </div>`;
+
+  const dosManosEImprimacionDiv = `
+  <div class="presupuestooption" id="imprimacionydosmanos">
+    <h3>DOS MANOS E IMPRIMACION</h3>
+    <p>Esto es lo que recomendamos.<b>(Recomendada)</b></p>
+  </div>`
+
+  const dosManosDiv = `
+  <div class="presupuestooption" id="dosmanos">
+    <h3>SOLO DOS MANOS</h3>
+    <p>Se puede ahorrar la imprimación, pero va a quedar</p>
+    <p>menos capa. Para suelos nuevos funciona bien</p>
+  </div>`
+
   document.getElementById("buttonarea").innerHTML = `
     <div class="presupuestopicker">
-      <div class="presupuestooption" id="imprimacionydosmanos">
-        <h3>DOS MANOS E IMPRIMACION</h3>
-        <p>Esto es lo que recomendamos.<b>(Recomendada)</b></p>
-      </div>
-      <div class="presupuestooption" id="dosmanos">
-        <h3>SOLO DOS MANOS</h3>
-        <p>Se puede ahorrar la imprimación, pero va a quedar</p>
-        <p>menos capa. Para suelos nuevos funciona bien</p>
-      </div>
+  ${hasUnaMano ? unaManoDiv : ""}
+  ${hasDosManosEImprimacion ? dosManosEImprimacionDiv : ""}
+  ${hasDosManos ? dosManosDiv : ""}
   ${hasUnaManoTransparente ? unaManoTransparenteDiv : ""}
     </div>`;
 
@@ -3234,8 +3304,8 @@ function loadResinaPicker() {
 
   let hasAcrilica =
     FLOOR_MATERIAL !== "Baldosa" && FLOOR_MATERIAL !== "Terrazo";
-  let hasEpoxi =true
-  let hasPolitop = false
+  let hasEpoxi = FLOOR_TYPE!=="Patio Colegio" && FLOOR_TYPE!=="Suelo Exterior"
+  let hasPolitop = !hasEpoxi
   if(FLOOR_TYPE=="Patio Colegio"){
     hasAcrilica=true
     hasEpoxi=false
@@ -3699,7 +3769,6 @@ function loadFinalResult() {
       let imprimacionArray = calculateKits(true);
       let layersArray = calculateKits(false);
 
-      console.log("first", cartproductsArray[0], cartproductsArray)
 
       calculateTotalKgs();
       function calculateTotalKgs() {
@@ -3727,7 +3796,7 @@ function loadFinalResult() {
       }
 
       function calculateImprimacionArray() {
-        if (!MANOS.includes("imprimacion") || RESINA == "acrilica") return [];
+        if (!MANOS.includes("imprimacion") || RESINA == "acrilica" || RESINA =="politop") return [];
 
         let thisAmountOfKgs = imprimacionArray[1].name
           .split(" ")[1]
@@ -3832,7 +3901,6 @@ function loadFinalResult() {
       return toReturnArray;
     }
 
-    console.log("second", cartproductsArray[0], cartproductsArray)
     let index = 0
 
     function addIndex(){
