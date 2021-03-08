@@ -273,6 +273,65 @@ const stepOptions = {
       variableName: "Area",
     },
     4: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    5: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    6: {
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    7: {
       middle: ["color picker"],
       question1: "¿DE QUE COLOR QUIERE",
       question2: "PINTAR EL SUELO?",
@@ -334,65 +393,6 @@ const stepOptions = {
         },
       ],
       variableName: "Color",
-    },
-    5: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "Epoxi",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
-        },
-        {
-          name: "Acrílica",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
-        },
-      ],
-      variableName: "Resina",
-    },
-    6: {
-      middle: "presupuesto picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "2 Manos e Imprimación",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
-        },
-        {
-          name: "2 Manos",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
-        },
-        {
-          name: "1 Capa Transparente",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
-        },
-      ],
-      variableName: "Presupuesto",
-    },
-    7: {
-      middle: "brillo picker",
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
-      slides: [
-        {
-          name: "Brillo",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
-        },
-        {
-          name: "Mate",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
-        },
-      ],
-      variableName: "Brillo",
     },
     8: {
       middle: "herramientas picker",
@@ -571,6 +571,65 @@ const stepOptions = {
       variableName: "Area",
     },
     5: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    6: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    7: {
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    8: {
       middle: ["color picker"],
       question1: "¿DE QUE COLOR QUIERE",
       question2: "PINTAR EL SUELO?",
@@ -632,65 +691,6 @@ const stepOptions = {
         },
       ],
       variableName: "Color",
-    },
-    6: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "Epoxi",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
-        },
-        {
-          name: "Acrílica",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
-        },
-      ],
-      variableName: "Resina",
-    },
-    7: {
-      middle: "presupuesto picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "2 Manos e Imprimación",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
-        },
-        {
-          name: "2 Manos",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
-        },
-        {
-          name: "1 Capa Transparente",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
-        },
-      ],
-      variableName: "Presupuesto",
-    },
-    8: {
-      middle: "brillo picker",
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
-      slides: [
-        {
-          name: "Brillo",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
-        },
-        {
-          name: "Mate",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
-        },
-      ],
-      variableName: "Brillo",
     },
     9: {
       middle: "herramientas picker",
@@ -827,6 +827,65 @@ const stepOptions = {
       variableName: "Area",
     },
     4: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    5: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    6: {
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    7: {
       middle: ["color picker"],
       question1: "¿DE QUE COLOR QUIERE",
       question2: "PINTAR EL SUELO?",
@@ -889,66 +948,6 @@ const stepOptions = {
       ],
       variableName: "Color",
     },
-    5: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "Epoxi",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
-        },
-        {
-          name: "Acrílica",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
-        },
-      ],
-      variableName: "Resina",
-    },
-    6: {
-      middle: "presupuesto picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "2 Manos e Imprimación",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
-        },
-        {
-          name: "2 Manos",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
-        },
-        {
-          name: "1 Capa Transparente",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
-        },
-      ],
-      variableName: "Presupuesto",
-    },
-    7: {
-      middle: "brillo picker",
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
-      slides: [
-        {
-          name: "Brillo",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
-        },
-        {
-          name: "Mate",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
-        },
-      ],
-      variableName: "Brillo",
-    },
-
     8: {
       middle: "herramientas picker",
       question1: "¿NECESITA",
@@ -1107,6 +1106,65 @@ const stepOptions = {
       variableName: "Area",
     },
     5: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    6: {
+      middle: "ya pintado presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    7: {
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    8: {
       middle: ["color picker"],
       question1: "¿DE QUE COLOR QUIERE",
       question2: "PINTAR EL SUELO?",
@@ -1168,65 +1226,6 @@ const stepOptions = {
         },
       ],
       variableName: "Color",
-    },
-    6: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "Epoxi",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
-        },
-        {
-          name: "Acrílica",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
-        },
-      ],
-      variableName: "Resina",
-    },
-    7: {
-      middle: "ya pintado presupuesto picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "2 Manos e Imprimación",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
-        },
-        {
-          name: "2 Manos",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
-        },
-        {
-          name: "1 Capa Transparente",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
-        },
-      ],
-      variableName: "Presupuesto",
-    },
-    8: {
-      middle: "brillo picker",
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
-      slides: [
-        {
-          name: "Brillo",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
-        },
-        {
-          name: "Mate",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
-        },
-      ],
-      variableName: "Brillo",
     },
 
     9: {
@@ -1355,6 +1354,65 @@ const stepOptions = {
       variableName: "Area",
     },
     4: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    5: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    6: {
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    7: {
       middle: ["color picker"],
       question1: "¿DE QUE COLOR QUIERE",
       question2: "PINTAR EL SUELO?",
@@ -1417,66 +1475,6 @@ const stepOptions = {
       ],
       variableName: "Color",
     },
-    5: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "Epoxi",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
-        },
-        {
-          name: "Acrílica",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
-        },
-      ],
-      variableName: "Resina",
-    },
-    6: {
-      middle: "presupuesto picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "2 Manos e Imprimación",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
-        },
-        {
-          name: "2 Manos",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
-        },
-        {
-          name: "1 Capa Transparente",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
-        },
-      ],
-      variableName: "Presupuesto",
-    },
-    7: {
-      middle: "brillo picker",
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
-      slides: [
-        {
-          name: "Brillo",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
-        },
-        {
-          name: "Mate",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
-        },
-      ],
-      variableName: "Brillo",
-    },
-
     8: {
       middle: "herramientas picker",
       question1: "¿NECESITA",
@@ -1629,6 +1627,65 @@ const stepOptions = {
       variableName: "Area",
     },
     5: {
+      middle: "resina picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "Epoxi",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
+        },
+        {
+          name: "Acrílica",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
+        },
+      ],
+      variableName: "Resina",
+    },
+    6: {
+      middle: "presupuesto picker",
+      question1: "ELIJA SU",
+      question2: "PRESUPUESTO",
+      slides: [
+        {
+          name: "2 Manos e Imprimación",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
+        },
+        {
+          name: "2 Manos",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
+        },
+        {
+          name: "1 Capa Transparente",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
+        },
+      ],
+      variableName: "Presupuesto",
+    },
+    7: {
+      middle: "brillo picker",
+      question1: "¿LO PREFIERE BRILLO",
+      question2: "O MATE?",
+      slides: [
+        {
+          name: "Brillo",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
+        },
+        {
+          name: "Mate",
+          url:
+            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
+        },
+      ],
+      variableName: "Brillo",
+    },
+    8: {
       middle: ["color picker"],
       question1: "¿DE QUE COLOR QUIERE",
       question2: "PINTAR EL SUELO?",
@@ -1690,65 +1747,6 @@ const stepOptions = {
         },
       ],
       variableName: "Color",
-    },
-    6: {
-      middle: "resina picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "Epoxi",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-EPOXI-100_-SOLIDOS.jpg?v=1612448310",
-        },
-        {
-          name: "Acrílica",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/RESINA-ACRILICA-SUELOS.jpg?v=1612448310",
-        },
-      ],
-      variableName: "Resina",
-    },
-    7: {
-      middle: "presupuesto picker",
-      question1: "ELIJA SU",
-      question2: "PRESUPUESTO",
-      slides: [
-        {
-          name: "2 Manos e Imprimación",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS-E-IMPRIMACION.jpg?v=1612356095",
-        },
-        {
-          name: "2 Manos",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-DOS-MANOS.jpg?v=1612356095",
-        },
-        {
-          name: "1 Capa Transparente",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/PRESUPUESTO-TRANSPARENTE.jpg?v=1612356095",
-        },
-      ],
-      variableName: "Presupuesto",
-    },
-    8: {
-      middle: "brillo picker",
-      question1: "¿LO PREFIERE BRILLO",
-      question2: "O MATE?",
-      slides: [
-        {
-          name: "Brillo",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-BRILLO.jpg?v=1612355742",
-        },
-        {
-          name: "Mate",
-          url:
-            "https://cdn.shopify.com/s/files/1/0533/7255/1350/files/BRILLO-EPOXI-SUELO-MATE.jpg?v=1612355741",
-        },
-      ],
-      variableName: "Brillo",
     },
 
     9: {
@@ -2294,6 +2292,11 @@ function slideFromTheLeft(element) {
 
 function nextStep() {
   step++;
+  const FLOOR_MATERIAL = localStorage.getItem("floorMaterial")
+  const isTransparente = localStorage.getItem("Manos")=="soloimprimacion"
+  if(step>3 && stepOptions[FLOOR_MATERIAL][step].middle=="color picker" && isTransparente){
+    step++;
+  }
 
   slideToTheLeft(document.getElementById("question1"));
   slideToTheLeft(document.getElementById("question2"));
@@ -2321,9 +2324,12 @@ function prevStep() {
     step = 0;
     window.location.href = "/";
   } else {
-    console.log("it goes down");
+    const FLOOR_MATERIAL = localStorage.getItem("floorMaterial")
+    const isTransparente = localStorage.getItem("Manos")=="soloimprimacion"
     step--;
-    console.log("currentStep:", step);
+    if(step>3&& stepOptions[FLOOR_MATERIAL][step].middle=="color picker" && isTransparente){
+      step--;
+    }
     slideToTheRight(document.getElementById("question1"));
     slideToTheRight(document.getElementById("question2"));
     slideToTheRight(document.getElementById("buttonarea"));
@@ -2837,84 +2843,93 @@ function loadAreaPicker() {
 }
 
 function loadColorPicker() {
-  document.getElementById("buttonarea").innerHTML = `
-  <div class="cheapexpensive">
-    <img src="https://cdn.shopify.com/s/files/1/0520/4187/5656/files/cheap.png?v=1614878120" alt="cheap" />
-  </div>
-  <div class="colorpicker">
-    <div class="colorpickercolumn">
-      <div class="colorpickeroption grisclaro">
-          <p>Gris Claro</p>
-      </div>
-      <div class="colorpickeroption grismedio">
-          <p>Gris Medio</p>
-      </div>
-      <div class="colorpickeroption grisoscuro">
-          <p>Gris Oscuro</p>
-      </div>
-    </div>
-    <div class="colorpickercolumn">
-        <div class="colorpickeroption antracita">
-            <p>Antracita</p>
-        </div>
-        <div class="colorpickeroption blanco">
-            <p>Blanco</p>
-        </div>
-        <div class="colorpickeroption crema">
-            <p>Crema</p>
-        </div>
-    </div>
-    <div class="colorpickercolumn">
-        <div class="colorpickeroption ocre">
-            <p>Ocre</p>
-        </div>
-        <div class="colorpickeroption negro">
-            <p>Negro</p>
-        </div>
-        <div class="colorpickeroption rojooxido">
-            <p>Rojo Óxido</p>
-        </div>
+  const isTransparente = localStorage.getItem("Manos")=="soloimprimacion"
 
+  if(!isTransparente){
+    document.getElementById("buttonarea").innerHTML = `
+    <div class="cheapexpensive">
+      <img src="https://cdn.shopify.com/s/files/1/0520/4187/5656/files/cheap.png?v=1614878120" alt="cheap" />
     </div>
-    <div class="colorpickercolumn">
-        <div class="colorpickeroption azulacero">
-            <p>Azul Acero</p>
+    <div class="colorpicker">
+      <div class="colorpickercolumn">
+        <div class="colorpickeroption grisclaro">
+            <p>Gris Claro</p>
         </div>
-        <div class="colorpickeroption verdebosque">
-            <p>Verde Bosque</p>
+        <div class="colorpickeroption grismedio">
+            <p>Gris Medio</p>
         </div>
-        <div class="colorpickeroption amarillotrafico">
-            <p>Amarillo Tráfico</p>
+        <div class="colorpickeroption grisoscuro">
+            <p>Gris Oscuro</p>
         </div>
+      </div>
+      <div class="colorpickercolumn">
+          <div class="colorpickeroption antracita">
+              <p>Antracita</p>
+          </div>
+          <div class="colorpickeroption blanco">
+              <p>Blanco</p>
+          </div>
+          <div class="colorpickeroption crema">
+              <p>Crema</p>
+          </div>
+      </div>
+      <div class="colorpickercolumn">
+          <div class="colorpickeroption ocre">
+              <p>Ocre</p>
+          </div>
+          <div class="colorpickeroption negro">
+              <p>Negro</p>
+          </div>
+          <div class="colorpickeroption rojooxido">
+              <p>Rojo Óxido</p>
+          </div>
+
+      </div>
+      <div class="colorpickercolumn">
+          <div class="colorpickeroption azulacero">
+              <p>Azul Acero</p>
+          </div>
+          <div class="colorpickeroption verdebosque">
+              <p>Verde Bosque</p>
+          </div>
+          <div class="colorpickeroption amarillotrafico">
+              <p>Amarillo Tráfico</p>
+          </div>
+      </div>
     </div>
-  </div>
-  <div class="cheapexpensive">
-    <img src="https://cdn.shopify.com/s/files/1/0520/4187/5656/files/expensive.png?v=1614878120" alt="expensive" />
-  </div>`;
+    <div class="cheapexpensive">
+      <img src="https://cdn.shopify.com/s/files/1/0520/4187/5656/files/expensive.png?v=1614878120" alt="expensive" />
+    </div>`;
 
-  let elements = document.getElementsByClassName("colorpickeroption");
+    let elements = document.getElementsByClassName("colorpickeroption");
 
-  for (let i = 0, len = elements.length; i < len; i++) {
-    let myElement = elements[i];
-    elements[i].addEventListener(
-      "click",
-      () => colorElementClicked(myElement),
-      false
-    );
+    for (let i = 0, len = elements.length; i < len; i++) {
+      let myElement = elements[i];
+      elements[i].addEventListener(
+        "click",
+        () => colorElementClicked(myElement),
+        false
+      );
+    }
+
+    function colorElementClicked(element) {
+      localStorage.setItem("Color", element.children[0].innerHTML);
+      nextStep();
+    }
   }
-
-  function colorElementClicked(element) {
-    localStorage.setItem("Color", element.children[0].innerHTML);
-    nextStep();
+  else{
+    localStorage.setItem("Color", "Negro")
+    nextStep()
   }
 }
 
 function loadBrilloPicker(){
   const RESINA = localStorage.getItem("Resina");
+  const isTransparente = localStorage.getItem("Manos")=="soloimprimacion"
 
   let hasBrillo = RESINA=="epoxi" || RESINA=="politop"
-  let hasMate = RESINA=="epoxi"
-  let hasSemiMate = RESINA=="acrilica"
+  let hasMate = RESINA=="epoxi" && !isTransparente
+  let hasSemiMate = RESINA=="acrilica" && !isTransparente
 
   const SEMIMATE_OPTION = `
   <div class="brillooption" id="Mate">
@@ -3206,6 +3221,9 @@ function loadPresupuestoPicker() {
 
   const unaManoTransparenteDiv = `
   <div class="presupuestooption" id="soloimprimacion">
+    <div class="infodiv">
+      <div class="infobutton" id="transparenteinfobutton"><img id="infoimagemanotransparente" src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/INFO-2.png?v=1614685382" /></div>
+    </div>
     <h3>UNA MANO TRANSPARENTE</h3>
     <p>Ideal para cuando solo se quiere evitar el polvo</p>
     <p>y gastar poco</p>
@@ -3238,7 +3256,15 @@ function loadPresupuestoPicker() {
   }
 
   [...document.getElementsByClassName("presupuestooption")].map((div) => {
-    div.addEventListener("click", () => setAndContinue(div.id), "false");
+
+    div.addEventListener("click", (e) => {
+      if(e.target.id=="infoimagemanotransparente"){
+        showCustomPopUp("ATENCIÓN", "Una mano transparente solo está disponible con terminación brillo", [VOLVER_BUTTON])
+      }
+      else{
+        setAndContinue(div.id)
+      }
+    }, "false");
   });
 }
 
@@ -3480,7 +3506,7 @@ function loadFinalResult() {
   document.getElementById("interactive").innerHTML = `
     <div class="backgroundimage">
     <img
-      src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/FONDO_GENERAL.jpg?v=1612267903"
+      src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/elegir-pintura-suelo-opciones.jpg?v=1613671411"
       alt="background"
     />
   </div>
@@ -3562,7 +3588,7 @@ function loadFinalResult() {
     <a class="tiendahomehomelink" href="/"></a>
     <div class="backgroundimage">
     <img
-      src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/FONDO_GENERAL.jpg?v=1612267903"
+      src="https://cdn.shopify.com/s/files/1/0533/7255/1350/files/elegir-pintura-suelo-opciones.jpg?v=1613671411"
       alt="background"
     />
   </div>

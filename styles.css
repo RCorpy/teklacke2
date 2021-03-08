@@ -625,8 +625,10 @@ body {
 
 .presupuestooption{
   display: flex;
+  flex:1;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .presupuestopicker{
@@ -1285,6 +1287,7 @@ body {
 }
 
 .infodiv{
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
